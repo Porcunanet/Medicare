@@ -1,0 +1,2477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SHIP TAC — Medicare Training | Level 1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    /* ── TOKENS ── */
+    :root {
+      --navy:   #1a3557;
+      --blue:   #2563a8;
+      --sky:    #4a9ed6;
+      --orange: #d9622b;
+      --amber:  #f0a500;
+      --sand:   #f5f0e8;
+      --white:  #ffffff;
+      --ink:    #1e2630;
+      --muted:  #5a6878;
+      --border: #dde3ec;
+
+      --nav-h: 68px;
+      --radius: 12px;
+      --shadow: 0 4px 24px rgba(26,53,87,.10);
+      --shadow-lg: 0 12px 48px rgba(26,53,87,.16);
+
+      --serif: 'DM Serif Display', Georgia, serif;
+      --sans:  'DM Sans', system-ui, sans-serif;
+    }
+
+    /* ── RESET ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--sans);
+      background: var(--sand);
+      color: var(--ink);
+      min-height: 100vh;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ── NAV ── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--nav-h);
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      box-shadow: 0 2px 16px rgba(0,0,0,.25);
+    }
+    .nav-inner {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .nav-logo-icon {
+      width: 38px; height: 38px;
+      background: var(--orange);
+      border-radius: 50%;
+      display: grid; place-items: center;
+      font-size: 18px; font-weight: 700; color: white;
+      font-family: var(--serif);
+      letter-spacing: -.5px;
+    }
+    .nav-logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+    .nav-logo-text strong { color: var(--white); font-size: .95rem; font-weight: 600; letter-spacing: .3px; }
+    .nav-logo-text span   { color: var(--sky);   font-size: .72rem; font-weight: 300; letter-spacing: .5px; text-transform: uppercase; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex: 1;
+      list-style: none;
+    }
+    .nav-links a {
+      padding: 6px 14px;
+      border-radius: 6px;
+      color: rgba(255,255,255,.75);
+      font-size: .875rem;
+      font-weight: 400;
+      transition: color .2s, background .2s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--white);
+      background: rgba(255,255,255,.12);
+    }
+    .nav-links a.active { font-weight: 600; color: var(--amber); }
+
+    .nav-cta {
+      margin-left: auto;
+      padding: 8px 18px;
+      background: var(--orange);
+      color: var(--white);
+      border-radius: 8px;
+      font-size: .875rem;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: background .2s, transform .15s;
+    }
+    .nav-cta:hover { background: #c2561e; transform: translateY(-1px); }
+
+    /* hamburger */
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; color: white; padding: 6px; }
+    .nav-toggle svg { width: 24px; height: 24px; }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #1e4a80 60%, var(--blue) 100%);
+      padding: 72px 24px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: .78rem; font-weight: 500; color: var(--sky);
+      letter-spacing: .6px; text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .hero-badge::before { content: '●'; font-size: .5rem; color: var(--amber); }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      color: var(--white);
+      line-height: 1.15;
+      max-width: 700px;
+      margin: 0 auto 16px;
+    }
+    .hero h1 em { font-style: italic; color: var(--sky); }
+    .hero p {
+      color: rgba(255,255,255,.7);
+      font-size: 1.1rem;
+      max-width: 560px;
+      margin: 0 auto 36px;
+      font-weight: 300;
+      line-height: 1.65;
+    }
+    .hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--orange);
+      color: var(--white);
+      padding: 13px 28px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: .95rem;
+      transition: background .2s, transform .15s, box-shadow .2s;
+      box-shadow: 0 4px 16px rgba(217,98,43,.4);
+    }
+    .btn-primary:hover { background: #c2561e; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(217,98,43,.4); }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1.5px solid rgba(255,255,255,.35);
+      padding: 13px 28px;
+      border-radius: 10px;
+      font-weight: 500;
+      font-size: .95rem;
+      transition: background .2s, border-color .2s;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.6); }
+
+    /* ── PROGRESS BAR ── */
+    .progress-strip {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 24px;
+    }
+    .progress-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .progress-label { font-size: .8rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; white-space: nowrap; }
+    .progress-track {
+      flex: 1;
+      min-width: 160px;
+      height: 8px;
+      background: var(--border);
+      border-radius: 100px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      width: 14%;
+      background: linear-gradient(90deg, var(--blue), var(--sky));
+      border-radius: 100px;
+      transition: width .6s ease;
+    }
+    .progress-meta { font-size: .82rem; color: var(--muted); white-space: nowrap; }
+    .progress-meta strong { color: var(--blue); }
+
+    /* ── MAIN LAYOUT ── */
+    .main-grid {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      grid-template-rows: auto;
+      gap: 0;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 32px 24px;
+      align-items: start;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      position: sticky;
+      top: calc(var(--nav-h) + 16px);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding-right: 28px;
+    }
+    .sidebar-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .sidebar-card-head {
+      background: var(--navy);
+      padding: 14px 18px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .sidebar-card-head h3 { color: var(--white); font-size: .85rem; font-weight: 600; letter-spacing: .3px; }
+    .sidebar-card-head .icon { font-size: 1rem; }
+    .course-list { list-style: none; }
+    .course-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--border);
+      transition: background .15s;
+      cursor: pointer;
+    }
+    .course-item:last-child { border-bottom: none; }
+    .course-item:hover { background: #f0f4fa; }
+    .course-item.active { background: #edf3fb; }
+    .course-num {
+      width: 26px; height: 26px;
+      border-radius: 50%;
+      background: var(--border);
+      display: grid; place-items: center;
+      font-size: .72rem; font-weight: 700;
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+    .course-item.active .course-num,
+    .course-item.done .course-num {
+      background: var(--blue);
+      color: var(--white);
+    }
+    .course-item.done .course-num { background: #2d9e5f; }
+    .course-info { flex: 1; min-width: 0; }
+    .course-info strong { display: block; font-size: .82rem; color: var(--ink); font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .course-info span  { font-size: .73rem; color: var(--muted); }
+    .course-badge {
+      font-size: .65rem; font-weight: 700;
+      padding: 3px 8px; border-radius: 100px;
+      background: #e8f4fd; color: var(--blue);
+      white-space: nowrap;
+    }
+    .course-item.done .course-badge { background: #e6f7ee; color: #2d9e5f; }
+    .course-item.locked .course-badge { background: var(--border); color: var(--muted); }
+
+    .info-box {
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .info-row { display: flex; justify-content: space-between; align-items: center; font-size: .82rem; }
+    .info-row span { color: var(--muted); }
+    .info-row strong { color: var(--ink); }
+
+    /* ── CONTENT AREA ── */
+    .content { min-width: 0; }
+
+    /* course header */
+    .course-header {
+      background: var(--white);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 28px 32px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items: center;
+    }
+    .course-header-left {}
+    .course-eyebrow { font-size: .75rem; font-weight: 600; color: var(--blue); text-transform: uppercase; letter-spacing: .6px; margin-bottom: 6px; }
+    .course-title { font-family: var(--serif); font-size: 1.75rem; color: var(--navy); line-height: 1.2; margin-bottom: 10px; }
+    .course-meta-row { display: flex; gap: 16px; flex-wrap: wrap; }
+    .meta-chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: .78rem; color: var(--muted);
+    }
+    .meta-chip .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--sky); }
+
+    .start-btn {
+      background: var(--orange);
+      color: var(--white);
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: .875rem;
+      white-space: nowrap;
+      cursor: pointer;
+      border: none;
+      transition: background .2s, transform .15s;
+      box-shadow: 0 4px 14px rgba(217,98,43,.3);
+    }
+    .start-btn:hover { background: #c2561e; transform: translateY(-2px); }
+
+    /* objectives */
+    .objectives-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .obj-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      box-shadow: var(--shadow);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .obj-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+    .obj-num {
+      width: 36px; height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--blue), var(--sky));
+      display: grid; place-items: center;
+      color: white; font-size: 1rem; font-weight: 700;
+      font-family: var(--serif);
+    }
+    .obj-card p { font-size: .83rem; color: var(--muted); line-height: 1.5; }
+
+    /* section label */
+    .section-label {
+      font-size: .72rem; font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase; letter-spacing: .8px;
+      margin-bottom: 14px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+    /* slides grid */
+    .slides-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 18px;
+      margin-bottom: 32px;
+    }
+    .slide-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      transition: transform .2s, box-shadow .2s, border-color .2s;
+    }
+    .slide-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--sky); }
+    .slide-img {
+      aspect-ratio: 16/9;
+      background: linear-gradient(135deg, #e8f0fb 0%, #dce8f5 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .slide-img::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+      opacity: .06;
+    }
+    .slide-thumb-content {
+      padding: 16px;
+      text-align: center;
+      position: relative; z-index: 1;
+    }
+    .slide-thumb-icon { font-size: 2.2rem; margin-bottom: 8px; display: block; }
+    .slide-thumb-title { font-size: .8rem; font-weight: 600; color: var(--navy); line-height: 1.3; }
+    .slide-body { padding: 14px 16px; }
+    .slide-num { font-size: .7rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+    .slide-title { font-size: .88rem; font-weight: 600; color: var(--ink); line-height: 1.35; margin-bottom: 8px; }
+    .slide-desc { font-size: .78rem; color: var(--muted); line-height: 1.5; }
+    .slide-footer {
+      padding: 10px 16px;
+      border-top: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .slide-tag {
+      font-size: .68rem; font-weight: 600;
+      padding: 3px 9px; border-radius: 100px;
+      background: #edf3fb; color: var(--blue);
+    }
+    .slide-arrow { font-size: .75rem; color: var(--sky); font-weight: 700; transition: transform .2s; }
+    .slide-card:hover .slide-arrow { transform: translateX(4px); }
+
+    /* key terms */
+    .terms-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    .term-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      position: relative;
+      overflow: hidden;
+    }
+    .term-card::before {
+      content: '';
+      position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+      background: var(--blue);
+    }
+    .term-card.orange::before { background: var(--orange); }
+    .term-card.amber::before  { background: var(--amber); }
+    .term-card.green::before  { background: #2d9e5f; }
+    .term-name { font-weight: 700; font-size: .88rem; color: var(--navy); }
+    .term-def  { font-size: .78rem; color: var(--muted); line-height: 1.5; }
+
+    /* modal overlay */
+    .modal-overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(10,20,40,.7);
+      backdrop-filter: blur(6px);
+      z-index: 200;
+      padding: 24px;
+      overflow-y: auto;
+    }
+    .modal-overlay.open { display: flex; align-items: flex-start; justify-content: center; }
+    .modal {
+      background: var(--white);
+      border-radius: 16px;
+      max-width: 820px;
+      width: 100%;
+      margin: auto;
+      box-shadow: 0 24px 80px rgba(0,0,0,.35);
+      overflow: hidden;
+      animation: modalIn .25s ease;
+    }
+    @keyframes modalIn { from { opacity: 0; transform: scale(.96) translateY(16px); } }
+    .modal-header {
+      background: var(--navy);
+      padding: 20px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px;
+    }
+    .modal-header h2 { color: var(--white); font-family: var(--serif); font-size: 1.25rem; }
+    .modal-close {
+      background: rgba(255,255,255,.15);
+      border: none; color: white; cursor: pointer;
+      width: 32px; height: 32px; border-radius: 50%;
+      font-size: 1.1rem; display: grid; place-items: center;
+      transition: background .2s;
+    }
+    .modal-close:hover { background: rgba(255,255,255,.3); }
+    .modal-body { padding: 28px 24px; }
+    .modal-section { margin-bottom: 22px; }
+    .modal-section h3 { font-size: .9rem; font-weight: 700; color: var(--blue); margin-bottom: 10px; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+    .modal-section p { font-size: .9rem; color: var(--muted); line-height: 1.6; margin-bottom: 8px; }
+    .modal-section ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .modal-section li { font-size: .88rem; color: var(--muted); padding-left: 18px; position: relative; line-height: 1.5; }
+    .modal-section li::before { content: '→'; position: absolute; left: 0; color: var(--orange); font-size: .75rem; top: 2px; }
+    .modal-footer { padding: 16px 24px; border-top: 1px solid var(--border); display: flex; gap: 12px; justify-content: flex-end; }
+
+    /* ── COURSE TABS ── */
+    .course-tabs {
+      display: flex;
+      gap: 0;
+      border-bottom: 2px solid var(--border);
+      margin-bottom: 28px;
+      overflow-x: auto;
+    }
+    .course-tab {
+      padding: 12px 24px;
+      font-size: .875rem;
+      font-weight: 600;
+      color: var(--muted);
+      cursor: pointer;
+      border: none;
+      background: none;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      white-space: nowrap;
+      transition: color .2s, border-color .2s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .course-tab:hover { color: var(--blue); }
+    .course-tab.active { color: var(--navy); border-bottom-color: var(--orange); }
+    .course-tab .tab-num {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: var(--border); color: var(--muted);
+      font-size: .7rem; font-weight: 700;
+      display: grid; place-items: center;
+    }
+    .course-tab.active .tab-num { background: var(--orange); color: white; }
+
+    .course-panel { display: none; }
+    .course-panel.active { display: block; }
+
+    /* course-2 accent color overrides */
+    .c2 .obj-num { background: linear-gradient(135deg, #2d7a4f, #45b876); }
+    .c2 .slide-tag { background: #e8f5ee; color: #2d7a4f; }
+    .c2 .slide-card:hover { border-color: #45b876; }
+    .c2 .course-header { border-top: 4px solid #2d7a4f; }
+    .c2 .course-eyebrow { color: #2d7a4f; }
+    .c2 .start-btn { background: #2d7a4f; box-shadow: 0 4px 14px rgba(45,122,79,.3); }
+    .c2 .start-btn:hover { background: #245f3d; }
+
+    .terms-section-head {
+      font-size: .75rem; font-weight: 700; color: var(--muted);
+      text-transform: uppercase; letter-spacing: .8px;
+      margin: 24px 0 10px;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .term-card.teal::before  { background: #2d9e8a; }
+    .term-card.purple::before { background: #6b5ea8; }
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,.55);
+      text-align: center;
+      padding: 28px 24px;
+      font-size: .8rem;
+      margin-top: 48px;
+    }
+    footer strong { color: rgba(255,255,255,.8); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .main-grid { grid-template-columns: 1fr; }
+      .sidebar { position: static; padding-right: 0; flex-direction: row; flex-wrap: wrap; }
+      .sidebar-card { flex: 1; min-width: 260px; }
+      .course-header { grid-template-columns: 1fr; }
+      .start-btn { width: 100%; }
+    }
+    @media (max-width: 640px) {
+      .nav-links { display: none; position: absolute; top: var(--nav-h); left: 0; right: 0; background: var(--navy); flex-direction: column; align-items: stretch; padding: 12px; gap: 4px; border-top: 1px solid rgba(255,255,255,.1); }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 10px 14px; }
+      .nav-toggle { display: block; margin-left: auto; }
+      .nav-cta { display: none; }
+      .hero { padding: 48px 20px 56px; }
+      .main-grid { padding: 20px 16px; }
+      .slides-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="#">
+        <div class="nav-logo-icon">S</div>
+        <div class="nav-logo-text">
+          <strong>SHIP TAC</strong>
+          <span>Medicare Training</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#course-tabs">Level 1 — Basics</a></li>
+        <li><a href="#terms">Key Terms</a></li>
+        <li><a href="#resources">Resources</a></li>
+        <li><a href="#about">About SHIP</a></li>
+      </ul>
+
+      <a class="nav-cta" href="#course">Start Learning →</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero-badge">SHIP Technical Assistance Center</div>
+    <h1>Master Medicare with <em>Confidence</em></h1>
+    <p>Structured, expert-reviewed training for counselors and advocates who help Medicare beneficiaries navigate their coverage options.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="#course">Begin Course 1 →</a>
+      <a class="btn-outline" href="#terms">Browse Key Terms</a>
+    </div>
+  </section>
+
+  <!-- ── PROGRESS STRIP ── -->
+  <div class="progress-strip">
+    <div class="progress-inner">
+      <span class="progress-label">Your Progress</span>
+      <div class="progress-track"><div class="progress-fill" style="width:42%"></div></div>
+      <span class="progress-meta"><strong>3 of 7</strong> courses available · Level 1</span>
+    </div>
+  </div>
+
+  <!-- ── MAIN ── -->
+  <div class="main-grid">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-card">
+        <div class="sidebar-card-head">
+          <span class="icon">📚</span>
+          <h3>Level 1 — Medicare Basics</h3>
+        </div>
+        <ul class="course-list">
+          <li class="course-item active">
+            <div class="course-num">1</div>
+            <div class="course-info">
+              <strong>Health Insurance Terms</strong>
+              <span>35 min · In Progress</span>
+            </div>
+            <span class="course-badge">Active</span>
+          </li>
+          <li class="course-item" onclick="switchCourse(2)" style="cursor:pointer">
+            <div class="course-num" style="background:var(--blue);color:white">2</div>
+            <div class="course-info">
+              <strong>Medicare Overview</strong>
+              <span>25 min · Available</span>
+            </div>
+            <span class="course-badge">New</span>
+          </li>
+          <li class="course-item" onclick="switchCourse(3)" style="cursor:pointer">
+            <div class="course-num" style="background:var(--blue);color:white">3</div>
+            <div class="course-info">
+              <strong>Medicare Options</strong>
+              <span>30 min · Available</span>
+            </div>
+            <span class="course-badge">New</span>
+          </li>
+          <li class="course-item locked">
+            <div class="course-num">4</div>
+            <div class="course-info">
+              <strong>Part B — Medical Coverage</strong>
+              <span>45 min</span>
+            </div>
+            <span class="course-badge locked">Locked</span>
+          </li>
+          <li class="course-item locked">
+            <div class="course-num">5</div>
+            <div class="course-info">
+              <strong>Medicare Advantage</strong>
+              <span>50 min</span>
+            </div>
+            <span class="course-badge locked">Locked</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="sidebar-card-head">
+          <span class="icon">ℹ️</span>
+          <h3>Course Details</h3>
+        </div>
+        <div class="info-box">
+          <div class="info-row"><span>Course 1 Time</span><strong>35 minutes</strong></div>
+          <div class="info-row"><span>Course 2 Time</span><strong>25 minutes</strong></div>
+          <div class="info-row"><span>Course 3 Time</span><strong>30 minutes</strong></div>
+          <div class="info-row"><span>Level</span><strong>Beginner</strong></div>
+          <div class="info-row"><span>Provider</span><strong>SHIP TAC</strong></div>
+          <div class="info-row"><span>Format</span><strong>Self-paced</strong></div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Content -->
+    <main class="content" id="course-tabs">
+
+      <!-- Course Tabs -->
+      <div class="course-tabs" id="courseTabs">
+        <button class="course-tab active" onclick="switchCourse(1)" id="tab-1">
+          <span class="tab-num">1</span> Health Insurance Terms
+        </button>
+        <button class="course-tab" onclick="switchCourse(2)" id="tab-2">
+          <span class="tab-num">2</span> Medicare Overview
+        </button>
+        <button class="course-tab" onclick="switchCourse(3)" id="tab-3">
+          <span class="tab-num">3</span> Medicare Options
+        </button>
+      </div>
+
+      <!-- ══ COURSE 1 PANEL ══ -->
+      <div class="course-panel active" id="panel-1">
+
+      <!-- Course Header -->
+      <div class="course-header">
+        <div class="course-header-left">
+          <div class="course-eyebrow">Level 1 · Course 1</div>
+          <h2 class="course-title">Health Insurance Terms</h2>
+          <div class="course-meta-row">
+            <span class="meta-chip"><span class="dot"></span> 35 minutes seat time</span>
+            <span class="meta-chip"><span class="dot"></span> 4 learning objectives</span>
+            <span class="meta-chip"><span class="dot"></span> Interactive slides</span>
+          </div>
+        </div>
+        <button class="start-btn" onclick="openModal('intro')">▶ View Course Intro</button>
+      </div>
+
+      <!-- Learning Objectives -->
+      <div class="section-label">Learning Objectives</div>
+      <div class="objectives-grid">
+        <div class="obj-card">
+          <div class="obj-num">1</div>
+          <p>Understand common terms for insurance costs including premiums, deductibles, coinsurance, and copayments.</p>
+        </div>
+        <div class="obj-card">
+          <div class="obj-num">2</div>
+          <p>Differentiate between inpatients, outpatients, and the types of care each setting covers.</p>
+        </div>
+        <div class="obj-card">
+          <div class="obj-num">3</div>
+          <p>Identify different types of Original Medicare and Medicare Advantage providers and their agreements.</p>
+        </div>
+        <div class="obj-card">
+          <div class="obj-num">4</div>
+          <p>Use these terms confidently when discussing Medicare topics with beneficiaries and colleagues.</p>
+        </div>
+      </div>
+
+      <!-- Slides -->
+      <div class="section-label">Course Slides</div>
+      <div class="slides-grid">
+
+        <div class="slide-card" onclick="openModal('basic-terms')">
+          <div class="slide-img">
+            <div class="slide-thumb-content">
+              <span class="slide-thumb-icon">📋</span>
+              <div class="slide-thumb-title">Basic Terms & Definitions</div>
+            </div>
+          </div>
+          <div class="slide-body">
+            <div class="slide-num">Slide 3</div>
+            <div class="slide-title">Basic Terms</div>
+            <div class="slide-desc">Beneficiary definition and the concept of medical necessity in Medicare coverage decisions.</div>
+          </div>
+          <div class="slide-footer">
+            <span class="slide-tag">Foundations</span>
+            <span class="slide-arrow">→</span>
+          </div>
+        </div>
+
+        <div class="slide-card" onclick="openModal('insurance-types')">
+          <div class="slide-img">
+            <div class="slide-thumb-content">
+              <span class="slide-thumb-icon">🏛️</span>
+              <div class="slide-thumb-title">Public vs Private Insurance</div>
+            </div>
+          </div>
+          <div class="slide-body">
+            <div class="slide-num">Slide 4</div>
+            <div class="slide-title">Types of Health Insurance</div>
+            <div class="slide-desc">Public insurance (Original Medicare) vs. private insurance (Medicare Advantage, HMOs, PPOs).</div>
+          </div>
+          <div class="slide-footer">
+            <span class="slide-tag">Insurance Types</span>
+            <span class="slide-arrow">→</span>
+          </div>
+        </div>
+
+        <div class="slide-card" onclick="openModal('costs')">
+          <div class="slide-img">
+            <div class="slide-thumb-content">
+              <span class="slide-thumb-icon">💰</span>
+              <div class="slide-thumb-title">Premium · Deductible · Coinsurance · Copay</div>
+            </div>
+          </div>
+          <div class="slide-body">
+            <div class="slide-num">Slides 5–8</div>
+            <div class="slide-title">Insurance Costs</div>
+            <div class="slide-desc">Detailed breakdown of the four cost types every Medicare beneficiary may encounter.</div>
+          </div>
+          <div class="slide-footer">
+            <span class="slide-tag">Costs</span>
+            <span class="slide-arrow">→</span>
+          </div>
+        </div>
+
+        <div class="slide-card" onclick="openModal('case-costs')">
+          <div class="slide-img">
+            <div class="slide-thumb-content">
+              <span class="slide-thumb-icon">👤</span>
+              <div class="slide-thumb-title">Roberto's Real-World Example</div>
+            </div>
+          </div>
+          <div class="slide-body">
+            <div class="slide-num">Slides 9–12</div>
+            <div class="slide-title">Case Example: Health Insurance Costs</div>
+            <div class="slide-desc">Follow Roberto's plan: $100 premium, $300 deductible, $15 copay, and 5% coinsurance for drugs.</div>
+          </div>
+          <div class="slide-footer">
+            <span class="slide-tag">Case Study</span>
+            <span class="slide-arrow">→</span>
+          </div>
+        </div>
+
+        <div class="slide-card" onclick="openModal('providers')">
+          <div class="slide-img">
+            <div class="slide-thumb-content">
+              <span class="slide-thumb-icon">🏥</span>
+              <div class="slide-thumb-title">SNF · Home Health · Hospice · DME</div>
+            </div>
+          </div>
+          <div class="slide-body">
+            <div class="slide-num">Slide 13</div>
+            <div class="slide-title">Types of Providers</div>
+            <div class="slide-desc">Skilled nursing facilities, home health agencies, hospice agencies, LTC, and DME suppliers.</div>
+          </div>
+          <div class="slide-footer">
+            <span class="slide-tag">Providers</span>
+            <span class="slide-arrow">→</span>
+          </div>
+        </div>
+
+        <div class="slide-card" onclick="openModal('orig-medicare-providers')">
+          <div class="slide-img">
+            <div class="slide-thumb-content">
+              <span class="slide-thumb-icon">⚕️</span>
+              <div class="slide-thumb-title">Participating · Non-Par · Opt-Out</div>
+            </div>
+          </div>
+          <div class="slide-body">
+            <div class="slide-num">Slide 14</div>
+            <div class="slide-title">Original Medicare Providers</div>
+            <div class="slide-desc">How participating, non-participating, and opt-out providers differ in billing and assignment rules.</div>
+          </div>
+          <div class="slide-footer">
+            <span class="slide-tag">Medicare A/B</span>
+            <span class="slide-arrow">→</span>
+          </div>
+        </div>
+
+        <div class="slide-card" onclick="openModal('ma-providers')">
+          <div class="slide-img">
+            <div class="slide-thumb-content">
+              <span class="slide-thumb-icon">🔗</span>
+              <div class="slide-thumb-title">In-Network vs Out-of-Network</div>
+            </div>
+          </div>
+          <div class="slide-body">
+            <div class="slide-num">Slides 15–16</div>
+            <div class="slide-title">Medicare Advantage Providers</div>
+            <div class="slide-desc">In-network vs. out-of-network cost differences and why checking the plan network matters.</div>
+          </div>
+          <div class="slide-footer">
+            <span class="slide-tag">MA Plans</span>
+            <span class="slide-arrow">→</span>
+          </div>
+        </div>
+
+        <div class="slide-card" onclick="openModal('inout')">
+          <div class="slide-img">
+            <div class="slide-thumb-content">
+              <span class="slide-thumb-icon">🛏️</span>
+              <div class="slide-thumb-title">Inpatient vs Outpatient Status</div>
+            </div>
+          </div>
+          <div class="slide-body">
+            <div class="slide-num">Slides 17–19</div>
+            <div class="slide-title">Inpatients and Outpatients</div>
+            <div class="slide-desc">Formal admission vs. observation status — and why the distinction significantly affects cost.</div>
+          </div>
+          <div class="slide-footer">
+            <span class="slide-tag">Hospital</span>
+            <span class="slide-arrow">→</span>
+          </div>
+        </div>
+
+        <div class="slide-card" onclick="openModal('therapy')">
+          <div class="slide-img">
+            <div class="slide-thumb-content">
+              <span class="slide-thumb-icon">🩺</span>
+              <div class="slide-thumb-title">Physical · Occupational · Speech</div>
+            </div>
+          </div>
+          <div class="slide-body">
+            <div class="slide-num">Slides 20–22</div>
+            <div class="slide-title">Types of Therapy & Care</div>
+            <div class="slide-desc">Physical, occupational, and speech therapy; plus personal care vs. skilled care distinctions.</div>
+          </div>
+          <div class="slide-footer">
+            <span class="slide-tag">Care Types</span>
+            <span class="slide-arrow">→</span>
+          </div>
+        </div>
+
+        <div class="slide-card" onclick="openModal('care-types')">
+          <div class="slide-img">
+            <div class="slide-thumb-content">
+              <span class="slide-thumb-icon">🔬</span>
+              <div class="slide-thumb-title">Preventive · Diagnostic · Curative · Palliative</div>
+            </div>
+          </div>
+          <div class="slide-body">
+            <div class="slide-num">Slides 23–28</div>
+            <div class="slide-title">Types of Care</div>
+            <div class="slide-desc">The four care categories and how to distinguish between them using real case examples.</div>
+          </div>
+          <div class="slide-footer">
+            <span class="slide-tag">Care Types</span>
+            <span class="slide-arrow">→</span>
+          </div>
+        </div>
+
+        <div class="slide-card" onclick="openModal('notices')">
+          <div class="slide-img">
+            <div class="slide-thumb-content">
+              <span class="slide-thumb-icon">📄</span>
+              <div class="slide-thumb-title">ABN · MSN · EOB</div>
+            </div>
+          </div>
+          <div class="slide-body">
+            <div class="slide-num">Slides 29–32</div>
+            <div class="slide-title">Medicare Notices</div>
+            <div class="slide-desc">Advance Beneficiary Notice, Medicare Summary Notice, and Explanation of Benefits explained.</div>
+          </div>
+          <div class="slide-footer">
+            <span class="slide-tag">Notices</span>
+            <span class="slide-arrow">→</span>
+          </div>
+        </div>
+
+        <div class="slide-card" onclick="openModal('contractors')">
+          <div class="slide-img">
+            <div class="slide-thumb-content">
+              <span class="slide-thumb-icon">🏢</span>
+              <div class="slide-thumb-title">MAC · QIC · BFCC-QIO · COBC</div>
+            </div>
+          </div>
+          <div class="slide-body">
+            <div class="slide-num">Slide 33</div>
+            <div class="slide-title">Medicare Contractors</div>
+            <div class="slide-desc">Entities that contract with Medicare — from claims processing to quality oversight and appeals.</div>
+          </div>
+          <div class="slide-footer">
+            <span class="slide-tag">Administration</span>
+            <span class="slide-arrow">→</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Key Terms -->
+      <div class="section-label" id="terms">Key Terms Glossary</div>
+      <div class="terms-grid">
+        <div class="term-card"><span class="term-name">Beneficiary</span><span class="term-def">A person who has Medicare benefits.</span></div>
+        <div class="term-card orange"><span class="term-name">Premium</span><span class="term-def">Monthly amount paid to maintain health insurance coverage.</span></div>
+        <div class="term-card amber"><span class="term-name">Deductible</span><span class="term-def">Out-of-pocket amount paid before insurance coverage begins; usually set per calendar year.</span></div>
+        <div class="term-card green"><span class="term-name">Coinsurance</span><span class="term-def">Percentage of cost the beneficiary pays after insurance pays (e.g., 20% of a $200 service = $40).</span></div>
+        <div class="term-card"><span class="term-name">Copayment</span><span class="term-def">Fixed dollar amount paid per service or item received (e.g., $15 per doctor visit).</span></div>
+        <div class="term-card orange"><span class="term-name">Medically Necessary</span><span class="term-def">The basis Medicare uses to decide whether to cover a service — must be reasonable, necessary, and within scope.</span></div>
+        <div class="term-card amber"><span class="term-name">Inpatient</span><span class="term-def">Formally admitted to a hospital by an attending physician.</span></div>
+        <div class="term-card green"><span class="term-name">Outpatient</span><span class="term-def">Not formally admitted; may stay overnight (e.g., observation status is outpatient care).</span></div>
+        <div class="term-card"><span class="term-name">Skilled Care</span><span class="term-def">Medical care provided by or under the direct supervision of a licensed nurse or therapist.</span></div>
+        <div class="term-card orange"><span class="term-name">Personal Care</span><span class="term-def">Non-medical care (bathing, dressing, bathroom assistance) provided by a home health aide.</span></div>
+        <div class="term-card amber"><span class="term-name">ABN</span><span class="term-def">Advance Beneficiary Notice — informs the patient that Medicare may not pay for a service before they receive it.</span></div>
+        <div class="term-card green"><span class="term-name">MSN / EOB</span><span class="term-def">Medicare Summary Notice (Original Medicare) or Explanation of Benefits (MA Plans) — summaries of services and costs; not a bill.</span></div>
+      </div>
+
+      </div><!-- end panel-1 -->
+
+      <!-- ══ COURSE 2 PANEL ══ -->
+      <div class="course-panel" id="panel-2">
+
+        <!-- Course 2 Header -->
+        <div class="course-header" style="border-top:4px solid #2d7a4f">
+          <div class="course-header-left">
+            <div class="course-eyebrow" style="color:#2d7a4f">Level 1 · Course 2</div>
+            <h2 class="course-title">Medicare Overview</h2>
+            <div class="course-meta-row">
+              <span class="meta-chip"><span class="dot" style="background:#45b876"></span> 25 minutes seat time</span>
+              <span class="meta-chip"><span class="dot" style="background:#45b876"></span> 4 learning objectives</span>
+              <span class="meta-chip"><span class="dot" style="background:#45b876"></span> 20 slides</span>
+            </div>
+          </div>
+          <button class="start-btn" onclick="openModal('c2-intro')" style="background:#2d7a4f;box-shadow:0 4px 14px rgba(45,122,79,.3)">▶ View Course Intro</button>
+        </div>
+
+        <!-- C2 Objectives -->
+        <div class="section-label">Learning Objectives</div>
+        <div class="objectives-grid">
+          <div class="obj-card">
+            <div class="obj-num" style="background:linear-gradient(135deg,#2d7a4f,#45b876)">1</div>
+            <p>Understand Medicare's history and background — how and why it was established in 1965.</p>
+          </div>
+          <div class="obj-card">
+            <div class="obj-num" style="background:linear-gradient(135deg,#2d7a4f,#45b876)">2</div>
+            <p>Explain the basics of Medicare including what it covers and who administers it.</p>
+          </div>
+          <div class="obj-card">
+            <div class="obj-num" style="background:linear-gradient(135deg,#2d7a4f,#45b876)">3</div>
+            <p>List the different parts of Medicare (A, B, C, D) and discuss eligibility rules.</p>
+          </div>
+          <div class="obj-card">
+            <div class="obj-num" style="background:linear-gradient(135deg,#2d7a4f,#45b876)">4</div>
+            <p>Know the main differences between Medicare and Medicaid including dual-eligibility.</p>
+          </div>
+        </div>
+
+        <!-- C2 Slides -->
+        <div class="section-label">Course Slides</div>
+        <div class="slides-grid">
+
+          <div class="slide-card" onclick="openModal('c2-history')" style="--hover-border:#45b876">
+            <div class="slide-img" style="background:linear-gradient(135deg,#e8f5ee,#d5eddf)">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">🏛️</span>
+                <div class="slide-thumb-title">History of Medicare — 1965</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slide 3</div>
+              <div class="slide-title">History of Medicare</div>
+              <div class="slide-desc">LBJ signs the Social Security Act of 1965, creating Medicare (Title XVIII) and Medicaid (Title XIX).</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag" style="background:#e8f5ee;color:#2d7a4f">History</span>
+              <span class="slide-arrow" style="color:#45b876">→</span>
+            </div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c2-what')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#e8f5ee,#d5eddf)">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">❓</span>
+                <div class="slide-thumb-title">What is Medicare?</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slide 4</div>
+              <div class="slide-title">What is Medicare?</div>
+              <div class="slide-desc">Health insurance for people 65+ and people with disabilities. Eligibility is not based on income.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag" style="background:#e8f5ee;color:#2d7a4f">Basics</span>
+              <span class="slide-arrow" style="color:#45b876">→</span>
+            </div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c2-two-options')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#e8f5ee,#d5eddf)">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">🔀</span>
+                <div class="slide-thumb-title">Original Medicare vs Medicare Advantage</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slide 5</div>
+              <div class="slide-title">Two Options for Medicare Benefits</div>
+              <div class="slide-desc">Original Medicare (federal) vs. Medicare Advantage (private plans contracting with the government).</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag" style="background:#e8f5ee;color:#2d7a4f">Overview</span>
+              <span class="slide-arrow" style="color:#45b876">→</span>
+            </div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c2-parts')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#e8f5ee,#d5eddf)">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">🗂️</span>
+                <div class="slide-thumb-title">Parts A · B · C · D</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slide 6</div>
+              <div class="slide-title">Parts of Medicare</div>
+              <div class="slide-desc">How Parts A, B, C, and D map to Original Medicare and Medicare Advantage coverage.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag" style="background:#e8f5ee;color:#2d7a4f">Structure</span>
+              <span class="slide-arrow" style="color:#45b876">→</span>
+            </div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c2-choice')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#e8f5ee,#d5eddf)">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">⚖️</span>
+                <div class="slide-thumb-title">Health Needs · Drugs · Location</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slide 7</div>
+              <div class="slide-title">Original Medicare or Medicare Advantage?</div>
+              <div class="slide-desc">Key factors for choosing between Original Medicare and a Medicare Advantage plan.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag" style="background:#e8f5ee;color:#2d7a4f">Decision</span>
+              <span class="slide-arrow" style="color:#45b876">→</span>
+            </div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c2-elig65')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#e8f5ee,#d5eddf)">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">🎂</span>
+                <div class="slide-thumb-title">Age 65 Eligibility Rules</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slide 8</div>
+              <div class="slide-title">Medicare Eligibility: 65+</div>
+              <div class="slide-desc">Two pathways to qualify at 65: Social Security benefits, or U.S. citizen/resident status requirements.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag" style="background:#e8f5ee;color:#2d7a4f">Eligibility</span>
+              <span class="slide-arrow" style="color:#45b876">→</span>
+            </div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c2-ss')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#e8f5ee,#d5eddf)">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">💵</span>
+                <div class="slide-thumb-title">Social Security & Auto-Enrollment</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slide 9</div>
+              <div class="slide-title">Social Security Retirement &amp; Eligibility</div>
+              <div class="slide-desc">SS retirement starts at 62; Medicare still begins at 65. Auto-enrollment vs. active enrollment explained.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag" style="background:#e8f5ee;color:#2d7a4f">Enrollment</span>
+              <span class="slide-arrow" style="color:#45b876">→</span>
+            </div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c2-work')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#e8f5ee,#d5eddf)">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">💼</span>
+                <div class="slide-thumb-title">Work History & Part A Premiums</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slide 10</div>
+              <div class="slide-title">Medicare and Work History</div>
+              <div class="slide-desc">Work history affects costs (not eligibility). Part A is premium-free with 10+ years of Social Security taxes paid.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag" style="background:#e8f5ee;color:#2d7a4f">Costs</span>
+              <span class="slide-arrow" style="color:#45b876">→</span>
+            </div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c2-under65')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#e8f5ee,#d5eddf)">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">♿</span>
+                <div class="slide-thumb-title">SSDI · ALS · ESRD Eligibility</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slide 11</div>
+              <div class="slide-title">Medicare Eligibility: Under 65</div>
+              <div class="slide-desc">Under-65 eligibility via SSDI (24-month wait), ALS exception (immediate), or End-Stage Renal Disease.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag" style="background:#e8f5ee;color:#2d7a4f">Eligibility</span>
+              <span class="slide-arrow" style="color:#45b876">→</span>
+            </div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c2-case-elig')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#e8f5ee,#d5eddf)">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">👩</span>
+                <div class="slide-thumb-title">Case Study: Ruth's Eligibility</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slides 12–13</div>
+              <div class="slide-title">Case Example: Medicare Eligibility</div>
+              <div class="slide-desc">Ruth, 59, on SSDI less than a year — when does she qualify? Answer: age 65 or 24-month SSDI milestone.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag" style="background:#e8f5ee;color:#2d7a4f">Case Study</span>
+              <span class="slide-arrow" style="color:#45b876">→</span>
+            </div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c2-agencies')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#e8f5ee,#d5eddf)">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">🏢</span>
+                <div class="slide-thumb-title">SSA &amp; CMS Roles</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slides 14–15</div>
+              <div class="slide-title">Agencies: SSA and CMS</div>
+              <div class="slide-desc">Social Security Administration handles enrollment; CMS administers Medicare and Medicaid coverage rules.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag" style="background:#e8f5ee;color:#2d7a4f">Agencies</span>
+              <span class="slide-arrow" style="color:#45b876">→</span>
+            </div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c2-medicaid')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#e8f5ee,#d5eddf)">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">🔄</span>
+                <div class="slide-thumb-title">Medicare vs Medicaid — Dual-Eligibles</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slides 16–18</div>
+              <div class="slide-title">Medicare and Medicaid</div>
+              <div class="slide-desc">Key differences, dual-eligibility, and how Medicaid can cover costs Medicare doesn't — including Alfred's dental case.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag" style="background:#e8f5ee;color:#2d7a4f">Medicare/Medicaid</span>
+              <span class="slide-arrow" style="color:#45b876">→</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Course 2 Key Terms -->
+        <div class="section-label">Course 2 Key Terms</div>
+        <div class="terms-grid">
+          <div class="term-card teal"><span class="term-name">Original Medicare</span><span class="term-def">The traditional Medicare program administered directly by the federal government (Parts A and B).</span></div>
+          <div class="term-card"><span class="term-name">Medicare Advantage (Part C)</span><span class="term-def">Private health plans that contract with the federal government to deliver Medicare benefits, usually including Part D coverage.</span></div>
+          <div class="term-card orange"><span class="term-name">Part A</span><span class="term-def">Hospital insurance — covers inpatient hospital stays, SNF care, hospice, and some home health. Usually premium-free with 10+ work years.</span></div>
+          <div class="term-card amber"><span class="term-name">Part B</span><span class="term-def">Medical insurance — covers outpatient services, doctor visits, preventive care, and durable medical equipment.</span></div>
+          <div class="term-card teal"><span class="term-name">Part D</span><span class="term-def">Prescription drug coverage — added to Original Medicare or bundled into most Medicare Advantage plans.</span></div>
+          <div class="term-card green"><span class="term-name">SSDI</span><span class="term-def">Social Security Disability Insurance — receiving SSDI for 24 months qualifies individuals under 65 for Medicare (ALS exception: immediate).</span></div>
+          <div class="term-card"><span class="term-name">ESRD</span><span class="term-def">End-Stage Renal Disease — permanent kidney failure requiring dialysis or transplant; qualifies individuals for Medicare at any age.</span></div>
+          <div class="term-card purple"><span class="term-name">Medicaid</span><span class="term-def">Federal- and state-funded, state-administered health insurance. Eligibility based on income and assets, not age.</span></div>
+          <div class="term-card teal"><span class="term-name">Dual-Eligible</span><span class="term-def">Individuals who qualify for both Medicare and Medicaid. Medicaid may cover Medicare cost-sharing and services Medicare excludes.</span></div>
+          <div class="term-card orange"><span class="term-name">CMS</span><span class="term-def">Centers for Medicare &amp; Medicaid Services — the federal agency that writes coverage rules and oversees both programs.</span></div>
+          <div class="term-card amber"><span class="term-name">SSA</span><span class="term-def">Social Security Administration — handles Medicare enrollment, issues Medicare cards, and manages related benefit programs.</span></div>
+          <div class="term-card green"><span class="term-name">Work History / Quarters</span><span class="term-def">Number of years or quarters an individual paid Social Security taxes. Affects Part A premiums but not Medicare eligibility.</span></div>
+        </div>
+
+      </div><!-- end panel-2 -->
+
+      <!-- ══ COURSE 3 PANEL ══ -->
+      <div class="course-panel" id="panel-3">
+
+        <!-- Course 3 Header -->
+        <div class="course-header" style="border-top:4px solid #7b5ea8">
+          <div class="course-header-left">
+            <div class="course-eyebrow" style="color:#7b5ea8">Level 1 · Course 3</div>
+            <h2 class="course-title">Medicare Options</h2>
+            <div class="course-meta-row">
+              <span class="meta-chip"><span class="dot" style="background:#9b7ec8"></span> 30 minutes seat time</span>
+              <span class="meta-chip"><span class="dot" style="background:#9b7ec8"></span> 3 learning objectives</span>
+              <span class="meta-chip"><span class="dot" style="background:#9b7ec8"></span> 23 slides</span>
+            </div>
+          </div>
+          <button class="start-btn" onclick="openModal('c3-intro')" style="background:#7b5ea8;box-shadow:0 4px 14px rgba(123,94,168,.3)">▶ View Course Intro</button>
+        </div>
+
+        <!-- C3 Objectives -->
+        <div class="section-label">Learning Objectives</div>
+        <div class="objectives-grid">
+          <div class="obj-card">
+            <div class="obj-num" style="background:linear-gradient(135deg,#7b5ea8,#9b7ec8)">1</div>
+            <p>Identify the two main ways an individual can access Medicare benefits — Original Medicare or Medicare Advantage.</p>
+          </div>
+          <div class="obj-card">
+            <div class="obj-num" style="background:linear-gradient(135deg,#7b5ea8,#9b7ec8)">2</div>
+            <p>Describe the key differences between Original Medicare and Medicare Advantage in coverage, costs, and flexibility.</p>
+          </div>
+          <div class="obj-card">
+            <div class="obj-num" style="background:linear-gradient(135deg,#7b5ea8,#9b7ec8)">3</div>
+            <p>Help beneficiaries decide which option works best for them by applying a structured set of personal questions.</p>
+          </div>
+        </div>
+
+        <!-- C3 Slides -->
+        <div class="section-label">Course Slides</div>
+        <div class="slides-grid">
+
+          <div class="slide-card" onclick="openModal('c3-what')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#f0ebfa,#e0d4f5)">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">🏥</span>
+                <div class="slide-thumb-title">Medicare Eligibility Recap</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slide 3</div>
+              <div class="slide-title">What is Medicare?</div>
+              <div class="slide-desc">Federal health insurance for people 65+, SSDI recipients, ALS patients, and those with ESRD.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag" style="background:#f0ebfa;color:#7b5ea8">Recap</span>
+              <span class="slide-arrow" style="color:#9b7ec8">→</span>
+            </div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c3-parts')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#f0ebfa,#e0d4f5)">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">🗂️</span>
+                <div class="slide-thumb-title">Parts A · B · C · D</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slide 4</div>
+              <div class="slide-title">Parts of Medicare</div>
+              <div class="slide-desc">Original Medicare (Parts A + B + optional D) vs. Medicare Advantage (Part C, bundles A, B, usually D).</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag" style="background:#f0ebfa;color:#7b5ea8">Structure</span>
+              <span class="slide-arrow" style="color:#9b7ec8">→</span>
+            </div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c3-options')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#f0ebfa,#e0d4f5)">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">🔀</span>
+                <div class="slide-thumb-title">Two Paths After Enrollment</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slide 5</div>
+              <div class="slide-title">Medicare Options</div>
+              <div class="slide-desc">After enrolling in Parts A &amp; B, beneficiaries choose: stay with Original Medicare or switch to a Medicare Advantage Plan.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag" style="background:#f0ebfa;color:#7b5ea8">Overview</span>
+              <span class="slide-arrow" style="color:#9b7ec8">→</span>
+            </div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c3-cards')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#f0ebfa,#e0d4f5)">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">💳</span>
+                <div class="slide-thumb-title">Which Card to Use at the Doctor?</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slide 6</div>
+              <div class="slide-title">Using Health Insurance Cards</div>
+              <div class="slide-desc">Original Medicare beneficiaries use the red/white/blue card; MA beneficiaries use their plan card. Using the wrong card causes billing denials.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag" style="background:#f0ebfa;color:#7b5ea8">Practical</span>
+              <span class="slide-arrow" style="color:#9b7ec8">→</span>
+            </div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c3-orig-basics')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#f0ebfa,#e0d4f5)">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">🇺🇸</span>
+                <div class="slide-thumb-title">Original Medicare Key Features</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slide 8</div>
+              <div class="slide-title">Original Medicare Basics</div>
+              <div class="slide-desc">Any Medicare-accepting provider nationwide, no referrals, stand-alone Part D, Medigap eligible — but no dental/vision/hearing.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag" style="background:#f0ebfa;color:#7b5ea8">Original Medicare</span>
+              <span class="slide-arrow" style="color:#9b7ec8">→</span>
+            </div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c3-orig-covered')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#f0ebfa,#e0d4f5)">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">📋</span>
+                <div class="slide-thumb-title">Part A & Part B Covered Services</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slide 9</div>
+              <div class="slide-title">Original Medicare-Covered Services</div>
+              <div class="slide-desc">Part A: inpatient hospital, SNF, home health, hospice. Part B: outpatient, doctors, preventive, DME, ambulance.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag" style="background:#f0ebfa;color:#7b5ea8">Coverage</span>
+              <span class="slide-arrow" style="color:#9b7ec8">→</span>
+            </div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c3-orig-costs')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#f0ebfa,#e0d4f5)">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">💰</span>
+                <div class="slide-thumb-title">Premiums · Deductibles · No MOOP</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slide 10</div>
+              <div class="slide-title">Original Medicare Costs</div>
+              <div class="slide-desc">Part B premium, possible Part A premium, A &amp; B deductibles, 20% coinsurance — and no maximum out-of-pocket (MOOP) limit.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag" style="background:#f0ebfa;color:#7b5ea8">Costs</span>
+              <span class="slide-arrow" style="color:#9b7ec8">→</span>
+            </div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c3-ma-basics')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#f0ebfa,#e0d4f5)">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">🏢</span>
+                <div class="slide-thumb-title">MA Plan Key Features</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slide 12</div>
+              <div class="slide-title">Medicare Advantage Basics</div>
+              <div class="slide-desc">Bundles A, B, usually D in one private plan. May need referrals, restrict to network, may cover dental/vision — no Medigap allowed.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag" style="background:#f0ebfa;color:#7b5ea8">Medicare Advantage</span>
+              <span class="slide-arrow" style="color:#9b7ec8">→</span>
+            </div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c3-ma-costs')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#f0ebfa,#e0d4f5)">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">💲</span>
+                <div class="slide-thumb-title">MA Costs Vary by Plan · MOOP Required</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slide 13</div>
+              <div class="slide-title">Medicare Advantage Costs &amp; Coverage</div>
+              <div class="slide-desc">May charge extra premium on top of Part B. Deductibles and copays vary by plan — but ALL MA plans must have a MOOP limit.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag" style="background:#f0ebfa;color:#7b5ea8">Costs</span>
+              <span class="slide-arrow" style="color:#9b7ec8">→</span>
+            </div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c3-comparison')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#f0ebfa,#e0d4f5)">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">⚖️</span>
+                <div class="slide-thumb-title">Side-by-Side Comparison Table</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slide 14</div>
+              <div class="slide-title">Original Medicare vs. Medicare Advantage</div>
+              <div class="slide-desc">Full side-by-side comparison across coverage, provider access, referrals, costs, excluded services, and Medigap eligibility.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag" style="background:#f0ebfa;color:#7b5ea8">Comparison</span>
+              <span class="slide-arrow" style="color:#9b7ec8">→</span>
+            </div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c3-case')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#f0ebfa,#e0d4f5)">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">👩‍🤝‍👩</span>
+                <div class="slide-thumb-title">Case Study: Carol &amp; Lucia</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slides 15–16</div>
+              <div class="slide-title">Case Example: Medicare Options</div>
+              <div class="slide-desc">Should Carol sign up for the same MA plan as her neighbor Lucia? No — she must assess her own health needs first.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag" style="background:#f0ebfa;color:#7b5ea8">Case Study</span>
+              <span class="slide-arrow" style="color:#9b7ec8">→</span>
+            </div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c3-questions')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#f0ebfa,#e0d4f5)">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">❓</span>
+                <div class="slide-thumb-title">5 Questions to Guide the Decision</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slides 17–21</div>
+              <div class="slide-title">Questions to Ask</div>
+              <div class="slide-desc">Travel frequency, doctor relationships, needed services, Medigap interest, and drug coverage preference — five key personal questions.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag" style="background:#f0ebfa;color:#7b5ea8">Decision Guide</span>
+              <span class="slide-arrow" style="color:#9b7ec8">→</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Course 3 Key Terms -->
+        <div class="section-label">Course 3 Key Terms</div>
+        <div class="terms-grid">
+          <div class="term-card purple"><span class="term-name">Medigap (Medicare Supplement)</span><span class="term-def">Supplemental insurance that works alongside Original Medicare to pay cost-sharing gaps like coinsurance. Not compatible with Medicare Advantage.</span></div>
+          <div class="term-card"><span class="term-name">MOOP (Maximum Out-of-Pocket)</span><span class="term-def">The annual cap on what a beneficiary pays for covered services. Original Medicare has NO MOOP; all Medicare Advantage plans are required to have one.</span></div>
+          <div class="term-card orange"><span class="term-name">Provider Network</span><span class="term-def">The group of doctors, hospitals, and providers contracted with a Medicare Advantage plan. Seeing out-of-network providers may cost more or be uncovered.</span></div>
+          <div class="term-card teal"><span class="term-name">Referral</span><span class="term-def">Authorization from a primary care provider to see a specialist. Not required under Original Medicare; may be required under some Medicare Advantage plans (e.g., HMOs).</span></div>
+          <div class="term-card amber"><span class="term-name">Stand-alone Part D Plan</span><span class="term-def">A separate prescription drug plan purchased alongside Original Medicare. Medicare Advantage plans usually bundle drug coverage, making a separate Part D plan unnecessary.</span></div>
+          <div class="term-card green"><span class="term-name">HMO (Health Maintenance Organization)</span><span class="term-def">A type of Medicare Advantage plan that typically requires beneficiaries to use in-network providers and obtain referrals to see specialists.</span></div>
+          <div class="term-card purple"><span class="term-name">PPO (Preferred Provider Organization)</span><span class="term-def">A type of Medicare Advantage plan that allows use of out-of-network providers (usually at higher cost) and generally does not require referrals.</span></div>
+          <div class="term-card"><span class="term-name">Medicare Card</span><span class="term-def">The red/white/blue card issued by SSA for Original Medicare beneficiaries. Those in Medicare Advantage use the card from their private plan — using the wrong card causes billing problems.</span></div>
+          <div class="term-card orange"><span class="term-name">Extra Benefits (MA Plans)</span><span class="term-def">Some Medicare Advantage plans offer benefits beyond Original Medicare such as routine dental, vision, and hearing coverage.</span></div>
+          <div class="term-card teal"><span class="term-name">Part B Premium</span><span class="term-def">The monthly fee all Medicare beneficiaries pay for Part B coverage, regardless of whether they have Original Medicare or Medicare Advantage.</span></div>
+        </div>
+
+      </div><!-- end panel-3 -->
+
+    </main>
+  </div>
+
+  <!-- ── MODAL ── -->
+  <div class="modal-overlay" id="modal" onclick="closeModal(event)">
+    <div class="modal" id="modalBox">
+      <div class="modal-header">
+        <h2 id="modalTitle">Slide Details</h2>
+        <button class="modal-close" onclick="closeModalDirect()">✕</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+      <div class="modal-footer">
+        <button class="btn-outline" style="color:var(--navy);border-color:var(--border);padding:9px 20px;border-radius:8px;font-size:.85rem;cursor:pointer;" onclick="closeModalDirect()">Close</button>
+        <button class="btn-primary" style="padding:9px 20px;border:none;border-radius:8px;font-size:.85rem;cursor:pointer;" onclick="closeModalDirect()">Got it ✓</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <footer id="about">
+    <p><strong>SHIP Technical Assistance Center</strong> — State Health Insurance Assistance Program</p>
+    <p style="margin-top:6px;">Training materials developed for Medicare counselors and advocates. Not a substitute for official CMS guidance.</p>
+  </footer>
+
+  <script>
+    // ── Nav toggle ──
+    const toggle = document.getElementById('navToggle');
+    const links  = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => links.classList.toggle('open'));
+
+    // ── Tab switching ──
+    function switchCourse(num) {
+      document.querySelectorAll('.course-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.course-panel').forEach(p => p.classList.remove('active'));
+      document.getElementById('tab-' + num).classList.add('active');
+      document.getElementById('panel-' + num).classList.add('active');
+      // update sidebar highlight
+      document.querySelectorAll('.course-item').forEach((el, i) => {
+        el.classList.toggle('active', i === num - 1);
+      });
+      document.getElementById('course-tabs').scrollIntoView({behavior:'smooth', block:'start'});
+    }
+
+    // ── Modal content ──
+    const slides = {
+      'intro': {
+        title: 'Course 1: Health Insurance Terms — Introduction',
+        body: `
+          <div class="modal-section">
+            <h3>About This Course</h3>
+            <p>This 35-minute course introduces the foundational terminology you need to help Medicare beneficiaries understand their health insurance. It is the first course in the SHIP TAC Level 1: Medicare Basics curriculum.</p>
+          </div>
+          <div class="modal-section">
+            <h3>What You Will Learn</h3>
+            <ul>
+              <li>Common insurance cost terms: premium, deductible, coinsurance, copayment</li>
+              <li>Differences between inpatient and outpatient status</li>
+              <li>Types of Original Medicare and Medicare Advantage providers</li>
+              <li>How to apply these terms in real-world Medicare conversations</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h3>Format</h3>
+            <p>Self-paced slides with interactive exercises, case examples, and knowledge checks throughout. Seat time: approximately 35 minutes.</p>
+          </div>`
+      },
+      'basic-terms': {
+        title: 'Basic Terms — Beneficiary & Medical Necessity',
+        body: `
+          <div class="modal-section">
+            <h3>Beneficiary</h3>
+            <p>A <strong>beneficiary</strong> is simply a person who has Medicare benefits. This term is used throughout the program to refer to any individual enrolled in Medicare.</p>
+          </div>
+          <div class="modal-section">
+            <h3>Medically Necessary</h3>
+            <p>Medicare will only cover services or items that are considered <strong>medically necessary</strong>. To qualify:</p>
+            <ul>
+              <li>The service or item must be reasonable and necessary for diagnosis or treatment</li>
+              <li>It must be within the scope of a Medicare benefit category</li>
+              <li>It must meet standards accepted by the medical community</li>
+            </ul>
+          </div>`
+      },
+      'insurance-types': {
+        title: 'Types of Health Insurance',
+        body: `
+          <div class="modal-section">
+            <h3>Public Health Insurance</h3>
+            <p>Offered directly by the government. The primary example for our training is <strong>Original Medicare</strong> (Parts A and B), administered by the Centers for Medicare & Medicaid Services (CMS).</p>
+          </div>
+          <div class="modal-section">
+            <h3>Private Health Insurance</h3>
+            <p>Offered through private insurance companies. Medicare beneficiaries may access private coverage through:</p>
+            <ul>
+              <li><strong>Medicare Advantage Plans (Part C)</strong> — includes HMOs and PPOs</li>
+              <li>Medigap / Medicare Supplement policies</li>
+              <li>Part D prescription drug plans</li>
+            </ul>
+          </div>`
+      },
+      'costs': {
+        title: 'Insurance Costs: Premium, Deductible, Coinsurance, Copayment',
+        body: `
+          <div class="modal-section">
+            <h3>Premium</h3>
+            <p>The amount a beneficiary must pay to <em>have</em> health insurance. Usually paid on a monthly basis regardless of whether services are used.</p>
+          </div>
+          <div class="modal-section">
+            <h3>Deductible</h3>
+            <p>The out-of-pocket amount a beneficiary must pay <em>before</em> health insurance begins to cover costs. Usually set for the calendar year and resets annually.</p>
+          </div>
+          <div class="modal-section">
+            <h3>Coinsurance</h3>
+            <p>A <em>percentage</em> of the cost of care the beneficiary pays after insurance pays. Example: if insurance covers 80% of a $200 service, the plan pays $160 and the beneficiary pays the remaining 20% ($40).</p>
+          </div>
+          <div class="modal-section">
+            <h3>Copayment (Copay)</h3>
+            <p>A <em>fixed dollar amount</em> paid for each service or item received — for example, a $15 copay each time the beneficiary visits the doctor.</p>
+          </div>`
+      },
+      'case-costs': {
+        title: 'Case Example: Roberto\'s Health Insurance Costs',
+        body: `
+          <div class="modal-section">
+            <h3>Roberto's Plan at a Glance</h3>
+            <ul>
+              <li><strong>$100 monthly premium</strong> — Roberto pays $100 each month to maintain his health coverage.</li>
+              <li><strong>$15 copay per doctor's office visit</strong> — Each time he visits the doctor, he pays a flat $15.</li>
+              <li><strong>$300 annual deductible</strong> — He must pay $300 out-of-pocket before his insurance begins covering additional expenses.</li>
+              <li><strong>5% coinsurance for covered generic drugs</strong> — He pays 5% of the cost for generic drugs covered under his plan.</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h3>Key Takeaway</h3>
+            <p>Beneficiaries like Roberto can have multiple cost-sharing responsibilities at the same time. Understanding each term separately helps counselors explain the total picture clearly.</p>
+          </div>`
+      },
+      'providers': {
+        title: 'Types of Providers',
+        body: `
+          <div class="modal-section">
+            <h3>Skilled Nursing Facility (SNF)</h3>
+            <p>Provides short-term care at a lower level than a hospital, including skilled nursing care (e.g., administration of medications, wound care) and skilled therapy.</p>
+          </div>
+          <div class="modal-section">
+            <h3>Home Health Agency</h3>
+            <p>Provides home care services such as skilled nursing, therapy, and/or personal care in the patient's residence.</p>
+          </div>
+          <div class="modal-section">
+            <h3>Hospice Agency</h3>
+            <p>Provides palliative care for terminally ill individuals, focusing on comfort rather than curative treatment.</p>
+          </div>
+          <div class="modal-section">
+            <h3>Long-Term Care (LTC) Agency</h3>
+            <p>Provides ongoing care to individuals with chronic illness or disability who need assistance with daily activities over an extended period.</p>
+          </div>
+          <div class="modal-section">
+            <h3>Durable Medical Equipment (DME) Supplier</h3>
+            <p>Sells equipment that serves a medical purpose, can withstand repeated use, and is appropriate for home use (e.g., wheelchairs, walkers, oxygen equipment).</p>
+          </div>`
+      },
+      'orig-medicare-providers': {
+        title: 'Original Medicare Providers',
+        body: `
+          <div class="modal-section">
+            <h3>Participating Providers</h3>
+            <ul>
+              <li>Accept Medicare</li>
+              <li>Take assignment — agree to accept Medicare's approved amount as full payment for covered services</li>
+              <li>Beneficiaries generally pay less out-of-pocket</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h3>Non-Participating Providers</h3>
+            <ul>
+              <li>Accept Medicare but do not take assignment</li>
+              <li>Can charge up to 15% more than the Medicare-approved amount (called the <em>excess charge</em>)</li>
+              <li>Beneficiaries may owe more out-of-pocket</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h3>Opt-Out Providers</h3>
+            <ul>
+              <li>Do not accept Medicare coverage at all</li>
+              <li>Can charge beneficiaries whatever they choose for services</li>
+              <li>Medicare will not pay for services from opt-out providers (except in emergencies)</li>
+            </ul>
+          </div>`
+      },
+      'ma-providers': {
+        title: 'Medicare Advantage Plan Providers',
+        body: `
+          <div class="modal-section">
+            <h3>In-Network Providers</h3>
+            <p>Providers who have contracted with the Medicare Advantage plan to deliver services to plan members at a negotiated rate. Beneficiaries typically pay <strong>less</strong> when using in-network providers.</p>
+          </div>
+          <div class="modal-section">
+            <h3>Out-of-Network Providers</h3>
+            <p>Providers who have not contracted with the plan. The plan may pay less — or nothing at all — for services from out-of-network providers, leaving the beneficiary with significantly higher costs.</p>
+          </div>
+          <div class="modal-section">
+            <h3>Important Reminders</h3>
+            <ul>
+              <li>Each Medicare Advantage plan has its own provider network</li>
+              <li>Networks differ by plan and by geographic area</li>
+              <li>Beneficiaries should always check with their plan to confirm a provider is in-network before receiving services</li>
+            </ul>
+          </div>`
+      },
+      'inout': {
+        title: 'Inpatients and Outpatients',
+        body: `
+          <div class="modal-section">
+            <h3>Inpatient</h3>
+            <ul>
+              <li>Formally admitted to a hospital by an attending physician</li>
+              <li>Services may include bed and board, general nursing, diagnostic and therapeutic services, and drugs used as part of inpatient treatment</li>
+              <li>Covered under Medicare Part A</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h3>Outpatient</h3>
+            <ul>
+              <li>Not formally admitted to the hospital</li>
+              <li>May still stay overnight (this is key — staying overnight does NOT automatically mean inpatient)</li>
+              <li><strong>Observation status is outpatient care</strong></li>
+              <li>Covered under Medicare Part B</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h3>Knowledge Check Answers</h3>
+            <ul>
+              <li><strong>Rhonda</strong> (formally admitted for surgery) → <strong>Inpatient ✓</strong></li>
+              <li><strong>José</strong> (stayed overnight, but status unknown) → <strong>More information needed ✓</strong></li>
+              <li><strong>Harold</strong> (ER visit, never formally admitted) → <strong>Outpatient ✓</strong></li>
+            </ul>
+          </div>`
+      },
+      'therapy': {
+        title: 'Types of Therapy & Personal vs Skilled Care',
+        body: `
+          <div class="modal-section">
+            <h3>Physical Therapy</h3>
+            <p>Includes exercise and physical activity that helps condition muscles and improve levels of activity and mobility.</p>
+          </div>
+          <div class="modal-section">
+            <h3>Occupational Therapy</h3>
+            <p>Helps individuals complete activities of daily living such as dressing, eating, and personal hygiene.</p>
+          </div>
+          <div class="modal-section">
+            <h3>Speech Therapy</h3>
+            <p>Helps improve or correct speech impairment or difficulties resulting from illness or injury.</p>
+          </div>
+          <div class="modal-section">
+            <h3>Personal Care vs Skilled Care</h3>
+            <ul>
+              <li><strong>Personal Care</strong> (non-medical): bathing, dressing, bathroom assistance — provided by a home health aide</li>
+              <li><strong>Skilled Care</strong> (medical): must be provided by or under supervision of a licensed nurse or therapist — examples include changing a catheter, dressing a wound, or providing rehabilitative therapy</li>
+            </ul>
+          </div>`
+      },
+      'care-types': {
+        title: 'Types of Care: Preventive, Diagnostic, Curative, Palliative',
+        body: `
+          <div class="modal-section">
+            <h3>Preventive Care</h3>
+            <p>Keeps individuals healthy and prevents illness before it starts. Includes screening services to catch illness in early stages or establish a baseline for further testing (e.g., annual wellness visits, mammograms).</p>
+          </div>
+          <div class="modal-section">
+            <h3>Diagnostic Care</h3>
+            <p>Addresses symptoms or conditions the individual already has. Important note: if a preventive screening finds something that requires treatment (like a polyp during a colonoscopy), the visit may be reclassified as <strong>diagnostic</strong>.</p>
+          </div>
+          <div class="modal-section">
+            <h3>Curative Care</h3>
+            <p>Treats an individual with the intent of curing the condition entirely.</p>
+          </div>
+          <div class="modal-section">
+            <h3>Palliative Care</h3>
+            <p>Provides relief from symptoms associated with terminal illness. Focuses on quality of life and comfort — <strong>not</strong> intended to cure. This is the type of care provided under the Medicare Hospice Benefit.</p>
+          </div>`
+      },
+      'notices': {
+        title: 'Medicare Notices: ABN, MSN, and EOB',
+        body: `
+          <div class="modal-section">
+            <h3>Advance Beneficiary Notice (ABN)</h3>
+            <ul>
+              <li>An Original Medicare notice given to a beneficiary <em>before</em> they receive a service</li>
+              <li>Informs them that Medicare may not pay for that service</li>
+              <li>Allows the beneficiary to decide whether to receive the care and accept financial responsibility</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h3>Medicare Summary Notice (MSN)</h3>
+            <ul>
+              <li>An Original Medicare notice (not a bill)</li>
+              <li>Summarizes services received, how much Medicare paid, and how much the beneficiary owes</li>
+              <li>Sent every three months</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h3>Explanation of Benefits (EOB)</h3>
+            <ul>
+              <li>A Medicare Advantage Plan notice (not a bill)</li>
+              <li>Similar to the MSN — summarizes services, plan payment, and beneficiary responsibility</li>
+              <li>Sent on a per-claim or monthly basis depending on the plan</li>
+            </ul>
+          </div>`
+      },
+      'contractors': {
+        title: 'Medicare Contractors',
+        body: `
+          <div class="modal-section">
+            <h3>Medicare Administrative Contractors (MACs)</h3>
+            <ul>
+              <li>Process Original Medicare claims</li>
+              <li>Educate providers about billing requirements</li>
+              <li>Oversee billing and reimbursement for Original Medicare providers</li>
+              <li>Involved in the Medicare appeals process</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h3>BFCC-QIO</h3>
+            <ul>
+              <li>Protect the quality and safety of care received by beneficiaries</li>
+              <li>Involved in the Medicare appeals process</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h3>Qualified Independent Contractors (QICs)</h3>
+            <ul>
+              <li>Review Medicare appeals at the second level</li>
+              <li>Determine medical necessity of services pertaining to a beneficiary's request</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h3>Coordination of Benefits Contractor (COBC)</h3>
+            <ul>
+              <li>Ensures claims are paid correctly for beneficiaries who have more than one type of insurance</li>
+              <li>Coordinates between Medicare and other payers to prevent duplicate payments</li>
+            </ul>
+          </div>`
+      },
+      // ── COURSE 2 MODALS ──
+      'c2-intro': {
+        title: 'Course 2: Medicare Overview — Introduction',
+        body: `
+          <div class="modal-section">
+            <h3>About This Course</h3>
+            <p>This 25-minute course provides a foundational overview of Medicare — its history, structure, eligibility rules, and its relationship to Medicaid. It is the second course in the SHIP TAC Level 1: Medicare Basics curriculum.</p>
+          </div>
+          <div class="modal-section">
+            <h3>What You Will Learn</h3>
+            <ul>
+              <li>How and why Medicare was established in 1965</li>
+              <li>The basics of Medicare — who it covers and what it includes</li>
+              <li>The four parts of Medicare (A, B, C, D) and eligibility criteria</li>
+              <li>Key differences between Medicare and Medicaid, including dual-eligibility</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h3>Format</h3>
+            <p>Self-paced slides with interactive tabs, case examples, and knowledge checks. Seat time: approximately 25 minutes.</p>
+          </div>`
+      },
+      'c2-history': {
+        title: 'History of Medicare',
+        body: `
+          <div class="modal-section">
+            <h3>July 30, 1965</h3>
+            <p>President Lyndon B. Johnson signed the <strong>Social Security Act of 1965</strong>, which established two landmark programs:</p>
+            <ul>
+              <li><strong>Title XVIII: Medicare</strong> — health insurance for older Americans</li>
+              <li><strong>Title XIX: Medicaid</strong> — health coverage for low-income individuals</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h3>Why Was Medicare Created?</h3>
+            <p>Older and low-income Americans could not afford private health insurance. The legislation allowed the financial burdens of health care to be shared across the country's population through a federal insurance system.</p>
+          </div>`
+      },
+      'c2-what': {
+        title: 'What is Medicare?',
+        body: `
+          <div class="modal-section">
+            <h3>Definition</h3>
+            <p>Medicare is a <strong>federal health insurance program</strong> that covers:</p>
+            <ul>
+              <li>People age 65 and older</li>
+              <li>People under 65 with certain disabilities</li>
+              <li>People with End-Stage Renal Disease (ESRD) at any age</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h3>Key Characteristics</h3>
+            <ul>
+              <li>Covers most health care services and items</li>
+              <li><strong>Eligibility is NOT based on income</strong> — this distinguishes Medicare from Medicaid</li>
+              <li>Administered federally by CMS</li>
+            </ul>
+          </div>`
+      },
+      'c2-two-options': {
+        title: 'Two Ways to Access Medicare Benefits',
+        body: `
+          <div class="modal-section">
+            <h3>Original Medicare</h3>
+            <p>The <strong>traditional Medicare program</strong> administered directly by the federal government. Beneficiaries can see any provider that accepts Medicare. Includes Part A (hospital) and Part B (medical).</p>
+          </div>
+          <div class="modal-section">
+            <h3>Medicare Advantage (Part C)</h3>
+            <p><strong>Medicare private health plans</strong> managed by private insurance companies that contract with the federal government. These plans must provide at least the same coverage as Original Medicare and usually include prescription drug coverage.</p>
+          </div>
+          <div class="modal-section">
+            <h3>Choosing Between the Two</h3>
+            <p>The decision depends on health care needs, drug needs, and geographic location. SHIP counselors help beneficiaries weigh these factors without making the decision for them.</p>
+          </div>`
+      },
+      'c2-parts': {
+        title: 'Parts of Medicare: A, B, C, and D',
+        body: `
+          <div class="modal-section">
+            <h3>Original Medicare</h3>
+            <ul>
+              <li><strong>Part A — Hospital Insurance:</strong> Covers inpatient hospital stays, skilled nursing facility care, hospice, and some home health services</li>
+              <li><strong>Part B — Medical Insurance:</strong> Covers outpatient services, doctor visits, preventive care, and durable medical equipment</li>
+              <li><strong>Part D — Prescription Drug Coverage:</strong> Optional add-on for drug coverage (separate plan purchased alongside Original Medicare)</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h3>Medicare Advantage (Part C)</h3>
+            <p>Bundles Part A and Part B coverage — and <em>usually</em> Part D — into a single private plan. Beneficiaries must still be enrolled in Parts A and B to join a Medicare Advantage plan.</p>
+          </div>`
+      },
+      'c2-choice': {
+        title: 'Original Medicare or Medicare Advantage?',
+        body: `
+          <div class="modal-section">
+            <h3>Key Decision Factors</h3>
+            <p>Choosing between Original Medicare and a Medicare Advantage Plan depends on several personal factors:</p>
+            <ul>
+              <li><strong>Health care needs:</strong> Does the beneficiary have specific doctors or specialists they want to keep seeing? Original Medicare allows any Medicare-participating provider nationwide.</li>
+              <li><strong>Drug needs:</strong> What prescriptions does the beneficiary take? MA plans often bundle drug coverage, while Original Medicare requires a separate Part D plan.</li>
+              <li><strong>Location:</strong> Medicare Advantage plans vary by county and state. Rural beneficiaries may have fewer MA plan options available.</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h3>SHIP Counselor Role</h3>
+            <p>SHIP counselors provide unbiased information to help beneficiaries make their own informed decisions — they do not recommend specific plans or receive compensation for enrollments.</p>
+          </div>`
+      },
+      'c2-elig65': {
+        title: 'Medicare Eligibility: Age 65+',
+        body: `
+          <div class="modal-section">
+            <h3>Two Conditions for Eligibility at 65</h3>
+            <p>Individuals 65+ are eligible for Medicare if <strong>one</strong> of the following conditions is met:</p>
+            <ul>
+              <li>They either receive or qualify for <strong>Social Security retirement cash benefits</strong></li>
+              <li>They currently reside in the U.S. AND are either a U.S. citizen OR a permanent resident who has lived in the U.S. continuously for <strong>five years</strong> prior to applying</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h3>Eligibility Start Date</h3>
+            <p>Individuals become Medicare-eligible on the <strong>first day of their 65th birthday month</strong> (or the month before if their birthday falls on the 1st of the month).</p>
+          </div>`
+      },
+      'c2-ss': {
+        title: 'Social Security Retirement and Medicare Eligibility',
+        body: `
+          <div class="modal-section">
+            <h3>Three Key Points</h3>
+            <ul>
+              <li>An individual can start collecting Social Security <em>retirement</em> benefits as early as <strong>age 62</strong></li>
+              <li>Medicare eligibility begins at <strong>age 65</strong>, regardless of when Social Security retirement benefits start</li>
+              <li>Individuals <strong>already collecting Social Security</strong> will be automatically enrolled in Medicare Parts A and B when they turn 65 — others must actively enroll</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h3>What This Means for Counselors</h3>
+            <p>A beneficiary who waited until 67 to collect Social Security still became eligible for Medicare at 65 and needed to actively enroll. Missing this window can result in late enrollment penalties.</p>
+          </div>`
+      },
+      'c2-work': {
+        title: 'Medicare and Work History',
+        body: `
+          <div class="modal-section">
+            <h3>Work History and Eligibility</h3>
+            <p>Medicare eligibility is <strong>not based on work history</strong>. Any eligible individual can enroll regardless of how long they worked.</p>
+          </div>
+          <div class="modal-section">
+            <h3>Work History and Costs</h3>
+            <p>Work history (the number of years or quarters an individual paid Social Security taxes) <strong>does affect Medicare costs</strong>:</p>
+            <ul>
+              <li><strong>Part A is premium-free</strong> if the beneficiary or their spouse worked the equivalent of at least <strong>10 years (40 quarters)</strong> in the U.S. and paid Social Security taxes</li>
+              <li>Those with fewer than 40 quarters pay a monthly Part A premium</li>
+            </ul>
+          </div>`
+      },
+      'c2-under65': {
+        title: 'Medicare Eligibility: Under Age 65',
+        body: `
+          <div class="modal-section">
+            <h3>Pathway 1: SSDI (Social Security Disability Insurance)</h3>
+            <ul>
+              <li>Individuals under 65 become eligible after receiving SSDI for <strong>24 months</strong></li>
+              <li>Medicare eligibility begins the <strong>first day of the 25th month</strong> of receiving SSDI</li>
+              <li><strong>Exception — ALS (Lou Gehrig's Disease):</strong> Individuals who receive SSDI due to ALS become eligible the <strong>first month</strong> their SSDI benefits begin (no waiting period)</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h3>Pathway 2: End-Stage Renal Disease (ESRD)</h3>
+            <p>Individuals with ESRD (permanent kidney failure requiring dialysis or a kidney transplant) are eligible for Medicare at any age, regardless of disability status.</p>
+          </div>`
+      },
+      'c2-case-elig': {
+        title: 'Case Example: Medicare Eligibility — Ruth',
+        body: `
+          <div class="modal-section">
+            <h3>The Scenario</h3>
+            <p>Ruth is 59 years old and has been receiving Social Security Disability Insurance (SSDI) for less than one year. She does not have ALS.</p>
+          </div>
+          <div class="modal-section">
+            <h3>Does Ruth Qualify for Medicare? — Yes ✓</h3>
+            <p>Ruth qualifies for Medicare when <strong>whichever comes first</strong>:</p>
+            <ul>
+              <li>She turns <strong>65 years old</strong>, OR</li>
+              <li>She has been receiving SSDI for <strong>24 months</strong> (she will become eligible on the first day of her 25th month of SSDI benefits)</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h3>Key Takeaway</h3>
+            <p>Even though Ruth is currently receiving SSDI, she must wait 24 months before Medicare eligibility begins (unless she had ALS). SHIP counselors should help her plan for enrollment when the time comes.</p>
+          </div>`
+      },
+      'c2-agencies': {
+        title: 'Agencies Involved in Medicare: SSA and CMS',
+        body: `
+          <div class="modal-section">
+            <h3>Social Security Administration (SSA)</h3>
+            <ul>
+              <li>Shapes and facilitates Social Security benefits programs including Medicare, SSDI, SSI, and Part D Extra Help</li>
+              <li>Facilitates <strong>initial Medicare enrollment</strong></li>
+              <li>Issues and replaces Medicare cards</li>
+              <li>Contact: <strong>1-800-772-1213</strong> (TTY 1-800-325-0778)</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h3>Centers for Medicare &amp; Medicaid Services (CMS)</h3>
+            <ul>
+              <li>U.S. government agency responsible for <strong>administering Medicare and Medicaid</strong></li>
+              <li>Writes Medicare coverage rules and approves Medicare Advantage Plan contracts</li>
+              <li>Employs payment and program integrity contractors</li>
+              <li>For Medicaid: writes minimum standards, reviews/approves state Medicaid plans</li>
+              <li>Contact: <strong>1-800-MEDICARE</strong> (TTY 1-877-486-2048)</li>
+            </ul>
+          </div>`
+      },
+      'c2-medicaid': {
+        title: 'Medicare and Medicaid: Key Differences & Dual-Eligibility',
+        body: `
+          <div class="modal-section">
+            <h3>Medicare</h3>
+            <ul>
+              <li>Federal health insurance program</li>
+              <li>Eligibility based on <strong>age or disability status</strong>, not income</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h3>Medicaid</h3>
+            <ul>
+              <li>Federal- and state-funded, <strong>state-administered</strong> health insurance</li>
+              <li>Eligibility based on <strong>state income and asset limits</strong></li>
+              <li>Benefits vary by state</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h3>Dual-Eligibles</h3>
+            <ul>
+              <li>Individuals who have <strong>both Medicare and Medicaid</strong></li>
+              <li>Medicaid covers some services Medicare does not (e.g., routine dental, vision)</li>
+              <li>Medicaid can also cover out-of-pocket expenses for Medicare-covered services</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h3>Case Example: Alfred's Dental Care</h3>
+            <p>Alfred has both Medicare and Medicaid. Medicare does not cover routine dental care, but his state's Medicaid program does. <strong>Yes</strong> — Medicaid can cover his dental services if they are medically necessary and he follows Medicaid rules.</p>
+          </div>`
+      },
+
+      // ── COURSE 3 MODALS ──
+      'c3-intro': {
+        title: 'Course 3: Medicare Options — Introduction',
+        body: `
+          <div class="modal-section">
+            <h3>About This Course</h3>
+            <p>This 30-minute course explores the two main ways a Medicare beneficiary can receive their benefits: Original Medicare and Medicare Advantage. It is the third course in the SHIP TAC Level 1: Medicare Basics curriculum.</p>
+          </div>
+          <div class="modal-section">
+            <h3>Learning Objectives</h3>
+            <ul>
+              <li>Identify the two main ways an individual can access Medicare benefits</li>
+              <li>Describe the key differences between Original Medicare and Medicare Advantage</li>
+              <li>Help beneficiaries decide which option works best for them</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h3>Why This Matters</h3>
+            <p>Every person who qualifies for Medicare must make an important choice about how to receive their coverage. SHIP counselors play a vital role in helping beneficiaries understand these options and make an informed, personalized decision — not just copy what a neighbor or friend chose.</p>
+          </div>`
+      },
+      'c3-what': {
+        title: 'What is Medicare?',
+        body: `
+          <div class="modal-section">
+            <h3>Medicare Overview</h3>
+            <p>Medicare is a federal health insurance program — not state-run and not income-based. A person qualifies based on age or specific medical conditions, not on how much money they make.</p>
+          </div>
+          <div class="modal-section">
+            <h3>Who Qualifies?</h3>
+            <ul>
+              <li><strong>Age 65 or older</strong></li>
+              <li><strong>Under 65 with a disability</strong> — must have received SSDI for at least 24 months (exception: ALS patients qualify immediately)</li>
+              <li><strong>Any age with End-Stage Renal Disease (ESRD)</strong> — permanent kidney failure requiring dialysis or a transplant</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h3>Key Facts</h3>
+            <ul>
+              <li>Covers most health care services</li>
+              <li>Eligibility does NOT depend on income</li>
+              <li>Administered by the Centers for Medicare &amp; Medicaid Services (CMS)</li>
+            </ul>
+          </div>`
+      },
+      'c3-parts': {
+        title: 'Parts of Medicare',
+        body: `
+          <div class="modal-section">
+            <h3>Original Medicare (Traditional Path)</h3>
+            <ul>
+              <li><strong>Part A</strong> — Hospital insurance (inpatient, SNF, home health, hospice)</li>
+              <li><strong>Part B</strong> — Medical insurance (outpatient, doctors, preventive, DME)</li>
+              <li><strong>Part D</strong> — Optional stand-alone prescription drug coverage</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h3>Medicare Advantage (Alternative Path)</h3>
+            <ul>
+              <li><strong>Part C</strong> — Bundles Parts A and B together, usually includes Part D drug coverage, offered through private insurers</li>
+              <li>Must be enrolled in both Part A and Part B to join a Medicare Advantage plan</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h3>Key Distinction</h3>
+            <p>Both paths provide Medicare benefits — Original Medicare directly through the federal government, and Medicare Advantage through private plans approved by Medicare.</p>
+          </div>`
+      },
+      'c3-options': {
+        title: 'Medicare Options: Two Paths After Enrollment',
+        body: `
+          <div class="modal-section">
+            <h3>Step 1: Enroll in Original Medicare</h3>
+            <p>When first eligible, an individual signs up for Part A and Part B through the Social Security Administration. They receive a red, white, and blue Medicare card in the mail.</p>
+          </div>
+          <div class="modal-section">
+            <h3>Step 2: Choose a Path</h3>
+            <p><strong>Option A — Stay with Original Medicare:</strong> Use the Medicare card and add a stand-alone Part D plan if prescription drug coverage is needed.</p>
+            <p><strong>Option B — Switch to Medicare Advantage:</strong> Enroll in a private plan (Part C) that bundles A, B, and usually D. Call 1-800-MEDICARE, contact a local SHIP, or visit <em>medicare.gov/find-a-plan</em>.</p>
+          </div>
+          <div class="modal-section">
+            <h3>Important</h3>
+            <p>A beneficiary must be enrolled in both Part A and Part B to join a Medicare Advantage Plan.</p>
+          </div>`
+      },
+      'c3-cards': {
+        title: 'Using Health Insurance Cards',
+        body: `
+          <div class="modal-section">
+            <h3>Which Card to Use at the Doctor</h3>
+            <ul>
+              <li><strong>Original Medicare beneficiaries</strong> — Present the red, white, and blue Medicare card at every appointment</li>
+              <li><strong>Medicare Advantage beneficiaries</strong> — Present the card issued by their private plan (NOT the Original Medicare card)</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h3>Why This Matters: Using the Wrong Card Causes Problems</h3>
+            <ol>
+              <li>A Medicare Advantage beneficiary gives the Original Medicare card to the doctor</li>
+              <li>The doctor bills Original Medicare — but should have billed the MA plan</li>
+              <li>Result: Coverage denials and significant payment delays</li>
+            </ol>
+          </div>
+          <div class="modal-section">
+            <h3>Counselor Tip</h3>
+            <p>Remind beneficiaries to check their wallet: if they have a Medicare Advantage plan, put the MA plan card front and center and keep the red/white/blue card safely stored — it should not be presented at the doctor.</p>
+          </div>`
+      },
+      'c3-orig-basics': {
+        title: 'Original Medicare Basics',
+        body: `
+          <div class="modal-section">
+            <h3>What is Original Medicare?</h3>
+            <p>The traditional Medicare program administered directly by the Centers for Medicare &amp; Medicaid Services (CMS). It consists of Part A (hospital) and Part B (medical).</p>
+          </div>
+          <div class="modal-section">
+            <h3>Key Features</h3>
+            <ul>
+              <li>✅ <strong>See any provider</strong> in the U.S. that accepts Medicare — no network restrictions</li>
+              <li>✅ <strong>No referral needed</strong> to see a specialist</li>
+              <li>✅ <strong>Can add Medigap</strong> (supplemental insurance to help pay cost-sharing gaps)</li>
+              <li>✅ <strong>Can add stand-alone Part D</strong> for prescription drug coverage</li>
+              <li>❌ <strong>Does NOT cover</strong> routine dental, vision, or hearing care</li>
+              <li>❌ <strong>No Maximum Out-of-Pocket (MOOP)</strong> limit — costs can be unlimited</li>
+            </ul>
+          </div>`
+      },
+      'c3-orig-covered': {
+        title: 'Original Medicare-Covered Services',
+        body: `
+          <div class="modal-section">
+            <h3>Part A — Hospital Insurance Covers:</h3>
+            <ul>
+              <li>Inpatient hospital services</li>
+              <li>Skilled nursing facility (SNF) care</li>
+              <li>Home health care</li>
+              <li>Hospice care</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h3>Part B — Medical Insurance Covers:</h3>
+            <ul>
+              <li>Outpatient services</li>
+              <li>Doctors' services</li>
+              <li>Preventive care</li>
+              <li>Home health care</li>
+              <li>Durable medical equipment (DME)</li>
+              <li>Some ambulance services</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h3>Not Covered by Original Medicare</h3>
+            <p>Routine dental, vision, hearing care, long-term custodial care, and most care outside the U.S.</p>
+          </div>`
+      },
+      'c3-orig-costs': {
+        title: 'Original Medicare Costs',
+        body: `
+          <div class="modal-section">
+            <h3>Cost Structure</h3>
+            <table style="width:100%;border-collapse:collapse;font-size:0.95rem">
+              <tr style="background:#f0ebfa">
+                <th style="padding:8px;text-align:left;border-bottom:2px solid #7b5ea8">Cost Type</th>
+                <th style="padding:8px;text-align:left;border-bottom:2px solid #7b5ea8">Details</th>
+              </tr>
+              <tr><td style="padding:8px;border-bottom:1px solid #eee"><strong>Premium</strong></td><td style="padding:8px;border-bottom:1px solid #eee">Monthly Part B premium (everyone pays); monthly Part A premium for some</td></tr>
+              <tr><td style="padding:8px;border-bottom:1px solid #eee"><strong>Deductible</strong></td><td style="padding:8px;border-bottom:1px solid #eee">Separate Part A and Part B annual deductibles</td></tr>
+              <tr><td style="padding:8px;border-bottom:1px solid #eee"><strong>Coinsurance</strong></td><td style="padding:8px;border-bottom:1px solid #eee">20% for Part B-covered services; daily coinsurance for hospital and SNF stays</td></tr>
+              <tr><td style="padding:8px"><strong>MOOP</strong></td><td style="padding:8px"><strong style="color:#c0392b">No MOOP limit</strong> — out-of-pocket costs can be unlimited</td></tr>
+            </table>
+          </div>
+          <div class="modal-section">
+            <h3>Managing Costs</h3>
+            <p>Because there is no MOOP, many Original Medicare beneficiaries purchase a <strong>Medigap</strong> supplemental policy to protect against high out-of-pocket expenses.</p>
+          </div>`
+      },
+      'c3-ma-basics': {
+        title: 'Medicare Advantage Basics',
+        body: `
+          <div class="modal-section">
+            <h3>What is Medicare Advantage?</h3>
+            <p>A program through which private insurance companies contract with the federal government to offer Medicare coverage. All Medicare Advantage Plans must cover at least the same services as Original Medicare.</p>
+          </div>
+          <div class="modal-section">
+            <h3>Key Features</h3>
+            <ul>
+              <li>✅ <strong>Bundles Parts A, B, and usually D</strong> into one plan</li>
+              <li>✅ <strong>May cover extra benefits</strong> like dental, vision, and hearing</li>
+              <li>✅ <strong>Has a MOOP limit</strong> — protects against catastrophic costs</li>
+              <li>⚠️ <strong>May require referrals</strong> to see specialists (especially HMOs)</li>
+              <li>⚠️ <strong>May restrict providers</strong> to an in-network list</li>
+              <li>❌ <strong>Cannot have Medigap</strong> — supplemental coverage is not compatible</li>
+            </ul>
+          </div>`
+      },
+      'c3-ma-costs': {
+        title: 'Medicare Advantage Costs & Coverage',
+        body: `
+          <div class="modal-section">
+            <h3>Cost Structure</h3>
+            <table style="width:100%;border-collapse:collapse;font-size:0.95rem">
+              <tr style="background:#f0ebfa">
+                <th style="padding:8px;text-align:left;border-bottom:2px solid #7b5ea8">Cost Type</th>
+                <th style="padding:8px;text-align:left;border-bottom:2px solid #7b5ea8">Details</th>
+              </tr>
+              <tr><td style="padding:8px;border-bottom:1px solid #eee"><strong>Premium</strong></td><td style="padding:8px;border-bottom:1px solid #eee">May charge an additional monthly premium on top of the Part B premium (some plans: $0 extra)</td></tr>
+              <tr><td style="padding:8px;border-bottom:1px solid #eee"><strong>Deductible</strong></td><td style="padding:8px;border-bottom:1px solid #eee">Varies by plan</td></tr>
+              <tr><td style="padding:8px;border-bottom:1px solid #eee"><strong>Copays/Coinsurance</strong></td><td style="padding:8px;border-bottom:1px solid #eee">Vary by plan — often a fixed copay amount per service</td></tr>
+              <tr><td style="padding:8px"><strong>MOOP</strong></td><td style="padding:8px"><strong style="color:#2d7a4f">All plans must have a MOOP limit</strong> — after reaching it, the plan pays 100%</td></tr>
+            </table>
+          </div>
+          <div class="modal-section">
+            <h3>Important Reminder</h3>
+            <p>All rules and costs vary by specific plan. Beneficiaries must compare actual plans in their area using medicare.gov/plan-compare.</p>
+          </div>`
+      },
+      'c3-comparison': {
+        title: 'Original Medicare vs. Medicare Advantage — Comparison',
+        body: `
+          <div class="modal-section">
+            <table style="width:100%;border-collapse:collapse;font-size:0.9rem">
+              <tr>
+                <th style="padding:8px;background:#1a6baa;color:white;text-align:left">Feature</th>
+                <th style="padding:8px;background:#1a6baa;color:white;text-align:left">Original Medicare</th>
+                <th style="padding:8px;background:#5a7a2e;color:white;text-align:left">Medicare Advantage</th>
+              </tr>
+              <tr style="background:#f0f5ff"><td style="padding:8px;border-bottom:1px solid #ddd"><strong>Drug Coverage</strong></td><td style="padding:8px;border-bottom:1px solid #ddd">Add separate Part D plan</td><td style="padding:8px;border-bottom:1px solid #ddd">Usually included (Part D)</td></tr>
+              <tr><td style="padding:8px;border-bottom:1px solid #ddd"><strong>Provider Choice</strong></td><td style="padding:8px;border-bottom:1px solid #ddd">Any U.S. provider accepting Medicare</td><td style="padding:8px;border-bottom:1px solid #ddd">May be restricted to network</td></tr>
+              <tr style="background:#f0f5ff"><td style="padding:8px;border-bottom:1px solid #ddd"><strong>Referrals</strong></td><td style="padding:8px;border-bottom:1px solid #ddd">Not required for specialists</td><td style="padding:8px;border-bottom:1px solid #ddd">May be required</td></tr>
+              <tr><td style="padding:8px;border-bottom:1px solid #ddd"><strong>Costs</strong></td><td style="padding:8px;border-bottom:1px solid #ddd">A &amp; B deductibles, 20% coinsurance</td><td style="padding:8px;border-bottom:1px solid #ddd">Varies by plan; usually fixed copays</td></tr>
+              <tr style="background:#f0f5ff"><td style="padding:8px;border-bottom:1px solid #ddd"><strong>MOOP</strong></td><td style="padding:8px;border-bottom:1px solid #ddd">No limit</td><td style="padding:8px;border-bottom:1px solid #ddd">Required on all plans</td></tr>
+              <tr><td style="padding:8px;border-bottom:1px solid #ddd"><strong>Excluded Services</strong></td><td style="padding:8px;border-bottom:1px solid #ddd">Does not cover dental/vision/hearing</td><td style="padding:8px;border-bottom:1px solid #ddd">May cover these services</td></tr>
+              <tr style="background:#f0f5ff"><td style="padding:8px"><strong>Medigap</strong></td><td style="padding:8px">Can purchase Medigap</td><td style="padding:8px">Cannot have Medigap</td></tr>
+            </table>
+          </div>`
+      },
+      'c3-case': {
+        title: 'Case Example: Carol & Lucia',
+        body: `
+          <div class="modal-section">
+            <h3>The Scenario</h3>
+            <p>Carol and Lucia are neighbors. Lucia tells Carol she should sign up for the same Medicare Advantage Plan that Lucia has.</p>
+          </div>
+          <div class="modal-section">
+            <h3>Should Carol sign up for the same plan?</h3>
+            <p><strong style="color:#2d7a4f">✅ Correct Answer: No</strong> — not without assessing her own health needs first.</p>
+          </div>
+          <div class="modal-section">
+            <h3>Why?</h3>
+            <p>Medicare plan selection is highly personal. Carol needs to consider her own situation before choosing any plan:</p>
+            <ul>
+              <li>Does she travel frequently? (Original Medicare may work better)</li>
+              <li>Does she have preferred doctors? Do they accept that plan?</li>
+              <li>Does she need services like dental or vision care?</li>
+              <li>What are her prescription drug needs?</li>
+              <li>Can she afford the potential out-of-pocket costs without a Medigap?</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h3>Key Lesson</h3>
+            <p>What works perfectly for one person may not work for another. SHIP counselors help beneficiaries make individualized, informed decisions — never just copying someone else's choice.</p>
+          </div>`
+      },
+      'c3-questions': {
+        title: 'Questions to Ask When Choosing a Medicare Option',
+        body: `
+          <div class="modal-section">
+            <h3>5 Key Questions for Beneficiaries</h3>
+          </div>
+          <div class="modal-section">
+            <h3>1. Do I travel often?</h3>
+            <p>Original Medicare covers care anywhere in the U.S. as long as the provider accepts Medicare. Some Medicare Advantage Plans only cover care within a specific network — traveling beneficiaries may face higher costs or denials under an MA plan.</p>
+          </div>
+          <div class="modal-section">
+            <h3>2. How often do I see my doctors? What insurance do they accept?</h3>
+            <p>Original Medicare does not require a referral to see a specialist. Some Medicare Advantage Plans (especially HMOs) do require a referral. If the beneficiary has a preferred specialist, it's important to confirm that doctor accepts the plan.</p>
+          </div>
+          <div class="modal-section">
+            <h3>3. Which health care services do I need?</h3>
+            <p>Original Medicare does not cover routine dental, vision, or hearing care. Some Medicare Advantage Plans do cover these extra benefits — so beneficiaries with these needs may prefer MA.</p>
+          </div>
+          <div class="modal-section">
+            <h3>4. Can I purchase a Medigap to help cover costs?</h3>
+            <p>Beneficiaries with Original Medicare can buy a Medigap policy to help pay coinsurance and other cost-sharing. Beneficiaries with Medicare Advantage cannot purchase Medigap — they need to consider what their plan's MOOP limit is.</p>
+          </div>
+          <div class="modal-section">
+            <h3>5. How do I want my medicines covered?</h3>
+            <p>With Original Medicare, a separate stand-alone Part D plan is needed. Medicare Advantage Plans usually include drug coverage (Part D) automatically.</p>
+          </div>`
+      }
+    };
+
+    function openModal(key) {
+      const s = slides[key];
+      if (!s) return;
+      document.getElementById('modalTitle').textContent = s.title;
+      document.getElementById('modalBody').innerHTML = s.body;
+      document.getElementById('modal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(e) {
+      if (e.target === document.getElementById('modal')) closeModalDirect();
+    }
+
+    function closeModalDirect() {
+      document.getElementById('modal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModalDirect(); });
+  </script>
+</body>
+</html>

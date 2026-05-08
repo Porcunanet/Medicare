@@ -1,0 +1,1869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SHIP TAC — Medicare Training | Level 3: Appeals and Penalties</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    /* ── TOKENS ── */
+    :root {
+      --navy:   #1a3557;
+      --blue:   #2563a8;
+      --sky:    #4a9ed6;
+      --orange: #d9622b;
+      --amber:  #f0a500;
+      --sand:   #f5f0e8;
+      --white:  #ffffff;
+      --ink:    #1e2630;
+      --muted:  #5a6878;
+      --border: #dde3ec;
+      --teal:   #2d9e8a;
+
+      /* Level 3 accent — deep blue/slate */
+      --l3-primary: #1a3d6b;
+      --l3-accent:  #2563a8;
+      --l3-light:   #e8f0fb;
+      --l3-mid:     #3a7fd4;
+
+      --nav-h: 68px;
+      --radius: 12px;
+      --shadow: 0 4px 24px rgba(26,53,87,.10);
+      --shadow-lg: 0 12px 48px rgba(26,53,87,.16);
+
+      --serif: 'DM Serif Display', Georgia, serif;
+      --sans:  'DM Sans', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: var(--sans); background: var(--sand); color: var(--ink); min-height: 100vh; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ── NAV ── */
+    .nav {
+      position: sticky; top: 0; z-index: 100; height: var(--nav-h);
+      background: var(--navy); display: flex; align-items: center;
+      box-shadow: 0 2px 16px rgba(0,0,0,.25);
+    }
+    .nav-inner {
+      width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; gap: 32px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .nav-logo-icon {
+      width: 38px; height: 38px; background: var(--orange); border-radius: 50%;
+      display: grid; place-items: center; font-size: 18px; font-weight: 700;
+      color: white; font-family: var(--serif); letter-spacing: -.5px;
+    }
+    .nav-logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+    .nav-logo-text strong { color: var(--white); font-size: .95rem; font-weight: 600; letter-spacing: .3px; }
+    .nav-logo-text span   { color: var(--sky);   font-size: .72rem; font-weight: 300; letter-spacing: .5px; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 4px; flex: 1; list-style: none; }
+    .nav-links a {
+      padding: 6px 14px; border-radius: 6px; color: rgba(255,255,255,.75);
+      font-size: .875rem; font-weight: 400; transition: color .2s, background .2s; white-space: nowrap;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--white); background: rgba(255,255,255,.12); }
+    .nav-links a.active { font-weight: 600; color: var(--amber); }
+    .nav-cta {
+      margin-left: auto; padding: 8px 18px; background: var(--orange); color: var(--white);
+      border-radius: 8px; font-size: .875rem; font-weight: 600; white-space: nowrap;
+      transition: background .2s, transform .15s;
+    }
+    .nav-cta:hover { background: #c2561e; transform: translateY(-1px); }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; color: white; padding: 6px; }
+    .nav-toggle svg { width: 24px; height: 24px; }
+
+    /* ── LEVEL BANNER ── */
+    .level-banner {
+      background: linear-gradient(135deg, #0d2444 0%, #1a3d6b 60%, #2563a8 100%);
+      padding: 72px 24px 80px; text-align: center; position: relative; overflow: hidden;
+    }
+    .level-banner::before {
+      content: ''; position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .level-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2);
+      border-radius: 100px; padding: 6px 16px;
+      font-size: .78rem; font-weight: 500; color: #a8c8f0;
+      letter-spacing: .6px; text-transform: uppercase; margin-bottom: 24px;
+    }
+    .level-badge::before { content: '●'; font-size: .5rem; color: var(--amber); }
+    .level-banner h1 {
+      font-family: var(--serif); font-size: clamp(2rem, 5vw, 3.5rem);
+      color: var(--white); line-height: 1.15; max-width: 700px; margin: 0 auto 16px;
+    }
+    .level-banner h1 em { font-style: italic; color: #a8c8f0; }
+    .level-banner p {
+      color: rgba(255,255,255,.7); font-size: 1.1rem; max-width: 560px;
+      margin: 0 auto 36px; font-weight: 300; line-height: 1.65;
+    }
+    .hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--orange); color: var(--white); padding: 13px 28px; border-radius: 10px;
+      font-weight: 600; font-size: .95rem; transition: background .2s, transform .15s, box-shadow .2s;
+      box-shadow: 0 4px 16px rgba(217,98,43,.4);
+    }
+    .btn-primary:hover { background: #c2561e; transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,.35);
+      padding: 13px 28px; border-radius: 10px; font-weight: 500; font-size: .95rem;
+      transition: background .2s, border-color .2s;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.6); }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb {
+      background: var(--white); border-bottom: 1px solid var(--border);
+      padding: 14px 24px;
+    }
+    .breadcrumb-inner {
+      max-width: 1280px; margin: 0 auto; display: flex; align-items: center; gap: 8px;
+      font-size: .82rem; color: var(--muted);
+    }
+    .breadcrumb-inner a { color: var(--blue); }
+    .breadcrumb-inner a:hover { text-decoration: underline; }
+    .breadcrumb-sep { color: var(--border); }
+
+    /* ── PROGRESS STRIP ── */
+    .progress-strip { background: var(--white); border-bottom: 1px solid var(--border); padding: 18px 24px; }
+    .progress-inner {
+      max-width: 1280px; margin: 0 auto; display: flex; align-items: center;
+      gap: 20px; flex-wrap: wrap;
+    }
+    .progress-label { font-size: .8rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; white-space: nowrap; }
+    .progress-track { flex: 1; min-width: 160px; height: 8px; background: var(--border); border-radius: 100px; overflow: hidden; }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, var(--l3-primary), var(--l3-mid)); border-radius: 100px; transition: width .6s ease; }
+    .progress-meta { font-size: .82rem; color: var(--muted); white-space: nowrap; }
+    .progress-meta strong { color: var(--l3-accent); }
+
+    /* ── MAIN LAYOUT ── */
+    .main-grid {
+      display: grid; grid-template-columns: 300px 1fr; gap: 0;
+      max-width: 1280px; margin: 0 auto; padding: 32px 24px; align-items: start;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      position: sticky; top: calc(var(--nav-h) + 16px);
+      display: flex; flex-direction: column; gap: 16px; padding-right: 28px;
+    }
+    .sidebar-card {
+      background: var(--white); border-radius: var(--radius);
+      border: 1px solid var(--border); overflow: hidden; box-shadow: var(--shadow);
+    }
+    .sidebar-card-head {
+      background: var(--l3-primary); padding: 14px 18px; display: flex; align-items: center; gap: 10px;
+    }
+    .sidebar-card-head h3 { color: var(--white); font-size: .85rem; font-weight: 600; letter-spacing: .3px; }
+    .sidebar-card-head .icon { font-size: 1rem; }
+    .course-list { list-style: none; }
+    .course-item {
+      display: flex; align-items: center; gap: 12px; padding: 12px 18px;
+      border-bottom: 1px solid var(--border); transition: background .15s; cursor: pointer;
+    }
+    .course-item:last-child { border-bottom: none; }
+    .course-item:hover { background: var(--l3-light); }
+    .course-item.active { background: #ddeaf8; }
+    .course-num {
+      width: 26px; height: 26px; border-radius: 50%; background: var(--border);
+      display: grid; place-items: center; font-size: .72rem; font-weight: 700;
+      color: var(--muted); flex-shrink: 0;
+    }
+    .course-item.active .course-num { background: var(--l3-accent); color: var(--white); }
+    .course-info { flex: 1; min-width: 0; }
+    .course-info strong { display: block; font-size: .82rem; color: var(--ink); font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .course-info span  { font-size: .73rem; color: var(--muted); }
+    .course-badge {
+      font-size: .65rem; font-weight: 700; padding: 3px 8px; border-radius: 100px;
+      background: var(--l3-light); color: var(--l3-accent); white-space: nowrap;
+    }
+    .info-box { padding: 16px 18px; display: flex; flex-direction: column; gap: 10px; }
+    .info-row { display: flex; justify-content: space-between; align-items: center; font-size: .82rem; }
+    .info-row span { color: var(--muted); }
+    .info-row strong { color: var(--ink); }
+
+    /* ── CONTENT ── */
+    .content { min-width: 0; }
+    .course-header {
+      background: var(--white); border-radius: var(--radius); border: 1px solid var(--border);
+      padding: 28px 32px; margin-bottom: 24px; box-shadow: var(--shadow);
+      display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: center;
+    }
+    .course-eyebrow { font-size: .75rem; font-weight: 600; color: var(--l3-accent); text-transform: uppercase; letter-spacing: .6px; margin-bottom: 6px; }
+    .course-title { font-family: var(--serif); font-size: 1.75rem; color: var(--navy); line-height: 1.2; margin-bottom: 10px; }
+    .course-meta-row { display: flex; gap: 16px; flex-wrap: wrap; }
+    .meta-chip { display: inline-flex; align-items: center; gap: 6px; font-size: .78rem; color: var(--muted); }
+    .meta-chip .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--l3-mid); }
+    .start-btn {
+      background: var(--l3-accent); color: var(--white); padding: 12px 24px; border-radius: 10px;
+      font-weight: 600; font-size: .875rem; white-space: nowrap; cursor: pointer; border: none;
+      transition: background .2s, transform .15s; box-shadow: 0 4px 14px rgba(37,99,168,.3);
+    }
+    .start-btn:hover { background: var(--l3-primary); transform: translateY(-2px); }
+
+    .section-label {
+      font-size: .72rem; font-weight: 700; color: var(--muted);
+      text-transform: uppercase; letter-spacing: .8px; margin-bottom: 14px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+    /* ── OBJECTIVES ── */
+    .objectives-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px; margin-bottom: 24px;
+    }
+    .obj-card {
+      background: var(--white); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 20px; display: flex; flex-direction: column; gap: 10px; box-shadow: var(--shadow);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .obj-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+    .obj-num {
+      width: 36px; height: 36px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--l3-primary), var(--l3-mid));
+      display: grid; place-items: center; font-family: var(--serif);
+      font-size: 1.1rem; color: white; font-weight: 400;
+    }
+
+    /* ── SLIDES GRID ── */
+    .slides-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px; margin-bottom: 32px;
+    }
+    .slide-card {
+      background: var(--white); border: 1px solid var(--border); border-radius: var(--radius);
+      overflow: hidden; box-shadow: var(--shadow); cursor: pointer;
+      transition: transform .2s, box-shadow .2s, border-color .2s;
+      display: flex; flex-direction: column;
+    }
+    .slide-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--l3-mid); }
+    .slide-img {
+      background: linear-gradient(135deg, var(--l3-primary) 0%, var(--l3-mid) 100%);
+      padding: 28px 16px; display: flex; align-items: center; justify-content: center;
+      position: relative; min-height: 100px;
+    }
+    .slide-img.orange-bg { background: linear-gradient(135deg, #9e4d1a 0%, var(--orange) 100%); }
+    .slide-img.teal-bg   { background: linear-gradient(135deg, #1a6a5a 0%, var(--teal) 100%); }
+    .slide-thumb-content { padding: 16px; text-align: center; position: relative; z-index: 1; }
+    .slide-thumb-icon { font-size: 2.2rem; margin-bottom: 8px; display: block; }
+    .slide-thumb-title { font-size: .8rem; font-weight: 600; color: white; line-height: 1.3; }
+    .slide-body { padding: 14px 16px; flex: 1; }
+    .slide-num { font-size: .7rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+    .slide-title { font-size: .88rem; font-weight: 600; color: var(--ink); line-height: 1.35; margin-bottom: 8px; }
+    .slide-desc { font-size: .78rem; color: var(--muted); line-height: 1.5; }
+    .slide-footer { padding: 10px 16px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+    .slide-tag { font-size: .68rem; font-weight: 600; padding: 3px 9px; border-radius: 100px; background: var(--l3-light); color: var(--l3-accent); }
+    .slide-tag.orange { background: #fdecea; color: var(--orange); }
+    .slide-tag.teal   { background: #e0f5f1; color: var(--teal); }
+    .slide-arrow { font-size: .75rem; color: var(--l3-mid); font-weight: 700; transition: transform .2s; }
+    .slide-card:hover .slide-arrow { transform: translateX(4px); }
+
+    /* ── TIMELINE VISUAL ── */
+    .timeline-card {
+      background: var(--white); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 24px 28px; box-shadow: var(--shadow); margin-bottom: 32px;
+    }
+    .timeline-track {
+      display: flex; align-items: center; gap: 0; margin: 20px 0 28px; overflow-x: auto; padding-bottom: 4px;
+    }
+    .timeline-node {
+      display: flex; flex-direction: column; align-items: center; gap: 6px; flex-shrink: 0; min-width: 90px;
+    }
+    .timeline-circle {
+      width: 36px; height: 36px; border-radius: 50%; border: 2.5px solid var(--border);
+      background: var(--white); display: grid; place-items: center;
+      font-size: .72rem; font-weight: 700; color: var(--muted); transition: all .2s;
+    }
+    .timeline-circle.active { background: var(--l3-accent); border-color: var(--l3-accent); color: white; }
+    .timeline-circle.orange { background: var(--orange); border-color: var(--orange); color: white; }
+    .timeline-label { font-size: .68rem; font-weight: 600; color: var(--muted); text-align: center; white-space: nowrap; }
+    .timeline-connector { flex: 1; height: 2.5px; background: var(--border); min-width: 20px; }
+    .timeline-connector.filled { background: var(--l3-accent); }
+    .timeline-connector.orange { background: var(--orange); }
+
+    .level-rows { display: flex; flex-direction: column; gap: 12px; }
+    .level-row {
+      display: grid; grid-template-columns: 44px 1fr auto; align-items: center; gap: 16px;
+      background: var(--sand); border-radius: 10px; padding: 14px 18px; border: 1px solid var(--border);
+    }
+    .level-row-num {
+      width: 38px; height: 38px; border-radius: 10px; background: var(--l3-accent);
+      display: grid; place-items: center; color: white; font-weight: 700; font-size: .85rem;
+    }
+    .level-row-num.orange { background: var(--orange); }
+    .level-row-info strong { display: block; font-size: .85rem; color: var(--ink); font-weight: 600; }
+    .level-row-info span { font-size: .78rem; color: var(--muted); }
+    .level-row-badge {
+      font-size: .7rem; font-weight: 700; padding: 4px 10px; border-radius: 100px;
+      white-space: nowrap;
+    }
+    .badge-blue   { background: var(--l3-light); color: var(--l3-accent); }
+    .badge-orange { background: #fdecea; color: var(--orange); }
+    .badge-teal   { background: #e0f5f1; color: var(--teal); }
+
+    /* ── TERMS ── */
+    .terms-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin-bottom: 32px;
+    }
+    .term-card {
+      background: var(--white); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 18px; box-shadow: var(--shadow); display: flex; flex-direction: column;
+      gap: 6px; position: relative; overflow: hidden;
+    }
+    .term-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--l3-accent); }
+    .term-card.orange::before { background: var(--orange); }
+    .term-card.amber::before  { background: var(--amber); }
+    .term-card.teal::before   { background: var(--teal); }
+    .term-name { font-weight: 700; font-size: .88rem; color: var(--navy); }
+    .term-def  { font-size: .78rem; color: var(--muted); line-height: 1.5; }
+
+    /* ── MODAL ── */
+    .modal-overlay {
+      display: none; position: fixed; inset: 0; background: rgba(10,20,40,.7);
+      backdrop-filter: blur(6px); z-index: 200; padding: 24px; overflow-y: auto;
+    }
+    .modal-overlay.open { display: flex; align-items: flex-start; justify-content: center; }
+    .modal {
+      background: var(--white); border-radius: 16px; max-width: 820px; width: 100%;
+      margin: auto; box-shadow: 0 24px 80px rgba(0,0,0,.35); overflow: hidden;
+      animation: modalIn .25s ease;
+    }
+    @keyframes modalIn { from { opacity: 0; transform: scale(.96) translateY(16px); } }
+    .modal-header {
+      background: var(--l3-primary); padding: 20px 24px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    }
+    .modal-header h2 { color: var(--white); font-family: var(--serif); font-size: 1.25rem; }
+    .modal-close {
+      background: rgba(255,255,255,.15); border: none; color: white; cursor: pointer;
+      width: 32px; height: 32px; border-radius: 50%; font-size: 1.1rem;
+      display: grid; place-items: center; transition: background .2s;
+    }
+    .modal-close:hover { background: rgba(255,255,255,.3); }
+    .modal-body { padding: 28px 24px; }
+    .modal-section { margin-bottom: 22px; }
+    .modal-section h3 { font-size: .9rem; font-weight: 700; color: var(--l3-accent); margin-bottom: 10px; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+    .modal-section p { font-size: .9rem; color: var(--muted); line-height: 1.6; margin-bottom: 8px; }
+    .modal-section ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .modal-section li { font-size: .88rem; color: var(--muted); padding-left: 18px; position: relative; line-height: 1.5; }
+    .modal-section li::before { content: '→'; position: absolute; left: 0; color: var(--orange); font-size: .75rem; top: 2px; }
+    .modal-section .highlight { display: inline-block; background: var(--l3-light); color: var(--l3-accent); padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: .85rem; }
+    .modal-section .highlight.orange { background: #fdecea; color: var(--orange); }
+    .modal-footer { padding: 16px 24px; border-top: 1px solid var(--border); display: flex; gap: 12px; justify-content: flex-end; }
+    .modal-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 10px; }
+    .modal-col { background: var(--sand); border-radius: 8px; padding: 14px; border: 1px solid var(--border); }
+    .modal-col h4 { font-size: .8rem; font-weight: 700; margin-bottom: 6px; color: var(--ink); }
+    .outcome-box { background: #e8f5ee; border-radius: 8px; padding: 14px 16px; margin-top: 10px; border-left: 4px solid #2d7a4f; }
+    .outcome-box.red-box { background: #fdecea; border-left-color: var(--orange); }
+    .outcome-box h4 { font-size: .8rem; font-weight: 700; color: #2d7a4f; margin-bottom: 6px; }
+    .outcome-box.red-box h4 { color: var(--orange); }
+    .outcome-box p { font-size: .82rem; color: var(--muted); line-height: 1.5; }
+
+    /* ── COURSE TABS ── */
+    .course-tabs {
+      display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px;
+      background: var(--white); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 10px 14px; box-shadow: var(--shadow);
+    }
+    .course-tab {
+      padding: 9px 18px; border-radius: 8px; border: none; cursor: pointer;
+      font-family: var(--sans); font-size: .82rem; font-weight: 600;
+      background: var(--sand); color: var(--muted); transition: all .2s;
+    }
+    .course-tab:hover { background: var(--l3-light); color: var(--l3-accent); }
+    .course-tab.active-c1 { background: var(--l3-accent); color: white; box-shadow: 0 3px 10px rgba(37,99,168,.3); }
+    .course-panel { display: none; }
+    .course-panel.active { display: block; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy); color: rgba(255,255,255,.55); text-align: center;
+      padding: 28px 24px; font-size: .8rem; margin-top: 48px;
+    }
+    footer strong { color: rgba(255,255,255,.8); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .main-grid { grid-template-columns: 1fr; }
+      .sidebar { position: static; padding-right: 0; flex-direction: row; flex-wrap: wrap; }
+      .sidebar-card { flex: 1; min-width: 260px; }
+      .course-header { grid-template-columns: 1fr; }
+      .start-btn { width: 100%; }
+    }
+    @media (max-width: 640px) {
+      .nav-links { display: none; position: absolute; top: var(--nav-h); left: 0; right: 0; background: var(--navy); flex-direction: column; align-items: stretch; padding: 12px; gap: 4px; border-top: 1px solid rgba(255,255,255,.1); }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 10px 14px; }
+      .nav-toggle { display: block; margin-left: auto; }
+      .nav-cta { display: none; }
+      .level-banner { padding: 48px 20px 56px; }
+      .main-grid { padding: 20px 16px; }
+      .slides-grid { grid-template-columns: 1fr; }
+      .modal-two-col { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">
+        <div class="nav-logo-icon">S</div>
+        <div class="nav-logo-text">
+          <strong>SHIP TAC</strong>
+          <span>Medicare Training</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#course-tabs">Level 1 — Basics</a></li>
+        <li><a href="index2.html">Level 2 — Coverage Rules</a></li>
+        <li><a href="index3.html" class="active">Level 3 — Appeals &amp; Penalties</a></li>
+        <li><a href="#terms">Key Terms</a></li>
+      </ul>
+
+      <a class="nav-cta" href="index2.html">← Level 2</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="level-banner">
+    <div class="level-badge">Level 3 — Appeals and Penalties</div>
+    <h1>Navigating Medicare <em>Appeals</em></h1>
+    <p>Advanced training on how to guide beneficiaries through the Medicare appeals process — from filing a standard appeal to pursuing judicial review.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="#course-content">Begin Course 1 →</a>
+      <a class="btn-outline" href="index2.html">← Back to Level 2</a>
+    </div>
+  </section>
+
+  <!-- ── BREADCRUMB ── -->
+  <div class="breadcrumb">
+    <div class="breadcrumb-inner">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="index2.html">Level 2: Coverage Rules</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>Level 3: Appeals &amp; Penalties</span>
+      <span class="breadcrumb-sep">›</span>
+      <span>Course 1: Original Medicare Appeals</span>
+    </div>
+  </div>
+
+  <!-- ── PROGRESS STRIP ── -->
+  <div class="progress-strip">
+    <div class="progress-inner">
+      <span class="progress-label">Your Progress</span>
+      <div class="progress-track"><div class="progress-fill" style="width:0%"></div></div>
+      <span class="progress-meta"><strong>0 of 2</strong> courses · Level 3</span>
+    </div>
+  </div>
+
+  <!-- ── MAIN ── -->
+  <div class="main-grid" id="course-content">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-card">
+        <div class="sidebar-card-head">
+          <span class="icon">⚖️</span>
+          <h3>Level 3 — Appeals &amp; Penalties</h3>
+        </div>
+        <ul class="course-list">
+          <li class="course-item active" id="sideC1" onclick="switchCourse(1)" style="cursor:pointer">
+            <div class="course-num" style="background:var(--l3-accent);color:white">1</div>
+            <div class="course-info">
+              <strong>Original Medicare Appeals</strong>
+              <span>50 min · In Progress</span>
+            </div>
+            <span class="course-badge">Active</span>
+          </li>
+          <li class="course-item" id="sideC2" onclick="switchCourse(2)" style="cursor:pointer">
+            <div class="course-num" style="background:var(--orange);color:white">2</div>
+            <div class="course-info">
+              <strong>Medicare Advantage Appeals</strong>
+              <span>65 min · Available</span>
+            </div>
+            <span class="course-badge" style="background:#fff3ec;color:var(--orange);border:1px solid var(--orange)">Available</span>
+          </li>
+          <li class="course-item" id="sideC3" onclick="switchCourse(3)" style="cursor:pointer">
+            <div class="course-num" style="background:#16803c;color:white">3</div>
+            <div class="course-info">
+              <strong>Part D Appeals</strong>
+              <span>45 min · Available</span>
+            </div>
+            <span class="course-badge" style="background:#f0fdf4;color:#16803c;border:1px solid #16803c">New</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="sidebar-card-head">
+          <span class="icon">ℹ️</span>
+          <h3>Course Details</h3>
+        </div>
+        <div class="info-box">
+          <div class="info-row"><span>Seat Time</span><strong>50 minutes</strong></div>
+          <div class="info-row"><span>Level</span><strong>Advanced</strong></div>
+          <div class="info-row"><span>Prerequisites</span><strong>Level 2 Complete</strong></div>
+          <div class="info-row"><span>Provider</span><strong>SHIP TAC</strong></div>
+          <div class="info-row"><span>Format</span><strong>Self-paced</strong></div>
+        </div>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="sidebar-card-head">
+          <span class="icon">📘</span>
+          <h3>Level 2 Complete?</h3>
+        </div>
+        <div class="info-box">
+          <p style="font-size:.82rem;color:var(--muted);line-height:1.5">Make sure you've finished all Level 2 courses before starting Level 3.</p>
+          <a href="index2.html" style="display:block;text-align:center;background:var(--l3-primary);color:white;padding:9px 16px;border-radius:8px;font-size:.82rem;font-weight:600;margin-top:4px">← Review Level 2</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Content -->
+    <main class="content">
+
+      <!-- Course Tabs -->
+      <div class="course-tabs">
+        <button class="course-tab active-c1" id="tab1" onclick="switchCourse(1)">⚖️ Course 1: Original Medicare Appeals</button>
+        <button class="course-tab" id="tab2" onclick="switchCourse(2)">📋 Course 2: Medicare Advantage Appeals</button>
+        <button class="course-tab" id="tab3" onclick="switchCourse(3)">💊 Course 3: Part D Appeals</button>
+      </div>
+
+      <!-- ══ COURSE 1 PANEL ══ -->
+      <div class="course-panel active" id="panel1">
+
+        <!-- Course Header -->
+        <div class="course-header" style="border-top:4px solid var(--l3-accent)">
+          <div class="course-header-left">
+            <div class="course-eyebrow">Level 3 · Course 1</div>
+            <h2 class="course-title">Original Medicare Appeals</h2>
+            <div class="course-meta-row">
+              <span class="meta-chip"><span class="dot"></span> 50 minutes seat time</span>
+              <span class="meta-chip"><span class="dot"></span> 4 learning objectives</span>
+              <span class="meta-chip"><span class="dot"></span> 5 appeal levels</span>
+            </div>
+          </div>
+          <button class="start-btn" onclick="openModal('l3c1-intro')">▶ View Course Intro</button>
+        </div>
+
+        <!-- Learning Objectives -->
+        <div class="section-label">Learning Objectives</div>
+        <div class="objectives-grid">
+          <div class="obj-card">
+            <div class="obj-num">1</div>
+            <p>Identify when a beneficiary may start an Original Medicare appeal.</p>
+          </div>
+          <div class="obj-card">
+            <div class="obj-num">2</div>
+            <p>Explain the differences between standard and expedited appeals.</p>
+          </div>
+          <div class="obj-card">
+            <div class="obj-num">3</div>
+            <p>Understand the steps in different Original Medicare appeal processes.</p>
+          </div>
+          <div class="obj-card">
+            <div class="obj-num">4</div>
+            <p>Help clients through all steps of an Original Medicare appeal.</p>
+          </div>
+        </div>
+
+        <!-- Appeal Overview -->
+        <div class="section-label">Appeal Overview</div>
+        <div class="slides-grid">
+
+          <div class="slide-card" onclick="openModal('l3c1-overview')">
+            <div class="slide-img">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">📋</span>
+                <div class="slide-thumb-title">What is an Original Medicare Appeal?</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slide 3</div>
+              <div class="slide-title">Original Medicare Appeal Overview</div>
+              <div class="slide-desc">A formal request a beneficiary makes to Medicare when they disagree with a coverage or payment decision. Two types: standard and expedited.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag">Overview</span>
+              <span class="slide-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('l3c1-msn')">
+            <div class="slide-img">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">📄</span>
+                <div class="slide-thumb-title">Medicare Summary Notice</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slides 4–5</div>
+              <div class="slide-title">Medicare Summary Notice (MSN)</div>
+              <div class="slide-desc">The key document needed to begin a standard appeal. Sent after care is received; it is not a bill, but shows what Medicare paid and what was denied.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag">Documents</span>
+              <span class="slide-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('l3c1-standard')">
+            <div class="slide-img">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">📬</span>
+                <div class="slide-thumb-title">Standard Appeal</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slide 6</div>
+              <div class="slide-title">Standard Appeal: When to File</div>
+              <div class="slide-desc">Filed after a beneficiary already received care and receives an MSN with a coverage denial note. Used when care is already complete.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag">Standard</span>
+              <span class="slide-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('l3c1-expedited')">
+            <div class="slide-img orange-bg">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">⚡</span>
+                <div class="slide-thumb-title">Expedited Appeal</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slide 16</div>
+              <div class="slide-title">Expedited Appeal: When to File</div>
+              <div class="slide-desc">Filed when a beneficiary is currently receiving care at a hospital, SNF, HHA, CORF, or hospice — and their provider has informed them that care is ending soon.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag orange">Expedited</span>
+              <span class="slide-arrow">→</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Standard Appeal Process -->
+        <div class="section-label">Standard Appeal — 5 Levels</div>
+
+        <!-- Timeline Visual -->
+        <div class="timeline-card">
+          <p style="font-size:.82rem;color:var(--muted);margin-bottom:4px">The standard appeal process has five escalating levels. Click any level card below to learn more.</p>
+          <div class="timeline-track">
+            <div class="timeline-node">
+              <div class="timeline-circle" style="background:#6b9e3a;border-color:#6b9e3a;color:white;font-size:.6rem">Pre</div>
+              <div class="timeline-label">Before Filing</div>
+            </div>
+            <div class="timeline-connector filled"></div>
+            <div class="timeline-node">
+              <div class="timeline-circle active">L1</div>
+              <div class="timeline-label">Redetermination</div>
+            </div>
+            <div class="timeline-connector"></div>
+            <div class="timeline-node">
+              <div class="timeline-circle">L2</div>
+              <div class="timeline-label">Reconsideration</div>
+            </div>
+            <div class="timeline-connector"></div>
+            <div class="timeline-node">
+              <div class="timeline-circle">L3</div>
+              <div class="timeline-label">OMHA</div>
+            </div>
+            <div class="timeline-connector"></div>
+            <div class="timeline-node">
+              <div class="timeline-circle">L4</div>
+              <div class="timeline-label">Council Review</div>
+            </div>
+            <div class="timeline-connector"></div>
+            <div class="timeline-node">
+              <div class="timeline-circle">L5</div>
+              <div class="timeline-label">Judicial Review</div>
+            </div>
+          </div>
+
+          <div class="level-rows">
+            <div class="level-row" style="cursor:pointer" onclick="openModal('l3c1-prefiling')">
+              <div class="level-row-num" style="background:#6b9e3a">Pre</div>
+              <div class="level-row-info">
+                <strong>Before Filing</strong>
+                <span>Beneficiary receives care → provider submits claim → MSN shows denial</span>
+              </div>
+              <span class="level-row-badge badge-teal">3 steps</span>
+            </div>
+            <div class="level-row" style="cursor:pointer" onclick="openModal('l3c1-level1')">
+              <div class="level-row-num">1</div>
+              <div class="level-row-info">
+                <strong>Level 1: Redetermination</strong>
+                <span>File within 120 days → MAC reviews → decision within 60 days</span>
+              </div>
+              <span class="level-row-badge badge-blue">120-day deadline</span>
+            </div>
+            <div class="level-row" style="cursor:pointer" onclick="openModal('l3c1-level2')">
+              <div class="level-row-num">2</div>
+              <div class="level-row-info">
+                <strong>Level 2: Reconsideration</strong>
+                <span>File with QIC within 180 days → QIC reviews → decision within 60 days</span>
+              </div>
+              <span class="level-row-badge badge-blue">180-day deadline</span>
+            </div>
+            <div class="level-row" style="cursor:pointer" onclick="openModal('l3c1-level3')">
+              <div class="level-row-num">3</div>
+              <div class="level-row-info">
+                <strong>Level 3: OMHA Hearing</strong>
+                <span>Request ALJ hearing within 60 days → hearing scheduled → decision within 90 days</span>
+              </div>
+              <span class="level-row-badge badge-blue">60-day deadline</span>
+            </div>
+            <div class="level-row" style="cursor:pointer" onclick="openModal('l3c1-level4')">
+              <div class="level-row-num">4</div>
+              <div class="level-row-info">
+                <strong>Level 4: Council Review</strong>
+                <span>Request Council review within 60 days → decision within 90 days</span>
+              </div>
+              <span class="level-row-badge badge-blue">60-day deadline</span>
+            </div>
+            <div class="level-row" style="cursor:pointer" onclick="openModal('l3c1-level5')">
+              <div class="level-row-num">5</div>
+              <div class="level-row-info">
+                <strong>Level 5: Judicial Review</strong>
+                <span>File in Federal District Court within 60 days → no timeline for decision</span>
+              </div>
+              <span class="level-row-badge badge-orange">Final Level</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Expedited Appeal Process -->
+        <div class="section-label">Expedited Appeal Process</div>
+        <div class="slides-grid">
+
+          <div class="slide-card" onclick="openModal('l3c1-exp-hospital')">
+            <div class="slide-img orange-bg">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">🏥</span>
+                <div class="slide-thumb-title">Hospital Care: Before Filing</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slide 17</div>
+              <div class="slide-title">Before Filing: Hospital Care</div>
+              <div class="slide-desc">Beneficiary receives Important Message from Medicare, contacts QIO by discharge date, QIO notifies hospital, hospital provides Detailed Notice of Discharge.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag orange">Hospital</span>
+              <span class="slide-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('l3c1-exp-nonhosp')">
+            <div class="slide-img orange-bg">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">🏠</span>
+                <div class="slide-thumb-title">Non-Hospital Care: Before Filing</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slide 20</div>
+              <div class="slide-title">Before Filing: Non-Hospital Care</div>
+              <div class="slide-desc">Beneficiary receives Notice of Medicare Non-Coverage, contacts QIO by noon of the day before care ends, QIO notifies provider, provider issues Detailed Notice of Discharge.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag orange">Non-Hospital</span>
+              <span class="slide-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('l3c1-exp-l1')">
+            <div class="slide-img orange-bg">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">📞</span>
+                <div class="slide-thumb-title">Level 1: QIO Redetermination</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slides 18, 21</div>
+              <div class="slide-title">Level 1: QIO Redetermination</div>
+              <div class="slide-desc">Beneficiary discusses case by phone with QIO. QIO issues decision within 1 day (hospital) or 2 days before care ends (non-hospital).</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag orange">Level 1</span>
+              <span class="slide-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('l3c1-exp-l2')">
+            <div class="slide-img orange-bg">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">🔄</span>
+                <div class="slide-thumb-title">Level 2: QIC Reconsideration</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slides 19, 22</div>
+              <div class="slide-title">Level 2: QIC Reconsideration</div>
+              <div class="slide-desc">Contact QIC by noon of the day after receiving unfavorable QIO decision. QIC issues decision within 72 hours. Levels 3–5 same as standard appeal.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag orange">Level 2</span>
+              <span class="slide-arrow">→</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Good Cause & Tips -->
+        <div class="section-label">Additional Guidance</div>
+        <div class="slides-grid">
+
+          <div class="slide-card" onclick="openModal('l3c1-goodcause')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#5a3ea0,#8b6cd4)">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">📅</span>
+                <div class="slide-thumb-title">Good Cause Extension</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slide 14</div>
+              <div class="slide-title">Good Cause Extension</div>
+              <div class="slide-desc">Beneficiaries who miss a filing deadline can request a good cause extension at any level by filing late and explaining why it is late.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag" style="background:#f0eafa;color:#6b3fa0">Extension</span>
+              <span class="slide-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('l3c1-tips')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#0d6e5c,#1a9e85)">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">💡</span>
+                <div class="slide-thumb-title">Tips for Appealing</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slide 24</div>
+              <div class="slide-title">Tips for Appealing</div>
+              <div class="slide-desc">Best practices to help clients through the appeals process: follow instructions, meet deadlines, keep records, take notes, get provider support, and don't give up.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag teal">Best Practices</span>
+              <span class="slide-arrow">→</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Key Terms -->
+        <div class="section-label" id="terms">Key Terms</div>
+        <div class="terms-grid">
+          <div class="term-card">
+            <div class="term-name">Original Medicare Appeal</div>
+            <div class="term-def">A formal request a beneficiary makes to Medicare when they disagree with a coverage or payment decision on a health care service or item they received.</div>
+          </div>
+          <div class="term-card orange">
+            <div class="term-name">Medicare Summary Notice (MSN)</div>
+            <div class="term-def">A document sent to beneficiaries after receiving care that summarizes services, what Medicare paid, and what was denied. Not a bill. Needed to begin a standard appeal.</div>
+          </div>
+          <div class="term-card">
+            <div class="term-name">MAC (Medicare Administrative Contractor)</div>
+            <div class="term-def">Reviews Level 1 Redetermination requests. Should issue a decision within 60 days of receiving the appeal.</div>
+          </div>
+          <div class="term-card amber">
+            <div class="term-name">QIC (Qualified Independent Contractor)</div>
+            <div class="term-def">Performs Level 2 Reconsideration. Reviews the MAC's decision and issues a new decision within 60 days (standard) or 72 hours (expedited).</div>
+          </div>
+          <div class="term-card">
+            <div class="term-name">OMHA (Office of Medicare Hearings and Appeals)</div>
+            <div class="term-def">Conducts Level 3 hearings with an Administrative Law Judge (ALJ). Beneficiary must meet the amount in controversy requirement to proceed.</div>
+          </div>
+          <div class="term-card teal">
+            <div class="term-name">QIO (Quality Improvement Organization)</div>
+            <div class="term-def">Also called BFCC-QIO. Handles Level 1 redeterminations in expedited appeals. Contacted directly by the beneficiary when care is ending.</div>
+          </div>
+          <div class="term-card orange">
+            <div class="term-name">Good Cause Extension</div>
+            <div class="term-def">Allows a beneficiary to file late at any level of appeal if they have a valid reason (e.g., illness, missing notice, lack of documentation).</div>
+          </div>
+          <div class="term-card">
+            <div class="term-name">Detailed Notice of Discharge</div>
+            <div class="term-def">Document from provider explaining why care is ending and what Medicare rules apply. Required before filing an expedited appeal.</div>
+          </div>
+        </div>
+
+      </div><!-- end panel1 -->
+
+      <!-- ══ COURSE 2 PANEL ══ -->
+      <div class="course-panel" id="panel2" style="display:none">
+
+        <!-- Course Header -->
+        <div class="course-header" style="border-top:4px solid var(--orange)">
+          <div class="course-header-left">
+            <div class="course-eyebrow">Level 3 · Course 2</div>
+            <h2 class="course-title">Medicare Advantage Appeals</h2>
+            <div class="course-meta-row">
+              <span class="meta-chip"><span class="dot" style="background:var(--orange)"></span> 65 minutes seat time</span>
+              <span class="meta-chip"><span class="dot" style="background:var(--orange)"></span> 4 learning objectives</span>
+              <span class="meta-chip"><span class="dot" style="background:var(--orange)"></span> Standard &amp; Expedited</span>
+            </div>
+          </div>
+          <button class="start-btn" style="background:var(--orange)" onclick="openModal('c2-intro')">▶ View Course Intro</button>
+        </div>
+
+        <!-- Learning Objectives -->
+        <div class="section-label">Learning Objectives</div>
+        <div class="objectives-grid">
+          <div class="obj-card">
+            <div class="obj-num" style="background:var(--orange)">1</div>
+            <p>Identify when a beneficiary may start a Medicare Advantage appeal.</p>
+          </div>
+          <div class="obj-card">
+            <div class="obj-num" style="background:var(--orange)">2</div>
+            <p>Explain the differences between standard and expedited MA appeals.</p>
+          </div>
+          <div class="obj-card">
+            <div class="obj-num" style="background:var(--orange)">3</div>
+            <p>Understand the steps in different Medicare Advantage appeal processes.</p>
+          </div>
+          <div class="obj-card">
+            <div class="obj-num" style="background:var(--orange)">4</div>
+            <p>Help clients through the steps of a Medicare Advantage appeal.</p>
+          </div>
+        </div>
+
+        <!-- Appeal Overview -->
+        <div class="section-label">Appeal Overview</div>
+        <div class="slides-grid">
+
+          <div class="slide-card" onclick="openModal('c2-overview')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#1a3d6b,#2563a8)">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">⚖️</span>
+                <div class="slide-thumb-title">What is an MA Appeal?</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slide 3</div>
+              <div class="slide-title">Medicare Advantage Appeal Overview</div>
+              <div class="slide-desc">A formal request a beneficiary makes to their MA Plan if they disagree with the plan's coverage or payment decision. Two types: Standard and Expedited.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag">Overview</span>
+              <span class="slide-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c2-org-det')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#2563a8,#3a7fd4)">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">📬</span>
+                <div class="slide-thumb-title">Organization Determinations</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slide 4</div>
+              <div class="slide-title">Organization Determinations</div>
+              <div class="slide-desc">A plan must issue an organization determination before a beneficiary can appeal. It covers approval for services, payment for services received, and reduced/discontinued treatment.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag">Key Concept</span>
+              <span class="slide-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c2-preservice-std')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#1a3d6b,#2563a8)">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">📋</span>
+                <div class="slide-thumb-title">Pre-Service Standard Appeal</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slide 5</div>
+              <div class="slide-title">MA Pre-Service Standard Appeal</div>
+              <div class="slide-desc">Filed when the beneficiary has NOT yet received care and needs prior approval from the plan — but that request was denied.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag">Standard</span>
+              <span class="slide-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c2-postservice-std')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#2563a8,#3a7fd4)">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">📞</span>
+                <div class="slide-thumb-title">Post-Service Standard Appeal</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slide 13</div>
+              <div class="slide-title">MA Post-Service Standard Appeal</div>
+              <div class="slide-desc">Filed when the beneficiary already received care but the plan refuses to pay. Triggered by Notice of Denial, EOB, or EOB insert.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag">Standard</span>
+              <span class="slide-arrow">→</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Standard Appeal Process -->
+        <div class="section-label">Standard Appeal — 5 Levels</div>
+        <div class="level-rows">
+          <div class="level-row" style="cursor:pointer" onclick="openModal('c2-std-pre')">
+            <div class="level-row-num" style="background:#6b9e3a">Pre</div>
+            <div class="level-row-info">
+              <strong>Before Filing (Pre-Service)</strong>
+              <span>Contact plan for prior approval → plan makes org determination → denial notice issued</span>
+            </div>
+            <span class="level-row-badge badge-teal">2 steps</span>
+          </div>
+          <div class="level-row" style="cursor:pointer" onclick="openModal('c2-std-l1')">
+            <div class="level-row-num" style="background:var(--l3-accent)">1</div>
+            <div class="level-row-info">
+              <strong>Level 1: Plan Reconsideration</strong>
+              <span>Appeal within 60 days → plan staff review → decision within 30 days (pre-service) or 60 days (post-service)</span>
+            </div>
+            <span class="level-row-badge badge-blue">60-day deadline</span>
+          </div>
+          <div class="level-row" style="cursor:pointer" onclick="openModal('c2-std-l2')">
+            <div class="level-row-num" style="background:var(--l3-accent)">2</div>
+            <div class="level-row-info">
+              <strong>Level 2: IRE Reconsideration</strong>
+              <span>Independent Review Entity reviews → decision within 30 days (pre-service) or 60 days (post-service)</span>
+            </div>
+            <span class="level-row-badge badge-blue">IRE Review</span>
+          </div>
+          <div class="level-row" style="cursor:pointer" onclick="openModal('c2-std-l3')">
+            <div class="level-row-num" style="background:var(--l3-accent)">3</div>
+            <div class="level-row-info">
+              <strong>Level 3: OMHA Hearing</strong>
+              <span>Request ALJ hearing within 60 days → hearing by video teleconference → decision within 90 days</span>
+            </div>
+            <span class="level-row-badge badge-blue">60-day deadline</span>
+          </div>
+          <div class="level-row" style="cursor:pointer" onclick="openModal('c2-std-l4')">
+            <div class="level-row-num" style="background:var(--l3-accent)">4</div>
+            <div class="level-row-info">
+              <strong>Level 4: Council Review</strong>
+              <span>Request Council review within 60 days → Council reviews OMHA decision → decision within 90 days</span>
+            </div>
+            <span class="level-row-badge badge-blue">60-day deadline</span>
+          </div>
+          <div class="level-row" style="cursor:pointer" onclick="openModal('c2-std-l5')">
+            <div class="level-row-num" style="background:var(--orange)">5</div>
+            <div class="level-row-info">
+              <strong>Level 5: Judicial Review</strong>
+              <span>File in Federal District Court within 60 days → court reviews Council decision → no timeline</span>
+            </div>
+            <span class="level-row-badge badge-orange">Final Level</span>
+          </div>
+        </div>
+
+        <!-- Expedited Appeal Process -->
+        <div class="section-label">Expedited Appeals</div>
+        <div class="slides-grid">
+
+          <div class="slide-card" onclick="openModal('c2-exp-preservice')">
+            <div class="slide-img orange-bg">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">⚡</span>
+                <div class="slide-thumb-title">Expedited Pre-Service Appeal</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slides 20–24</div>
+              <div class="slide-title">Pre-Service Expedited Appeal</div>
+              <div class="slide-desc">Doctor certifies health is at risk; plan has 72 hours to decide. IRE has 72 hours at Level 2. Levels 3–5 same as standard.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag orange">Expedited · Pre-Service</span>
+              <span class="slide-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c2-exp-ending')">
+            <div class="slide-img orange-bg">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">🏥</span>
+                <div class="slide-thumb-title">Expedited Ending-Care Appeal</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slides 25–32</div>
+              <div class="slide-title">Expedited Appeal for Ending Care</div>
+              <div class="slide-desc">For beneficiaries in hospital, SNF, HHA, CORF, or hospice when provider says care is ending. Different pre-filing steps for hospital vs. non-hospital settings.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag orange">Expedited · Ending Care</span>
+              <span class="slide-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c2-goodcause')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#6b3fa0,#9b5fc0)">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">⏰</span>
+                <div class="slide-thumb-title">Good Cause Extension</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slide 18</div>
+              <div class="slide-title">Good Cause Extension</div>
+              <div class="slide-desc">Beneficiaries can file late at any appeal level if they provide a reason. Examples: not receiving notices, being too ill to file, lacking documentation.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag" style="background:#f0eafa;color:#6b3fa0">Extension</span>
+              <span class="slide-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c2-tips')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#0d6e5c,#1a9e85)">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">💡</span>
+                <div class="slide-thumb-title">Tips for Appealing</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slide 33</div>
+              <div class="slide-title">Tips for Appealing</div>
+              <div class="slide-desc">Follow instructions, meet deadlines, keep originals, take notes, get provider support, and persist — the appeal process has many levels.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag teal">Best Practices</span>
+              <span class="slide-arrow">→</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Key Terms -->
+        <div class="section-label">Key Terms</div>
+        <div class="terms-grid">
+          <div class="term-card">
+            <div class="term-name">Medicare Advantage (MA) Appeal</div>
+            <div class="term-def">A formal request a beneficiary makes to their MA Plan when they disagree with the plan's coverage or payment decision on a health care service or item.</div>
+          </div>
+          <div class="term-card orange">
+            <div class="term-name">Organization Determination</div>
+            <div class="term-def">A decision made by a plan or provider acting on behalf of a plan. Must be issued before a beneficiary can begin an appeal. Covers approval, payment, or continuation of care.</div>
+          </div>
+          <div class="term-card">
+            <div class="term-name">IRE (Independent Review Entity)</div>
+            <div class="term-def">Reviews the plan's Level 1 reconsideration decision at Level 2. Must decide within 30 days (standard pre-service), 60 days (post-service), or 72 hours (expedited).</div>
+          </div>
+          <div class="term-card amber">
+            <div class="term-name">Notice of Denial of Medical Coverage</div>
+            <div class="term-def">Official denial notice from the MA plan. Instructs the beneficiary on how and when to appeal. Triggers the 60-day window to file a Level 1 appeal.</div>
+          </div>
+          <div class="term-card">
+            <div class="term-name">Explanation of Benefits (EOB)</div>
+            <div class="term-def">Statement from the MA plan showing what services were billed, what the plan paid, and what was denied. Can trigger a post-service standard appeal.</div>
+          </div>
+          <div class="term-card teal">
+            <div class="term-name">BFCC-QIO (Quality Improvement Organization)</div>
+            <div class="term-def">Beneficiary and Family-Centered Care QIO. Contacted by beneficiary when hospital or non-hospital care is ending to begin an expedited ending-care appeal.</div>
+          </div>
+          <div class="term-card orange">
+            <div class="term-name">Standard Appeal</div>
+            <div class="term-def">An MA appeal that follows standard timelines: pre-service (haven't received care yet) or post-service (already received care). Both follow the same 5-level process.</div>
+          </div>
+          <div class="term-card">
+            <div class="term-name">Expedited Appeal</div>
+            <div class="term-def">An MA appeal with accelerated timelines when a beneficiary's health would be at risk under standard processing. Available for pre-service situations and when care is ending.</div>
+          </div>
+        </div>
+
+      </div><!-- end panel2 -->
+
+      <!-- ══ COURSE 3 PANEL ══ -->
+      <div class="course-panel" id="panel3" style="display:none">
+
+        <!-- Course Header -->
+        <div class="course-header" style="border-top:4px solid #16803c">
+          <div class="course-header-left">
+            <div class="course-eyebrow">Level 3 · Course 3</div>
+            <h2 class="course-title">Part D Appeals</h2>
+            <div class="course-meta-row">
+              <span class="meta-chip"><span class="dot" style="background:#16803c"></span> 45 minutes seat time</span>
+              <span class="meta-chip"><span class="dot" style="background:#16803c"></span> 4 learning objectives</span>
+              <span class="meta-chip"><span class="dot" style="background:#16803c"></span> Standard &amp; Expedited</span>
+            </div>
+          </div>
+          <button class="start-btn" style="background:#16803c" onclick="openModal('c3-intro')">▶ View Course Intro</button>
+        </div>
+
+        <!-- Learning Objectives -->
+        <div class="section-label">Learning Objectives</div>
+        <div class="objectives-grid">
+          <div class="obj-card">
+            <div class="obj-num" style="background:#16803c">1</div>
+            <p>Identify when a beneficiary may start a Part D appeal.</p>
+          </div>
+          <div class="obj-card">
+            <div class="obj-num" style="background:#16803c">2</div>
+            <p>Explain the differences between standard and expedited Part D appeals.</p>
+          </div>
+          <div class="obj-card">
+            <div class="obj-num" style="background:#16803c">3</div>
+            <p>Understand the steps in the different Part D appeal processes.</p>
+          </div>
+          <div class="obj-card">
+            <div class="obj-num" style="background:#16803c">4</div>
+            <p>Help clients through all steps of a Part D appeal.</p>
+          </div>
+        </div>
+
+        <!-- Appeal Overview -->
+        <div class="section-label">Appeal Overview</div>
+        <div class="slides-grid">
+
+          <div class="slide-card" onclick="openModal('c3-overview')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#16803c,#22c55e)">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">💊</span>
+                <div class="slide-thumb-title">What is a Part D Appeal?</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slide 3</div>
+              <div class="slide-title">Part D Appeal Overview</div>
+              <div class="slide-desc">A formal request a beneficiary makes to their Part D plan if they disagree with the plan's coverage or payment decision on a prescription drug.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag" style="background:#f0fdf4;color:#16803c">Overview</span>
+              <span class="slide-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c3-partb-partd')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#1a3d6b,#16803c)">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">🔄</span>
+                <div class="slide-thumb-title">Part B vs. Part D Drugs</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slide 4</div>
+              <div class="slide-title">Part B- and Part D-Covered Drugs</div>
+              <div class="slide-desc">Part B covers drugs administered by a doctor; Part D covers self-administered drugs. Drug denials use different appeal processes — important to know which part applies.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag" style="background:#f0fdf4;color:#16803c">Key Concept</span>
+              <span class="slide-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c3-before-filing')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#16803c,#0d5c2c)">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">🏥</span>
+                <div class="slide-thumb-title">Before Filing</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slides 5–6</div>
+              <div class="slide-title">Before Filing a Part D Appeal</div>
+              <div class="slide-desc">Beneficiary learns plan won't cover prescription or drug is too expensive. Contacts plan, files formal coverage request, and receives coverage determination before appeal begins.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag" style="background:#f0fdf4;color:#16803c">Pre-Appeal</span>
+              <span class="slide-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c3-case-example')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#0d5c2c,#16803c)">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">👩</span>
+                <div class="slide-thumb-title">Case Example: Noor</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slides 14–15</div>
+              <div class="slide-title">Case Example: Pharmacy Denial</div>
+              <div class="slide-desc">Noor's prescribed drug isn't on the plan formulary. She needs it immediately — the correct first step is to contact her doctor, not the plan or Medicare directly.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag" style="background:#f0fdf4;color:#16803c">Case Study</span>
+              <span class="slide-arrow">→</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Standard Appeal Process: 5 Levels -->
+        <div class="section-label">Part D Appeal — 5 Levels</div>
+        <div class="level-rows">
+          <div class="level-row" style="cursor:pointer" onclick="openModal('c3-before')">
+            <div class="level-row-num" style="background:#6b9e3a">Pre</div>
+            <div class="level-row-info">
+              <strong>Before Filing</strong>
+              <span>Pharmacy denies drug → beneficiary contacts plan → files coverage determination or exception request → receives denial notice</span>
+            </div>
+            <span class="level-row-badge badge-teal">3 steps</span>
+          </div>
+          <div class="level-row" style="cursor:pointer" onclick="openModal('c3-l1')">
+            <div class="level-row-num" style="background:#16803c">1</div>
+            <div class="level-row-info">
+              <strong>Level 1: Plan Redetermination</strong>
+              <span>Appeal within 60 days → plan staff review → Standard: 7 days / Expedited: 72 hours</span>
+            </div>
+            <span class="level-row-badge" style="background:#dcfce7;color:#16803c">60-day deadline</span>
+          </div>
+          <div class="level-row" style="cursor:pointer" onclick="openModal('c3-l2')">
+            <div class="level-row-num" style="background:#16803c">2</div>
+            <div class="level-row-info">
+              <strong>Level 2: IRE Reconsideration</strong>
+              <span>File with IRE within 60 days → Standard: 7 days / Expedited: 72 hours</span>
+            </div>
+            <span class="level-row-badge" style="background:#dcfce7;color:#16803c">60-day deadline</span>
+          </div>
+          <div class="level-row" style="cursor:pointer" onclick="openModal('c3-l3')">
+            <div class="level-row-num" style="background:#16803c">3</div>
+            <div class="level-row-info">
+              <strong>Level 3: OMHA Hearing</strong>
+              <span>Request ALJ hearing within 60 days → Standard: 90 days / Expedited: 10 days</span>
+            </div>
+            <span class="level-row-badge" style="background:#dcfce7;color:#16803c">60-day deadline</span>
+          </div>
+          <div class="level-row" style="cursor:pointer" onclick="openModal('c3-l4')">
+            <div class="level-row-num" style="background:#16803c">4</div>
+            <div class="level-row-info">
+              <strong>Level 4: Council Review</strong>
+              <span>Request within 60 days → Standard: 90 days / Expedited: 10 days</span>
+            </div>
+            <span class="level-row-badge" style="background:#dcfce7;color:#16803c">60-day deadline</span>
+          </div>
+          <div class="level-row" style="cursor:pointer" onclick="openModal('c3-l5')">
+            <div class="level-row-num" style="background:var(--orange)">5</div>
+            <div class="level-row-info">
+              <strong>Level 5: Judicial Review</strong>
+              <span>File in Federal District Court within 60 days → no timeline for decision</span>
+            </div>
+            <span class="level-row-badge badge-orange">Final Level</span>
+          </div>
+        </div>
+
+        <!-- Additional Topics -->
+        <div class="section-label">Additional Topics</div>
+        <div class="slides-grid">
+
+          <div class="slide-card" onclick="openModal('c3-goodcause')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#6b3fa0,#9b5fc0)">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">⏰</span>
+                <div class="slide-thumb-title">Good Cause Extension</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slide 13</div>
+              <div class="slide-title">Good Cause Extension</div>
+              <div class="slide-desc">Beneficiaries who miss a filing deadline at any level can request a good cause extension by filing late and providing a reason for the delay.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag" style="background:#f0eafa;color:#6b3fa0">Extension</span>
+              <span class="slide-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c3-tips')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#0d6e5c,#1a9e85)">
+              <div class="slide-thumb-content">
+                <span class="slide-thumb-icon">💡</span>
+                <div class="slide-thumb-title">Tips for Appealing</div>
+              </div>
+            </div>
+            <div class="slide-body">
+              <div class="slide-num">Slide 16</div>
+              <div class="slide-title">Tips for Appealing</div>
+              <div class="slide-desc">Follow instructions, meet deadlines, keep originals, take notes, get provider support, and persist — the appeal process has many levels.</div>
+            </div>
+            <div class="slide-footer">
+              <span class="slide-tag teal">Best Practices</span>
+              <span class="slide-arrow">→</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Key Terms -->
+        <div class="section-label">Key Terms</div>
+        <div class="terms-grid">
+          <div class="term-card">
+            <div class="term-name">Part D Appeal</div>
+            <div class="term-def">A formal request a beneficiary makes to their Part D plan if they disagree with the plan's coverage or payment decision on a prescription drug or health care service.</div>
+          </div>
+          <div class="term-card" style="border-top:3px solid #16803c">
+            <div class="term-name">Coverage Determination</div>
+            <div class="term-def">The plan's initial decision about whether it will cover a drug. Must be issued before a beneficiary can begin a Part D appeal. Standard: 72 hours. Expedited: 24 hours.</div>
+          </div>
+          <div class="term-card">
+            <div class="term-name">Formulary</div>
+            <div class="term-def">The plan's list of covered prescription drugs. If a drug is not on the formulary or is excluded from all Part D coverage, the plan will not cover it.</div>
+          </div>
+          <div class="term-card" style="border-top:3px solid var(--orange)">
+            <div class="term-name">Notice of Denial of Medicare Prescription Drug Coverage</div>
+            <div class="term-def">The official notice from the plan when it denies coverage for a drug. Contains instructions on how and when to appeal. Triggers the 60-day window to file a Level 1 appeal.</div>
+          </div>
+          <div class="term-card">
+            <div class="term-name">Exception Request</div>
+            <div class="term-def">A request asking the plan to cover a drug that is not on its formulary, or to lower the copay tier for a drug. Can be standard (72 hrs) or expedited (24 hrs).</div>
+          </div>
+          <div class="term-card" style="border-top:3px solid #16803c">
+            <div class="term-name">IRE (Independent Review Entity)</div>
+            <div class="term-def">Reviews the plan's Level 1 redetermination at Level 2. Standard: 7 days. Expedited: 72 hours. Decides whether plan should cover drug or allow a tiering exception.</div>
+          </div>
+          <div class="term-card" style="border-top:3px solid var(--orange)">
+            <div class="term-name">Standard Part D Appeal</div>
+            <div class="term-def">A Part D appeal processed on standard timelines. Level 1 and 2 decisions issued within 7 days. Level 3 and 4 decisions within 90 days. Used when health is not urgently at risk.</div>
+          </div>
+          <div class="term-card">
+            <div class="term-name">Expedited Part D Appeal</div>
+            <div class="term-def">A Part D appeal with accelerated timelines when health could be harmed by waiting. Level 1 and 2: 72 hours. Level 3 and 4: 10 days. Beneficiary or doctor can request expedited review.</div>
+          </div>
+        </div>
+
+      </div><!-- end panel3 -->
+
+    </main>
+  </div><!-- end main-grid -->
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <strong>SHIP TAC — State Health Insurance Assistance Program Technical Assistance Center</strong><br>
+    Level 3: Appeals and Penalties · Course 1: Original Medicare Appeals · Training resource for SHIP counselors.
+  </footer>
+
+  <!-- ── MODAL ── -->
+  <div class="modal-overlay" id="modal" onclick="closeModal(event)">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 id="modalTitle">Slide Details</h2>
+        <button class="modal-close" onclick="closeModalDirect()">✕</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+      <div class="modal-footer">
+        <button onclick="closeModalDirect()" style="padding:9px 20px;border-radius:8px;border:1px solid var(--border);background:var(--white);cursor:pointer;font-family:var(--sans);font-size:.85rem;font-weight:600;color:var(--muted)">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ── NAV TOGGLE ──
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+
+    // ── MODAL ──
+    const slides = {
+      'l3c1-intro': {
+        title: 'Course 1: Original Medicare Appeals — Introduction',
+        body: `<div class="modal-section"><h3>Course Overview</h3><p>This course covers Original Medicare Appeals — the formal process beneficiaries use when they disagree with Medicare's coverage or payment decisions. There are two types: <strong>standard appeals</strong> (filed after receiving care) and <strong>expedited appeals</strong> (filed when care is currently ending).</p></div>
+        <div class="modal-section"><h3>4 Learning Objectives</h3><ul><li>Identify when a beneficiary may start an Original Medicare appeal</li><li>Explain the differences between standard and expedited appeals</li><li>Understand the steps in different Original Medicare appeal processes</li><li>Help clients through all steps of an Original Medicare appeal</li></ul></div>
+        <div class="modal-section"><h3>Estimated Seat Time</h3><p><span class="highlight">50 minutes</span> — Self-paced with interactive slides and knowledge checks.</p></div>`
+      },
+      'l3c1-overview': {
+        title: 'What is an Original Medicare Appeal?',
+        body: `<div class="modal-section"><h3>Definition</h3><p>An <strong>Original Medicare appeal</strong> is a formal request a beneficiary makes to Medicare when they disagree with Medicare's coverage or payment decision on a health care service or item they received.</p></div>
+        <div class="modal-section"><h3>Two Types of Original Medicare Appeals</h3>
+        <div class="modal-two-col">
+          <div class="modal-col"><h4>📬 Standard Appeal</h4><p>Filed after a beneficiary already received a health care service or item. Triggered when they receive an MSN with a coverage denial note.</p></div>
+          <div class="modal-col"><h4>⚡ Expedited Appeal</h4><p>Filed when a beneficiary's hospital or non-hospital care is currently ending. Handled with much faster timelines due to the urgent nature.</p></div>
+        </div></div>`
+      },
+      'l3c1-msn': {
+        title: 'Medicare Summary Notice (MSN)',
+        body: `<div class="modal-section"><h3>What is an MSN?</h3><p>The <strong>Medicare Summary Notice (MSN)</strong> is a document sent to beneficiaries after they receive care. It is <strong>not a bill</strong> — it is a summary of the services received and what Medicare's decisions were.</p></div>
+        <div class="modal-section"><h3>Key Facts About the MSN</h3><ul><li>Needed in order to begin a standard appeal</li><li>Sent to beneficiary after they receive care</li><li>Provides summary of services: what provider billed, what Medicare paid, what beneficiary may owe</li><li>Tells beneficiary if Medicare approved or denied the service</li><li>Includes a note at the bottom if a service was not covered</li><li>Sent every 3 months if the beneficiary received any service</li><li>Separate MSN for Part A and Part B</li></ul></div>
+        <div class="modal-section"><h3>MSN Columns Explained</h3><ul><li><strong>Service Approved?</strong> — Tells beneficiary whether their claim was approved or denied</li><li><strong>Amount Provider Charged</strong> — What the provider billed</li><li><strong>Medicare-Approved Amount</strong> — The approved rate for the service</li><li><strong>Amount Medicare Paid</strong> — What Medicare actually paid</li><li><strong>Maximum You May Be Billed</strong> — Total amount provider can bill the beneficiary</li><li><strong>See Notes Below</strong> — References footnotes explaining denial reasons</li></ul></div>`
+      },
+      'l3c1-standard': {
+        title: 'Original Medicare Standard Appeal',
+        body: `<div class="modal-section"><h3>When to File a Standard Appeal</h3><p>A beneficiary files an <strong>Original Medicare standard appeal</strong> when:</p><ul><li>They already received care</li><li>They receive an MSN with a coverage denial note</li></ul></div>
+        <div class="modal-section"><h3>Before Filing: 3 Steps</h3><ul><li>Beneficiary receives care</li><li>Provider submits claim to Medicare for care beneficiary received</li><li>Beneficiary receives Medicare Summary Notice indicating that Medicare denied coverage</li></ul></div>
+        <div class="modal-section"><h3>Standard Appeal Has 5 Levels</h3><p>If denied at one level, the beneficiary can escalate to the next level. Levels are: <span class="highlight">Redetermination → Reconsideration → OMHA → Council → Judicial Review</span></p></div>`
+      },
+      'l3c1-expedited': {
+        title: 'Original Medicare Expedited Appeal',
+        body: `<div class="modal-section"><h3>When to File an Expedited Appeal</h3><p>A beneficiary files an <strong>Original Medicare expedited appeal</strong> if:</p><ul><li>They are currently receiving care from a <strong>hospital OR</strong> skilled nursing facility (SNF), home health agency (HHA), comprehensive outpatient rehabilitation facility (CORF), or hospice</li><li>Their provider has informed them that care is ending soon because Medicare will not pay for continued care</li></ul></div>
+        <div class="modal-section"><h3>Two Expedited Appeal Tracks</h3>
+        <div class="modal-two-col">
+          <div class="modal-col"><h4>🏥 Hospital Care</h4><p>Contacts BFCC-QIO by discharge date. QIO issues decision within 1 day.</p></div>
+          <div class="modal-col"><h4>🏠 Non-Hospital Care</h4><p>Contacts QIO by noon the day before care ends. QIO issues decision 2 days before care ends.</p></div>
+        </div></div>
+        <div class="modal-section"><h3>Key Difference from Standard Appeal</h3><p>Expedited appeals have much shorter timelines because the beneficiary's care is actively ending. Levels 3–5 are the same as the standard appeal process.</p></div>`
+      },
+      'l3c1-prefiling': {
+        title: 'Before Filing a Standard Appeal',
+        body: `<div class="modal-section"><h3>3 Steps Before Filing</h3><ul><li><strong>Step 1:</strong> Beneficiary receives care</li><li><strong>Step 2:</strong> Provider submits claim to Medicare for care beneficiary received</li><li><strong>Step 3:</strong> Beneficiary receives Medicare Summary Notice indicating that Medicare denied coverage</li></ul></div>
+        <div class="modal-section"><h3>What to Look For on the MSN</h3><p>The beneficiary should look for any line items where "Service Approved?" shows <strong>NO</strong>. These denials can be appealed. The notes section at the bottom will explain the reason for denial.</p></div>`
+      },
+      'l3c1-level1': {
+        title: 'Level 1: Redetermination',
+        body: `<div class="modal-section"><h3>How to File</h3><p>The beneficiary begins their appeal by completing the gray-shaded section on the MSN and sending it to the listed address within <span class="highlight">120 days</span> of the date on the denial notice.</p></div>
+        <div class="modal-section"><h3>Review Process</h3><p>The <strong>Medicare Administrative Contractor (MAC)</strong> reviews the appeal. The MAC should issue a decision within <span class="highlight">60 days</span> of receiving the appeal.</p></div>
+        <div class="modal-section"><h3>Two Possible Outcomes</h3>
+        <div class="modal-two-col">
+          <div class="modal-col"><h4>✅ Favorable Decision</h4><p>Medicare will cover the service or item. The appeal is resolved.</p></div>
+          <div class="modal-col"><h4>❌ Unfavorable Decision</h4><p>Beneficiary can move to Level 2 (Reconsideration).</p></div>
+        </div></div>`
+      },
+      'l3c1-level2': {
+        title: 'Level 2: Reconsideration',
+        body: `<div class="modal-section"><h3>How to File</h3><p>Beneficiary files appeal with the <strong>Qualified Independent Contractor (QIC)</strong> within <span class="highlight">180 days</span> of receiving the unfavorable redetermination decision.</p></div>
+        <div class="modal-section"><h3>Review Process</h3><p>The <strong>QIC</strong> reviews the appeal and reconsiders the MAC's decision. The QIC should issue a decision within <span class="highlight">60 days</span> of receiving the appeal.</p></div>
+        <div class="modal-section"><h3>Two Possible Outcomes</h3>
+        <div class="modal-two-col">
+          <div class="modal-col"><h4>✅ Favorable Decision</h4><p>Medicare will cover the service or item.</p></div>
+          <div class="modal-col"><h4>❌ Unfavorable Decision</h4><p>Beneficiary can move to Level 3 (OMHA Hearing).</p></div>
+        </div></div>`
+      },
+      'l3c1-level3': {
+        title: 'Level 3: OMHA — ALJ Hearing',
+        body: `<div class="modal-section"><h3>How to File</h3><p>Beneficiary appeals to the <strong>Office of Medicare Hearings and Appeals (OMHA)</strong> to request a hearing with an Administrative Law Judge (ALJ) within <span class="highlight">60 days</span> of the date listed on the QIC notice. Beneficiary must meet the <strong>amount in controversy</strong> requirement.</p></div>
+        <div class="modal-section"><h3>Hearing Process</h3><ul><li>ALJ receives request and sets time for hearing</li><li>Beneficiary receives Notice of Hearing at least <span class="highlight">20 days</span> before the hearing</li><li>Hearing is usually held by <strong>video teleconference</strong></li></ul></div>
+        <div class="modal-section"><h3>OMHA Decision</h3><p>OMHA notifies beneficiary of decision within <span class="highlight">90 days</span> of receiving the hearing request.</p></div>
+        <div class="modal-section"><h3>Three Possible Outcomes</h3><ul><li>✅ <strong>Favorable decision:</strong> Medicare will cover service or item</li><li>❌ <strong>Unfavorable decision:</strong> Beneficiary can move to Level 4 (Council Review)</li><li>⏰ <strong>OMHA does not issue decision within 90 days:</strong> Beneficiary can escalate</li></ul></div>`
+      },
+      'l3c1-level4': {
+        title: 'Level 4: Council Review',
+        body: `<div class="modal-section"><h3>How to File</h3><p>Beneficiary requests Council review within <span class="highlight">60 days</span> of receiving the unfavorable OMHA decision.</p></div>
+        <div class="modal-section"><h3>Review Process</h3><p>The <strong>Council</strong> reviews the OMHA decision. The Council should issue a decision within <span class="highlight">90 days</span>.</p></div>
+        <div class="modal-section"><h3>Three Possible Outcomes</h3><ul><li>✅ <strong>Favorable decision:</strong> Medicare will cover service or item</li><li>❌ <strong>Unfavorable decision:</strong> Beneficiary can move to Level 5 (Judicial Review)</li><li>⏰ <strong>Council does not issue decision within 90 days:</strong> Beneficiary can escalate</li></ul></div>`
+      },
+      'l3c1-level5': {
+        title: 'Level 5: Judicial Review',
+        body: `<div class="modal-section"><h3>How to File</h3><p>Beneficiary requests judicial review by filing a case in their local <strong>U.S. Federal District Court</strong> within <span class="highlight">60 days</span> of the unfavorable Council decision.</p></div>
+        <div class="modal-section"><h3>Review Process</h3><p>The <strong>Federal District Court</strong> reviews the Council's unfavorable decision. There is <strong>no timeline</strong> for the court's decision.</p></div>
+        <div class="modal-section"><h3>Two Possible Outcomes — Final Level</h3>
+        <div class="modal-two-col">
+          <div class="modal-col"><h4>✅ Favorable Decision</h4><p>Medicare will cover the service or item.</p></div>
+          <div class="modal-col"><h4>❌ Unfavorable Decision</h4><p>Beneficiary will have to pay for the service or item. This is the final level of appeal.</p></div>
+        </div></div>
+        <div class="outcome-box red-box"><h4>⚠️ This is the final level</h4><p>If the Federal District Court rules against the beneficiary, there are no further appeal options within the Medicare appeals framework.</p></div>`
+      },
+      'l3c1-exp-hospital': {
+        title: 'Expedited Appeal — Hospital Care: Before Filing',
+        body: `<div class="modal-section"><h3>5 Steps Before Filing (Hospital)</h3><ul><li><strong>Step 1:</strong> Beneficiary receives Important Message from Medicare within first 2 days of hospital admission</li><li><strong>Step 2:</strong> Hospital tells beneficiary it is ending care</li><li><strong>Step 3:</strong> Beneficiary contacts the <strong>BFCC-QIO (QIO)</strong> by the discharge date</li><li><strong>Step 4:</strong> QIO notifies hospital that beneficiary wants to appeal</li><li><strong>Step 5:</strong> Hospital gives beneficiary a <strong>Detailed Notice of Discharge</strong> explaining why care is ending and any related Medicare rules</li></ul></div>
+        <div class="modal-section"><h3>Key Deadline</h3><p>The beneficiary must contact the QIO <span class="highlight orange">by the discharge date</span> to trigger the expedited hospital appeal.</p></div>`
+      },
+      'l3c1-exp-nonhosp': {
+        title: 'Expedited Appeal — Non-Hospital Care: Before Filing',
+        body: `<div class="modal-section"><h3>4 Steps Before Filing (Non-Hospital)</h3><ul><li><strong>Step 1:</strong> Beneficiary receives <strong>Notice of Medicare Non-Coverage</strong> indicating when care is set to end</li><li><strong>Step 2:</strong> Beneficiary contacts QIO by <strong>noon of the day before</strong> care is set to end</li><li><strong>Step 3:</strong> QIO notifies provider that beneficiary wants to appeal</li><li><strong>Step 4:</strong> Provider gives beneficiary a <strong>Detailed Notice of Discharge</strong> explaining why care is ending</li></ul></div>
+        <div class="modal-section"><h3>Key Deadline</h3><p>The beneficiary must contact the QIO <span class="highlight orange">by noon of the day before</span> care is set to end.</p></div>`
+      },
+      'l3c1-exp-l1': {
+        title: 'Expedited Appeal — Level 1: QIO Redetermination',
+        body: `<div class="modal-section"><h3>How It Works</h3><p>The beneficiary or their representative discusses the case over the phone with a QIO representative. The QIO determines whether care should be continued.</p></div>
+        <div class="modal-section"><h3>Decision Timelines</h3>
+        <div class="modal-two-col">
+          <div class="modal-col"><h4>🏥 Hospital</h4><p>QIO should issue decision within <span class="highlight">1 day</span> of receiving all necessary information.</p></div>
+          <div class="modal-col"><h4>🏠 Non-Hospital</h4><p>QIO should issue decision no later than <span class="highlight">2 days</span> before care is set to end.</p></div>
+        </div></div>
+        <div class="modal-section"><h3>Two Possible Outcomes</h3>
+        <div class="modal-two-col">
+          <div class="modal-col"><h4>✅ Favorable Decision</h4><p>Hospital/provider should continue to provide care.</p></div>
+          <div class="modal-col"><h4>❌ Unfavorable Decision</h4><p>Beneficiary can move to Level 2 (QIC Reconsideration).</p></div>
+        </div></div>`
+      },
+      'l3c1-exp-l2': {
+        title: 'Expedited Appeal — Level 2: QIC Reconsideration',
+        body: `<div class="modal-section"><h3>How to File</h3><p>Beneficiary or their representative contacts the QIC <span class="highlight orange">by noon of the day after</span> they receive the unfavorable QIO redetermination.</p></div>
+        <div class="modal-section"><h3>Review Process</h3><ul><li>QIC notifies hospital and QIO of beneficiary's decision to appeal</li><li>Both the beneficiary and hospital can submit information</li><li>QIC reconsiders QIO's decision and decides whether care should be continued</li><li>QIC should issue decision within <span class="highlight">72 hours</span></li></ul></div>
+        <div class="modal-section"><h3>Two Possible Outcomes</h3>
+        <div class="modal-two-col">
+          <div class="modal-col"><h4>✅ Favorable Decision</h4><p>Provider/hospital continues to provide care.</p></div>
+          <div class="modal-col"><h4>❌ Unfavorable Decision</h4><p>Beneficiary can move to Level 3 (OMHA — same as standard appeal).</p></div>
+        </div></div>
+        <div class="outcome-box"><h4>ℹ️ Levels 3–5</h4><p>After Level 2, the expedited appeal follows the same Levels 3, 4, and 5 as the standard appeal: OMHA (ALJ), Council Review, and Judicial Review.</p></div>`
+      },
+      'l3c1-goodcause': {
+        title: 'Good Cause Extension',
+        body: `<div class="modal-section"><h3>What is a Good Cause Extension?</h3><p>Beneficiaries can file for a <strong>good cause extension</strong> if they are late filing an appeal at any level. The extension allows them to still have their appeal considered despite missing the deadline.</p></div>
+        <div class="modal-section"><h3>Valid Reasons (Examples)</h3><ul><li>Not receiving Medicare notices</li><li>Being too ill to file an appeal</li><li>Lacking sufficient documentation to support appeal because of obstruction or delay of others</li><li>Late in receiving the MSN</li></ul></div>
+        <div class="modal-section"><h3>How to Request a Good Cause Extension</h3><ul><li>File the late appeal</li><li>Include an explanation of why it is late</li></ul></div>`
+      },
+      'l3c1-tips': {
+        title: 'Tips for Appealing',
+        body: `<div class="modal-section"><h3>6 Best Practices for a Successful Appeal</h3><ul><li>📋 <strong>Follow instructions</strong> — Read all directions carefully and complete all required sections</li><li>📅 <strong>Adhere to important deadlines</strong> — Missing a deadline can forfeit the right to appeal at that level</li><li>📁 <strong>Keep original copies of information</strong> — Never send originals; keep copies of everything submitted</li><li>📝 <strong>Take notes while appealing</strong> — Document all calls, dates, names, and outcomes</li><li>👨‍⚕️ <strong>Get doctor or health care provider support</strong> — A letter of medical necessity from the provider can strengthen an appeal</li><li>💪 <strong>Keep going! The appeal process has many levels.</strong> — Don't give up if denied at one level; higher levels may decide differently</li></ul></div>`
+      },
+
+      // ── COURSE 2: MEDICARE ADVANTAGE APPEALS ──
+      'c2-intro': {
+        title: 'Course 2: Medicare Advantage Appeals — Introduction',
+        body: `<div class="modal-section"><h3>Course Overview</h3><p>This course covers <strong>Medicare Advantage (MA) Appeals</strong> — the formal process beneficiaries use when they disagree with their MA plan's coverage or payment decisions. MA appeals differ from Original Medicare in important ways, including the role of organization determinations and the plan's direct involvement.</p></div>
+        <div class="modal-section"><h3>4 Learning Objectives</h3><ul><li>Identify when a beneficiary may start a Medicare Advantage appeal</li><li>Explain the differences between standard and expedited MA appeals</li><li>Understand the steps in different Medicare Advantage appeal processes</li><li>Help clients through the steps of a Medicare Advantage appeal</li></ul></div>
+        <div class="modal-section"><h3>Estimated Seat Time</h3><p><span class="highlight">65 minutes</span> — Self-paced with interactive slides and knowledge checks.</p></div>`
+      },
+      'c2-overview': {
+        title: 'Medicare Advantage Appeal Overview',
+        body: `<div class="modal-section"><h3>Definition</h3><p>A <strong>Medicare Advantage appeal</strong> is a formal request a beneficiary makes to their Medicare Advantage Plan if they disagree with their plan's coverage or payment decision on a health care service or item.</p></div>
+        <div class="modal-section"><h3>Two Types of MA Appeals</h3>
+        <div class="modal-two-col">
+          <div class="modal-col"><h4>📋 Standard Appeal</h4><p>Two subtypes: <strong>Pre-service</strong> (beneficiary has not yet received care) and <strong>Post-service</strong> (beneficiary already received care). Both follow the same 5-level appeal process.</p></div>
+          <div class="modal-col"><h4>⚡ Expedited Appeal</h4><p>Two subtypes: <strong>Pre-service</strong> (when health is at risk under standard timeline) and <strong>Ending care</strong> (when hospital, SNF, HHA, CORF, or hospice care is being terminated).</p></div>
+        </div></div>`
+      },
+      'c2-org-det': {
+        title: 'Organization Determinations',
+        body: `<div class="modal-section"><h3>What is an Organization Determination?</h3><p>An <strong>organization determination</strong> is a decision made by the plan or a provider acting on behalf of the plan. The plan must issue one before a beneficiary can appeal.</p></div>
+        <div class="modal-section"><h3>Organization Determinations Cover</h3><ul><li>Approval for services <strong>not yet received</strong></li><li>Payment for services <strong>already received</strong></li><li>Treatment that is <strong>reduced or discontinued</strong></li></ul></div>
+        <div class="modal-section"><h3>Important Distinctions</h3><ul><li>Depending on the type of determination, beneficiary files appeal <strong>before or after</strong> receiving care</li><li><span class="highlight">Organization determination must be made before beneficiary begins appeal</span></li><li>Provider says service is not covered: <strong>NOT</strong> an organization determination</li><li>Provider decides to reduce or terminate care: <strong>IS</strong> an organization determination</li></ul></div>`
+      },
+      'c2-preservice-std': {
+        title: 'MA Pre-Service Standard Appeal',
+        body: `<div class="modal-section"><h3>When to File</h3><p>A beneficiary files a <strong>MA pre-service standard appeal</strong> if:</p><ul><li>They have <strong>not yet received</strong> the health care service or item</li><li>They need prior approval from their plan before they get care <strong>and</strong> the request for prior approval was denied</li></ul></div>
+        <div class="modal-section"><h3>Before Filing</h3><ul><li><strong>Step 1:</strong> Beneficiary contacts plan to get prior approval for service or item</li><li><strong>Step 2:</strong> Plan makes organization determination about whether it will approve care — if denied, beneficiary receives Notice of Denial of Medical Coverage</li></ul></div>
+        <div class="modal-section"><h3>Level 1: Plan Reconsideration</h3><ul><li>Beneficiary follows instructions on Notice of Denial to appeal within <span class="highlight">60 days</span></li><li>Plan staff unrelated to initial decision review → decide whether plan will cover service</li><li>Decision issued within <span class="highlight">30 days</span></li><li><strong>Favorable:</strong> Plan covers service | <strong>Unfavorable:</strong> Plan forwards case to Level 2 automatically</li></ul></div>`
+      },
+      'c2-postservice-std': {
+        title: 'MA Post-Service Standard Appeal',
+        body: `<div class="modal-section"><h3>When to File</h3><p>A beneficiary files a <strong>MA post-service standard appeal</strong> if:</p><ul><li>They <strong>already received</strong> the health care service or item</li><li>They received a notice from their plan saying it will <strong>not cover</strong> the health care service or item received</li></ul></div>
+        <div class="modal-section"><h3>Before Filing</h3><ul><li><strong>Step 1:</strong> Beneficiary receives care</li><li><strong>Step 2:</strong> Provider bills Medicare Advantage Plan</li><li><strong>Step 3:</strong> Beneficiary receives written notice that payment has been denied — this could be a Notice of Denial of Medical Coverage, Explanation of Benefits (EOB), or insert with EOB mailing</li></ul></div>
+        <div class="modal-section"><h3>Level 1: Plan Reconsideration</h3><ul><li>Beneficiary follows instructions on denial notice to appeal within <span class="highlight">60 days</span></li><li>Plan staff unrelated to initial decision review appeal and reconsider whether plan will cover service</li><li>Decision issued within <span class="highlight">60 days</span></li><li><strong>Favorable:</strong> Plan covers service | <strong>Unfavorable:</strong> Plan forwards case to Level 2 automatically</li></ul></div>`
+      },
+      'c2-std-pre': {
+        title: 'Before Filing — MA Standard Appeal',
+        body: `<div class="modal-section"><h3>Pre-Service: Before Filing</h3><ul><li><strong>Step 1:</strong> Beneficiary contacts plan to get prior approval for service or item</li><li><strong>Step 2:</strong> Plan makes organization determination — if denied, issues Notice of Denial of Medical Coverage</li></ul></div>
+        <div class="modal-section"><h3>Post-Service: Before Filing</h3><ul><li><strong>Step 1:</strong> Beneficiary receives care</li><li><strong>Step 2:</strong> Provider bills Medicare Advantage Plan</li><li><strong>Step 3:</strong> Beneficiary receives written notice that payment was denied (Notice of Denial, EOB, or EOB insert)</li></ul></div>`
+      },
+      'c2-std-l1': {
+        title: 'Level 1: Plan Reconsideration',
+        body: `<div class="modal-section"><h3>How to File</h3><ul><li>Beneficiary follows instructions on Notice of Denial of Medical Coverage to appeal to plan within <span class="highlight">60 days</span> of date listed on denial notice</li></ul></div>
+        <div class="modal-section"><h3>Review Process</h3><ul><li>Plan staff <strong>unrelated to initial decision</strong> review the organization determination and decide whether plan will cover service or item</li><li><strong>Pre-service:</strong> Decision within <span class="highlight">30 days</span></li><li><strong>Post-service:</strong> Decision within <span class="highlight">60 days</span></li></ul></div>
+        <div class="modal-section"><h3>Two Possible Outcomes</h3>
+        <div class="modal-two-col">
+          <div class="modal-col"><h4>✅ Favorable Decision</h4><p>Plan will cover the service or item.</p></div>
+          <div class="modal-col"><h4>❌ Unfavorable Decision</h4><p>Plan automatically forwards case file to Level 2 (IRE).</p></div>
+        </div></div>`
+      },
+      'c2-std-l2': {
+        title: 'Level 2: IRE Reconsideration',
+        body: `<div class="modal-section"><h3>What Happens</h3><p>The <strong>Independent Review Entity (IRE)</strong> reviews the organization determination and plan's reconsideration decision and decides whether the plan should cover the service or item.</p></div>
+        <div class="modal-section"><h3>Timelines</h3><ul><li><strong>Pre-service standard:</strong> Must issue decision within <span class="highlight">30 days</span> of receiving appeal from plan</li><li><strong>Post-service standard:</strong> Must issue decision within <span class="highlight">60 days</span> of receiving appeal from plan</li></ul></div>
+        <div class="modal-section"><h3>Two Possible Outcomes</h3>
+        <div class="modal-two-col">
+          <div class="modal-col"><h4>✅ Favorable Decision</h4><p>Plan will cover the service or item.</p></div>
+          <div class="modal-col"><h4>❌ Unfavorable Decision</h4><p>Beneficiary can move to Level 3 (OMHA).</p></div>
+        </div></div>`
+      },
+      'c2-std-l3': {
+        title: 'Level 3: OMHA Hearing',
+        body: `<div class="modal-section"><h3>How to File</h3><ul><li>Beneficiary appeals to OMHA to request a hearing with an Administrative Law Judge (ALJ) within <span class="highlight">60 days</span> of date listed on IRE notice</li><li>Beneficiary must meet the <strong>amount in controversy</strong> requirement</li></ul></div>
+        <div class="modal-section"><h3>Process</h3><ul><li><strong>Step 1:</strong> Beneficiary appeals to OMHA within 60 days</li><li><strong>Step 2:</strong> ALJ receives request and sets time for hearing; beneficiary receives Notice of Hearing at least <span class="highlight">20 days</span> before hearing</li><li><strong>Step 3:</strong> Beneficiary attends hearing — usually held by video teleconference</li><li><strong>Step 4:</strong> OMHA notifies beneficiary of decision within <span class="highlight">90 days</span> of receiving hearing request</li></ul></div>
+        <div class="modal-section"><h3>Three Possible Outcomes</h3><ul><li>✅ <strong>Favorable:</strong> Plan will cover service or item</li><li>❌ <strong>Unfavorable:</strong> Beneficiary can move to Level 4</li><li>⏰ <strong>OMHA does not issue decision within 90 days</strong> — beneficiary may escalate</li></ul></div>`
+      },
+      'c2-std-l4': {
+        title: 'Level 4: Council Review',
+        body: `<div class="modal-section"><h3>How to File</h3><ul><li>Beneficiary requests Council review within <span class="highlight">60 days</span> of receiving unfavorable OMHA decision</li></ul></div>
+        <div class="modal-section"><h3>Review Process</h3><ul><li>Council reviews OMHA decision and decides whether plan should cover service or item</li><li>Should issue decision within <span class="highlight">90 days</span></li></ul></div>
+        <div class="modal-section"><h3>Three Possible Outcomes</h3><ul><li>✅ <strong>Favorable:</strong> Plan will cover service or item</li><li>❌ <strong>Unfavorable:</strong> Beneficiary can move to Level 5</li><li>⏰ <strong>Council does not issue decision within 90 days</strong> — beneficiary may escalate</li></ul></div>`
+      },
+      'c2-std-l5': {
+        title: 'Level 5: Judicial Review',
+        body: `<div class="modal-section"><h3>How to File</h3><ul><li>Beneficiary requests judicial review by filing a case in local <strong>U.S. Federal District Court</strong> within <span class="highlight">60 days</span> of receiving unfavorable Council decision</li></ul></div>
+        <div class="modal-section"><h3>Review Process</h3><ul><li>Federal District Court reviews Council's unfavorable decision</li><li><strong>No timeline</strong> for decision — court sets its own schedule</li></ul></div>
+        <div class="modal-section"><h3>Two Possible Outcomes</h3>
+        <div class="modal-two-col">
+          <div class="modal-col"><h4>✅ Favorable Decision</h4><p>Medicare will cover the service or item.</p></div>
+          <div class="modal-col"><h4>❌ Unfavorable Decision</h4><p>Beneficiary will have to pay for service or item.</p></div>
+        </div></div>`
+      },
+      'c2-exp-preservice': {
+        title: 'Expedited Pre-Service Appeal',
+        body: `<div class="modal-section"><h3>When to File</h3><p>A beneficiary files a <strong>MA pre-service expedited appeal</strong> if:</p><ul><li>They have not yet received the health care service or item</li><li>They need prior approval from their plan before they get care</li><li>Their doctor certifies that their health would be at risk if the request were processed on the standard timeline</li></ul></div>
+        <div class="modal-section"><h3>Before Filing</h3><ul><li><strong>Step 1:</strong> Beneficiary contacts plan to get prior approval; doctor requests expedited decision</li><li>Plan has <span class="highlight">72 hours</span> to make decision</li><li><strong>Step 2:</strong> Plan makes organization determination — Notice of Denial of Medical Coverage, EOB, or EOB insert sent within 2 weeks</li></ul></div>
+        <div class="modal-section"><h3>Level 1: Expedited Reconsideration</h3><ul><li>Beneficiary follows instructions on Notice of Denial within <span class="highlight">60 days</span>; doctor requests expedited review</li><li>Plan staff review → decision within <span class="highlight">72 hours</span></li><li>Favorable: Plan covers service | Unfavorable: Plan forwards to Level 2</li></ul></div>
+        <div class="modal-section"><h3>Level 2: IRE Expedited Reconsideration</h3><ul><li>IRE reviews organization determination and initial reconsideration decision</li><li>Must issue decision within <span class="highlight">72 hours</span> of receiving appeal from plan</li><li>Favorable: Hospital continues care | Unfavorable: Move to Level 3</li></ul></div>
+        <div class="outcome-box"><h4>ℹ️ Levels 3–5</h4><p>After Level 2, the expedited pre-service appeal follows the same Levels 3, 4, and 5 as the standard appeal: OMHA (ALJ), Council Review, and Judicial Review.</p></div>`
+      },
+      'c2-exp-ending': {
+        title: 'Expedited Appeal for Ending Care',
+        body: `<div class="modal-section"><h3>When to File</h3><p>A beneficiary files a <strong>MA expedited appeal for ending care</strong> if:</p><ul><li>They are currently receiving care from a <strong>hospital OR</strong> skilled nursing facility (SNF), home health agency (HHA), comprehensive outpatient rehabilitation facility (CORF), or hospice</li><li>Their provider has informed them that care is ending soon because Medicare will not pay for continued care</li></ul></div>
+        <div class="modal-section"><h3>Hospital Care — Before Filing</h3><ul><li><strong>Step 1:</strong> Beneficiary receives Important Message from Medicare within first 2 days of hospital admission</li><li><strong>Step 2:</strong> Hospital tells beneficiary it is ending care</li><li><strong>Step 3:</strong> Beneficiary contacts BFCC-QIO <span class="highlight">by discharge date</span></li><li><strong>Step 4:</strong> QIO notifies hospital that beneficiary wants to appeal</li><li><strong>Step 5:</strong> Hospital gives beneficiary Detailed Notice of Discharge explaining why care is ending</li></ul></div>
+        <div class="modal-section"><h3>Non-Hospital Care — Before Filing</h3><ul><li><strong>Step 1:</strong> At least 2 days before care ends, beneficiary receives Notice of Medicare Non-coverage</li><li><strong>Step 2:</strong> Beneficiary contacts BFCC-QIO <span class="highlight">by noon of day before</span> care is set to end</li><li><strong>Step 3:</strong> QIO notifies plan that beneficiary wants to appeal</li><li><strong>Step 4:</strong> Provider gives beneficiary Detailed Notice of Discharge</li></ul></div>
+        <div class="modal-section"><h3>Level 1: QIO Redetermination (Hospital)</h3><ul><li>Beneficiary discusses case over phone with QIO representative</li><li>QIO determines whether care should be continued — decision within <span class="highlight">1 day</span> of receiving all necessary information</li><li>Favorable: Hospital continues care | Unfavorable: Move to Level 2</li></ul></div>
+        <div class="modal-section"><h3>Level 1: QIO Redetermination (Non-Hospital)</h3><ul><li>Beneficiary discusses case over phone with QIO representative</li><li>QIO determines whether care should be continued — decision <span class="highlight">no later than the day</span> care is set to end</li><li>Favorable: Provider continues care | Unfavorable: Move to Level 2</li></ul></div>
+        <div class="modal-section"><h3>Level 2: QIO Reconsideration</h3><ul><li><strong>Hospital:</strong> Contact QIO by <span class="highlight">noon of the day following</span> QIO's initial denial</li><li><strong>Non-Hospital:</strong> Contact QIO within <span class="highlight">60 days</span> of receiving unfavorable QIO redetermination</li><li>QIO reviews appeal and decides whether care should be continued — decision within <span class="highlight">14 days</span> in writing</li><li>Favorable: Provider continues care | Unfavorable: Move to Level 3</li></ul></div>
+        <div class="outcome-box"><h4>ℹ️ Levels 3–5</h4><p>After Level 2, the ending-care expedited appeal follows the same Levels 3, 4, and 5: OMHA (ALJ, 90-day decision), Council Review (90-day decision), and Judicial Review (no deadline). Unfavorable judicial decision means beneficiary pays for continued care.</p></div>`
+      },
+      'c2-goodcause': {
+        title: 'Good Cause Extension — Medicare Advantage',
+        body: `<div class="modal-section"><h3>What is a Good Cause Extension?</h3><p>Beneficiaries can file for a <strong>good cause extension</strong> if they are late filing an appeal at any level. This applies to Medicare Advantage appeals just as it does for Original Medicare appeals.</p></div>
+        <div class="modal-section"><h3>Valid Reasons (Examples)</h3><ul><li>Not receiving Medicare notices</li><li>Being too ill to file an appeal</li><li>Lacking sufficient documentation to support appeal because of obstruction or delay of others</li><li>Late in receiving the denial notice</li></ul></div>
+        <div class="modal-section"><h3>How to Request a Good Cause Extension</h3><ul><li>File the late appeal</li><li>Include an explanation of why it is late</li></ul></div>`
+      },
+      'c2-tips': {
+        title: 'Tips for Appealing a Medicare Advantage Appeal',
+        body: `<div class="modal-section"><h3>6 Best Practices for a Successful Appeal</h3><ul><li>📋 <strong>Follow instructions</strong> — Read all directions on the denial notice carefully and follow each step</li><li>📅 <strong>Adhere to important deadlines</strong> — Timelines for MA appeals can be very short (as little as 72 hours for expedited appeals)</li><li>📁 <strong>Keep original copies of information</strong> — Never send originals; keep copies of all notices and documents submitted</li><li>📝 <strong>Take notes while appealing</strong> — Document all calls, dates, names, and outcomes</li><li>👨‍⚕️ <strong>Get doctor or health care provider support</strong> — A provider's certification of medical necessity can trigger expedited timelines</li><li>💪 <strong>Keep going! The appeal process has many levels.</strong> — An unfavorable decision at one level can still be reversed at a higher level</li></ul></div>`
+      },
+
+      // ── COURSE 3: PART D APPEALS ──
+      'c3-intro': {
+        title: 'Course 3: Part D Appeals — Introduction',
+        body: `<div class="modal-section"><h3>Course Overview</h3><p>This course covers <strong>Part D Appeals</strong> — the formal process beneficiaries use when they disagree with their Part D drug plan's coverage or payment decisions. Part D appeals are distinct from Part B and Original Medicare appeals; it's essential to know which type of drug denial triggers which appeal process.</p></div>
+        <div class="modal-section"><h3>4 Learning Objectives</h3><ul><li>Identify when a beneficiary may start a Part D appeal</li><li>Explain the differences between standard and expedited appeals</li><li>Understand steps in the different appeal processes</li><li>Help clients through all steps of a Part D appeal</li></ul></div>
+        <div class="modal-section"><h3>Estimated Seat Time</h3><p><span class="highlight">45 minutes</span> — Self-paced with interactive slides and a case example.</p></div>`
+      },
+      'c3-overview': {
+        title: 'Part D Appeal Overview',
+        body: `<div class="modal-section"><h3>Definition</h3><p>A <strong>Part D appeal</strong> is a formal request a beneficiary makes to their Part D plan if they disagree with their plan's coverage or payment decision on a health care service or item.</p></div>
+        <div class="modal-section"><h3>Two Types of Part D Appeals</h3>
+        <div class="modal-two-col">
+          <div class="modal-col"><h4>📋 Standard Appeal</h4><p>Less urgent timeframe than expedited appeals. Decisions issued within 7 days at Levels 1 and 2.</p></div>
+          <div class="modal-col"><h4>⚡ Expedited Appeal</h4><p>Can be requested if the beneficiary or doctor believes their health could be harmed by waiting the standard timeframe for appeal decisions.</p></div>
+        </div></div>`
+      },
+      'c3-partb-partd': {
+        title: 'Part B- and Part D-Covered Drugs',
+        body: `<div class="modal-section"><h3>Key Distinction</h3><p>Both Part B and Part D cover outpatient prescription drugs — but they are different types of drugs and use different appeal processes:</p><ul><li><strong>Part B drugs:</strong> Administered by a doctor (e.g., infusions, injections in office)</li><li><strong>Part D drugs:</strong> Self-administered (e.g., pills filled at a pharmacy)</li></ul></div>
+        <div class="modal-section"><h3>Drug Denial Appeal Processes</h3><ul><li><strong>Part B drug denials</strong> → Appeal using the <em>Original Medicare or Medicare Advantage appeal process</em></li><li><strong>Part D drug denials</strong> → Appeal using the <em>Part D appeal process</em> (this course)</li></ul></div>
+        <div class="modal-section"><h3>Possible Coverage Problems</h3><ul><li>A Part B drug may be incorrectly billed to Part D — this could result in a denial that should be appealed under the Part B process instead</li></ul></div>`
+      },
+      'c3-before-filing': {
+        title: 'Before Filing a Part D Appeal',
+        body: `<div class="modal-section"><h3>Two Starting Situations</h3>
+        <div class="modal-two-col">
+          <div class="modal-col"><h4>🚫 Plan Won't Cover Drug</h4><p>Reasons may include: refill requested too soon; drug not on the plan's formulary; drug subject to prior authorization, step therapy, or quantity limit; or drug excluded from ALL Part D plans.</p></div>
+          <div class="modal-col"><h4>💰 Drug Is Too Expensive</h4><p>Reasons may include: pharmacy is not in the plan's network; or drug is on a higher cost-sharing tier.</p></div>
+        </div></div>
+        <div class="modal-section"><h3>Steps Before Filing</h3><ul><li><strong>Step 1:</strong> Beneficiary contacts plan to learn why it will not cover the drug</li><li><strong>Step 2:</strong> Beneficiary files a formal coverage request to the Part D plan — either a <strong>coverage determination</strong> or an <strong>exception request</strong>
+          <ul><li>Standard: Plan should issue decision within <span class="highlight">72 hours</span></li><li>Expedited: Plan should issue decision within <span class="highlight">24 hours</span></li></ul></li>
+          <li><strong>Step 3:</strong> Beneficiary receives coverage determination
+          <ul><li>Unfavorable: Plan sends Notice of Denial of Medicare Prescription Drug Coverage → beneficiary can begin appeal</li><li>Favorable: Beneficiary should be able to get drug at pharmacy</li></ul></li></ul></div>`
+      },
+      'c3-case-example': {
+        title: 'Case Example: Pharmacy Denial (Noor)',
+        body: `<div class="modal-section"><h3>Scenario</h3><p>Noor went to the pharmacy to fill a new prescription. Her pharmacist gave her a notice called <em>Medicare Prescription Drug Coverage and Your Rights</em>. The pharmacist said the drug her doctor had prescribed was not on the plan's formulary.</p></div>
+        <div class="modal-section"><h3>Question: Noor needs this drug immediately. Who should she contact?</h3>
+        <div class="modal-two-col">
+          <div class="modal-col"><h4>❌ Medicare / Drug Plan</h4><p>These are not the best first step when the drug is needed urgently and the issue is formulary exclusion.</p></div>
+          <div class="modal-col"><h4>✅ Her Doctor</h4><p>Noor should speak to her doctor as soon as possible. Her doctor may request an expedited exception to the plan's rules, or may prescribe a similar drug that IS on the plan's formulary.</p></div>
+        </div></div>`
+      },
+      'c3-before': {
+        title: 'Before Filing — Part D Appeal',
+        body: `<div class="modal-section"><h3>Steps Before the Appeal Begins</h3><ul><li><strong>Step 1:</strong> Beneficiary goes to pharmacy and learns plan will not cover prescription (or drug is too expensive)</li><li><strong>Step 2:</strong> Beneficiary contacts plan to learn why it will not cover the drug</li><li><strong>Step 3:</strong> Beneficiary files formal coverage request — coverage determination OR exception request<br><em>Standard: plan decides within <span class="highlight">72 hours</span> | Expedited: plan decides within <span class="highlight">24 hours</span></em></li><li><strong>Step 4:</strong> Plan issues unfavorable coverage determination → sends <strong>Notice of Denial of Medicare Prescription Drug Coverage</strong> → beneficiary can now begin appeal</li></ul></div>`
+      },
+      'c3-l1': {
+        title: 'Level 1: Plan Redetermination',
+        body: `<div class="modal-section"><h3>How to File</h3><ul><li>Beneficiary follows instructions on Notice of Denial of Prescription Drug Coverage to appeal to plan within <span class="highlight">60 days</span> of date listed on denial notice</li></ul></div>
+        <div class="modal-section"><h3>Review Process</h3><ul><li>Plan staff <strong>unrelated to initial decision</strong> review the coverage determination and decide whether plan will cover drug</li><li><strong>Standard:</strong> Plan should issue decision within <span class="highlight">7 days</span> of getting appeal</li><li><strong>Expedited:</strong> Plan should issue decision within <span class="highlight">72 hours</span> of getting appeal</li></ul></div>
+        <div class="modal-section"><h3>Two Possible Outcomes</h3>
+        <div class="modal-two-col">
+          <div class="modal-col"><h4>✅ Favorable Decision</h4><p>Plan will cover drug.</p></div>
+          <div class="modal-col"><h4>❌ Unfavorable Decision</h4><p>Beneficiary can move to next level of appeal (Level 2 — IRE).</p></div>
+        </div></div>`
+      },
+      'c3-l2': {
+        title: 'Level 2: IRE Reconsideration',
+        body: `<div class="modal-section"><h3>How to File</h3><ul><li>Beneficiary files appeal with the <strong>IRE (Independent Review Entity)</strong> within <span class="highlight">60 days</span> of date listed on unfavorable plan redetermination notice</li></ul></div>
+        <div class="modal-section"><h3>Review Process</h3><ul><li>IRE reviews the case and decides whether plan should cover drug or allow tiering exception</li><li><strong>Standard:</strong> IRE should issue decision within <span class="highlight">7 days</span> of getting appeal</li><li><strong>Expedited:</strong> IRE should issue decision within <span class="highlight">72 hours</span> of getting appeal</li></ul></div>
+        <div class="modal-section"><h3>Two Possible Outcomes</h3>
+        <div class="modal-two-col">
+          <div class="modal-col"><h4>✅ Favorable Decision</h4><p>Plan will cover drug.</p></div>
+          <div class="modal-col"><h4>❌ Unfavorable Decision</h4><p>Beneficiary can move to Level 3 (OMHA).</p></div>
+        </div></div>`
+      },
+      'c3-l3': {
+        title: 'Level 3: OMHA Hearing',
+        body: `<div class="modal-section"><h3>How to File</h3><ul><li>Beneficiary appeals to OMHA to request a hearing with an <strong>Administrative Law Judge (ALJ)</strong> within <span class="highlight">60 days</span> of date listed on IRE notice</li><li>Beneficiary must meet the <strong>amount in controversy</strong> requirement</li></ul></div>
+        <div class="modal-section"><h3>Process</h3><ul><li><strong>Step 1:</strong> Beneficiary appeals to OMHA within 60 days</li><li><strong>Step 2:</strong> ALJ receives request and sets time for hearing; beneficiary receives Notice of Hearing at least <span class="highlight">20 days</span> before hearing</li><li><strong>Step 3:</strong> Beneficiary attends hearing — usually held by video teleconference</li><li><strong>Step 4:</strong> OMHA notifies beneficiary of decision
+          <ul><li>Standard: within <span class="highlight">90 days</span></li><li>Expedited: within <span class="highlight">10 days</span></li></ul></li></ul></div>
+        <div class="modal-section"><h3>Three Possible Outcomes</h3><ul><li>✅ <strong>Favorable:</strong> Plan will cover drug</li><li>❌ <strong>Unfavorable:</strong> Beneficiary can move to Level 4</li><li>⏰ <strong>OMHA does not issue decision within 90 days</strong> — beneficiary may escalate</li></ul></div>`
+      },
+      'c3-l4': {
+        title: 'Level 4: Council Review',
+        body: `<div class="modal-section"><h3>How to File</h3><ul><li>Beneficiary requests Council review within <span class="highlight">60 days</span> of receiving unfavorable OMHA decision</li></ul></div>
+        <div class="modal-section"><h3>Review Process</h3><ul><li>Council reviews OMHA decision and decides whether plan should cover drug</li><li><strong>Standard:</strong> Council should issue decision within <span class="highlight">90 days</span> of getting appeal</li><li><strong>Expedited:</strong> Council should issue decision within <span class="highlight">10 days</span> of getting appeal</li></ul></div>
+        <div class="modal-section"><h3>Three Possible Outcomes</h3><ul><li>✅ <strong>Favorable:</strong> Plan will cover drug</li><li>❌ <strong>Unfavorable:</strong> Beneficiary can move to Level 5</li><li>⏰ <strong>Council does not issue decision within 90 days</strong> — beneficiary may escalate</li></ul></div>`
+      },
+      'c3-l5': {
+        title: 'Level 5: Judicial Review',
+        body: `<div class="modal-section"><h3>How to File</h3><ul><li>Beneficiary requests judicial review by filing a case in local <strong>U.S. Federal District Court</strong> within <span class="highlight">60 days</span> of unfavorable Council decision</li></ul></div>
+        <div class="modal-section"><h3>Review Process</h3><ul><li>Federal District Court reviews Council's unfavorable decision</li><li><strong>No timeline</strong> for decision — court sets its own schedule</li></ul></div>
+        <div class="modal-section"><h3>Two Possible Outcomes</h3>
+        <div class="modal-two-col">
+          <div class="modal-col"><h4>✅ Favorable Decision</h4><p>Plan will pay for drug.</p></div>
+          <div class="modal-col"><h4>❌ Unfavorable Decision</h4><p>Beneficiary will have to pay for drug.</p></div>
+        </div></div>`
+      },
+      'c3-goodcause': {
+        title: 'Good Cause Extension — Part D',
+        body: `<div class="modal-section"><h3>What is a Good Cause Extension?</h3><p>Beneficiaries can file for a <strong>good cause extension</strong> if they are late filing an appeal at any level of the Part D appeal process.</p></div>
+        <div class="modal-section"><h3>Valid Reasons (Examples)</h3><ul><li>Not receiving Medicare notices</li><li>Being too ill to file an appeal</li><li>Lacking sufficient documentation to support appeal because of obstruction or delay of others</li><li>Late in receiving the denial notice</li></ul></div>
+        <div class="modal-section"><h3>How to Request</h3><ul><li>File the late appeal</li><li>Include an explanation of why it is late</li></ul></div>`
+      },
+      'c3-tips': {
+        title: 'Tips for Appealing — Part D',
+        body: `<div class="modal-section"><h3>6 Best Practices for a Successful Part D Appeal</h3><ul><li>📋 <strong>Follow instructions</strong> — Read all directions on the denial notice carefully</li><li>📅 <strong>Adhere to important deadlines</strong> — Part D expedited timelines can be as short as 24–72 hours</li><li>📁 <strong>Keep original copies of information</strong> — Never send originals; keep copies of all documents submitted</li><li>📝 <strong>Take notes while appealing</strong> — Document all calls, dates, names, and outcomes</li><li>👨‍⚕️ <strong>Get doctor or health care provider support</strong> — The doctor can request an expedited exception or prescribe an alternative covered drug</li><li>💪 <strong>Keep going! The appeal process has many levels.</strong> — An unfavorable decision at one level can still be reversed at a higher level</li></ul></div>`
+      }
+    };
+
+    function switchCourse(num) {
+      // Update panels
+      document.getElementById('panel1').style.display = num === 1 ? '' : 'none';
+      document.getElementById('panel2').style.display = num === 2 ? '' : 'none';
+      document.getElementById('panel3').style.display = num === 3 ? '' : 'none';
+      // Update tabs
+      document.getElementById('tab1').classList.toggle('active-c1', num === 1);
+      document.getElementById('tab2').classList.toggle('active-c1', num === 2);
+      document.getElementById('tab3').classList.toggle('active-c1', num === 3);
+      // Update sidebar
+      document.getElementById('sideC1').classList.toggle('active', num === 1);
+      document.getElementById('sideC2').classList.toggle('active', num === 2);
+      document.getElementById('sideC3').classList.toggle('active', num === 3);
+      // Scroll to top of content
+      document.getElementById('course-content').scrollIntoView({behavior:'smooth', block:'start'});
+    }
+
+    function openModal(key) {
+      const s = slides[key];
+      if (!s) return;
+      document.getElementById('modalTitle').textContent = s.title;
+      document.getElementById('modalBody').innerHTML = s.body;
+      document.getElementById('modal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(e) {
+      if (e.target === document.getElementById('modal')) closeModalDirect();
+    }
+
+    function closeModalDirect() {
+      document.getElementById('modal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModalDirect(); });
+  </script>
+</body>
+</html>

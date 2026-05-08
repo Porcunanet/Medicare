@@ -1,0 +1,1610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SHIP TAC — Medicare Training | Level 4: Other Insurance & Assistance Programs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy:   #1a3557;
+      --blue:   #2563a8;
+      --sky:    #4a9ed6;
+      --orange: #d9622b;
+      --amber:  #f0a500;
+      --sand:   #f5f0e8;
+      --white:  #ffffff;
+      --ink:    #1e2630;
+      --muted:  #5a6878;
+      --border: #dde3ec;
+      --teal:   #2d9e8a;
+      --l4-primary: #0d5c4a;
+      --l4-accent:  #0f766e;
+      --l4-light:   #e8f8f5;
+      --l4-mid:     #14b8a6;
+      --nav-h: 68px;
+      --radius: 12px;
+      --shadow: 0 4px 24px rgba(13,92,74,.10);
+      --shadow-lg: 0 12px 48px rgba(13,92,74,.16);
+      --serif: 'DM Serif Display', Georgia, serif;
+      --sans:  'DM Sans', system-ui, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: var(--sans); background: var(--sand); color: var(--ink); min-height: 100vh; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    .nav { position: sticky; top: 0; z-index: 100; height: var(--nav-h); background: var(--navy); display: flex; align-items: center; box-shadow: 0 2px 16px rgba(0,0,0,.25); }
+    .nav-inner { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; gap: 32px; }
+    .nav-logo { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .nav-logo-icon { width: 38px; height: 38px; background: var(--orange); border-radius: 50%; display: grid; place-items: center; font-size: 18px; font-weight: 700; color: white; font-family: var(--serif); }
+    .nav-logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+    .nav-logo-text strong { color: var(--white); font-size: .95rem; font-weight: 600; }
+    .nav-logo-text span   { color: var(--sky); font-size: .72rem; font-weight: 300; letter-spacing: .5px; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 4px; flex: 1; list-style: none; }
+    .nav-links a { padding: 6px 14px; border-radius: 6px; color: rgba(255,255,255,.75); font-size: .875rem; font-weight: 400; transition: color .2s, background .2s; white-space: nowrap; }
+    .nav-links a:hover, .nav-links a.active { color: var(--white); background: rgba(255,255,255,.12); }
+    .nav-links a.active { font-weight: 600; color: var(--amber); }
+    .nav-cta { margin-left: auto; padding: 8px 18px; background: var(--orange); color: var(--white); border-radius: 8px; font-size: .875rem; font-weight: 600; white-space: nowrap; transition: background .2s; }
+    .nav-cta:hover { background: #c2561e; }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; color: white; padding: 6px; }
+    .nav-toggle svg { width: 24px; height: 24px; }
+
+    .level-banner { background: linear-gradient(135deg, #04231c 0%, #0d5c4a 60%, #0f766e 100%); padding: 72px 24px 80px; text-align: center; position: relative; overflow: hidden; }
+    .level-banner::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); pointer-events: none; }
+    .level-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2); border-radius: 100px; padding: 6px 16px; font-size: .78rem; font-weight: 500; color: #a8e8df; letter-spacing: .6px; text-transform: uppercase; margin-bottom: 24px; }
+    .level-badge::before { content: '●'; font-size: .5rem; color: var(--amber); }
+    .level-banner h1 { font-family: var(--serif); font-size: clamp(2rem, 5vw, 3.5rem); color: var(--white); line-height: 1.15; max-width: 700px; margin: 0 auto 16px; }
+    .level-banner h1 em { font-style: italic; color: #a8e8df; }
+    .level-banner p { color: rgba(255,255,255,.7); font-size: 1.1rem; max-width: 560px; margin: 0 auto 36px; font-weight: 300; line-height: 1.65; }
+    .hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { background: var(--orange); color: var(--white); padding: 13px 28px; border-radius: 10px; font-weight: 600; font-size: .95rem; transition: background .2s, transform .15s; box-shadow: 0 4px 16px rgba(217,98,43,.4); }
+    .btn-primary:hover { background: #c2561e; transform: translateY(-2px); }
+    .btn-outline { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,.35); padding: 13px 28px; border-radius: 10px; font-weight: 500; font-size: .95rem; transition: background .2s; }
+    .btn-outline:hover { background: rgba(255,255,255,.1); }
+
+    .breadcrumb { background: var(--white); border-bottom: 1px solid var(--border); padding: 14px 24px; }
+    .breadcrumb-inner { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; gap: 8px; font-size: .82rem; color: var(--muted); }
+    .breadcrumb-inner a { color: var(--l4-accent); }
+    .breadcrumb-inner a:hover { text-decoration: underline; }
+    .breadcrumb-sep { color: var(--border); }
+
+    .progress-strip { background: var(--white); border-bottom: 1px solid var(--border); padding: 18px 24px; }
+    .progress-inner { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .progress-label { font-size: .8rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; white-space: nowrap; }
+    .progress-track { flex: 1; min-width: 160px; height: 8px; background: var(--border); border-radius: 100px; overflow: hidden; }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, var(--l4-primary), var(--l4-mid)); border-radius: 100px; }
+    .progress-meta { font-size: .82rem; color: var(--muted); white-space: nowrap; }
+    .progress-meta strong { color: var(--l4-accent); }
+
+    .main-grid { display: grid; grid-template-columns: 300px 1fr; gap: 0; max-width: 1280px; margin: 0 auto; padding: 32px 24px; align-items: start; }
+
+    .sidebar { position: sticky; top: calc(var(--nav-h) + 16px); display: flex; flex-direction: column; gap: 16px; padding-right: 28px; }
+    .sidebar-card { background: var(--white); border-radius: var(--radius); border: 1px solid var(--border); overflow: hidden; box-shadow: var(--shadow); }
+    .sidebar-card-head { background: var(--l4-primary); padding: 14px 18px; display: flex; align-items: center; gap: 10px; }
+    .sidebar-card-head h3 { color: var(--white); font-size: .85rem; font-weight: 600; }
+    .sidebar-card-head .icon { font-size: 1rem; }
+    .course-list { list-style: none; }
+    .course-item { display: flex; align-items: center; gap: 12px; padding: 12px 18px; border-bottom: 1px solid var(--border); transition: background .15s; cursor: pointer; }
+    .course-item:last-child { border-bottom: none; }
+    .course-item:hover { background: var(--l4-light); }
+    .course-item.active { background: #d4f0ec; }
+    .course-num { width: 26px; height: 26px; border-radius: 50%; background: var(--border); display: grid; place-items: center; font-size: .72rem; font-weight: 700; color: var(--muted); flex-shrink: 0; }
+    .course-item.active .course-num { background: var(--l4-accent); color: var(--white); }
+    .course-info { flex: 1; min-width: 0; }
+    .course-info strong { display: block; font-size: .82rem; color: var(--ink); font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .course-info span  { font-size: .73rem; color: var(--muted); }
+    .course-badge { font-size: .65rem; font-weight: 700; padding: 3px 8px; border-radius: 100px; background: var(--l4-light); color: var(--l4-accent); white-space: nowrap; }
+    .info-box { padding: 16px 18px; display: flex; flex-direction: column; gap: 10px; }
+    .info-row { display: flex; justify-content: space-between; align-items: center; font-size: .82rem; }
+    .info-row span { color: var(--muted); }
+    .info-row strong { color: var(--ink); }
+
+    .content { min-width: 0; }
+    .course-header { background: var(--white); border-radius: var(--radius); border: 1px solid var(--border); padding: 28px 32px; margin-bottom: 24px; box-shadow: var(--shadow); display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: center; }
+    .course-eyebrow { font-size: .75rem; font-weight: 600; color: var(--l4-accent); text-transform: uppercase; letter-spacing: .6px; margin-bottom: 6px; }
+    .course-title { font-family: var(--serif); font-size: 1.75rem; color: var(--navy); line-height: 1.2; margin-bottom: 10px; }
+    .course-meta-row { display: flex; gap: 16px; flex-wrap: wrap; }
+    .meta-chip { display: inline-flex; align-items: center; gap: 6px; font-size: .78rem; color: var(--muted); }
+    .meta-chip .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--l4-mid); }
+    .start-btn { background: var(--l4-accent); color: var(--white); padding: 12px 24px; border-radius: 10px; font-weight: 600; font-size: .875rem; white-space: nowrap; cursor: pointer; border: none; transition: background .2s, transform .15s; box-shadow: 0 4px 14px rgba(15,118,110,.3); }
+    .start-btn:hover { background: var(--l4-primary); transform: translateY(-2px); }
+
+    .section-label { font-size: .72rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .8px; margin-bottom: 14px; margin-top: 28px; display: flex; align-items: center; gap: 10px; }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+    .objectives-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-bottom: 24px; }
+    .obj-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 10px; box-shadow: var(--shadow); transition: transform .2s, box-shadow .2s; }
+    .obj-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+    .obj-num { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, var(--l4-primary), var(--l4-mid)); display: grid; place-items: center; font-family: var(--serif); font-size: 1.1rem; color: white; }
+
+    .slides-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin-bottom: 32px; }
+    .slide-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); cursor: pointer; transition: transform .2s, box-shadow .2s, border-color .2s; display: flex; flex-direction: column; }
+    .slide-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--l4-mid); }
+    .slide-img { background: linear-gradient(135deg, var(--l4-primary) 0%, var(--l4-mid) 100%); padding: 28px 16px; display: flex; align-items: center; justify-content: center; min-height: 100px; }
+    .slide-img.orange-bg { background: linear-gradient(135deg, #9e4d1a 0%, var(--orange) 100%); }
+    .slide-img.amber-bg  { background: linear-gradient(135deg, #b07800 0%, var(--amber) 100%); }
+    .slide-img.navy-bg   { background: linear-gradient(135deg, #0d2444 0%, #1a3d6b 100%); }
+    .slide-thumb-content { padding: 16px; text-align: center; }
+    .slide-thumb-icon { font-size: 2.2rem; margin-bottom: 8px; display: block; }
+    .slide-thumb-title { font-size: .8rem; font-weight: 600; color: white; line-height: 1.3; }
+    .slide-body { padding: 14px 16px; flex: 1; }
+    .slide-num { font-size: .7rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+    .slide-title { font-size: .88rem; font-weight: 600; color: var(--ink); line-height: 1.35; margin-bottom: 8px; }
+    .slide-desc { font-size: .78rem; color: var(--muted); line-height: 1.5; }
+    .slide-footer { padding: 10px 16px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+    .slide-tag { font-size: .68rem; font-weight: 600; padding: 3px 9px; border-radius: 100px; background: var(--l4-light); color: var(--l4-accent); }
+    .slide-tag.orange { background: #fdecea; color: var(--orange); }
+    .slide-tag.amber  { background: #fff8e0; color: #a07000; }
+    .slide-tag.navy   { background: #e8f0fb; color: var(--navy); }
+    .slide-tag.purple { background: #f0eafa; color: #6b3fa0; }
+    .slide-arrow { font-size: .75rem; color: var(--l4-mid); font-weight: 700; transition: transform .2s; }
+    .slide-card:hover .slide-arrow { transform: translateX(4px); }
+
+    .level-rows { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+    .level-row { display: grid; grid-template-columns: 44px 1fr auto; align-items: center; gap: 16px; background: var(--sand); border-radius: 10px; padding: 14px 18px; border: 1px solid var(--border); cursor: pointer; transition: background .15s, border-color .15s; }
+    .level-row:hover { background: var(--l4-light); border-color: var(--l4-mid); }
+    .level-row-num { width: 38px; height: 38px; border-radius: 10px; display: grid; place-items: center; color: white; font-weight: 700; font-size: .9rem; }
+    .level-row-info strong { display: block; font-size: .85rem; color: var(--ink); font-weight: 600; }
+    .level-row-info span { font-size: .78rem; color: var(--muted); }
+    .level-row-badge { font-size: .7rem; font-weight: 700; padding: 4px 10px; border-radius: 100px; white-space: nowrap; }
+    .badge-teal   { background: var(--l4-light); color: var(--l4-accent); }
+    .badge-orange { background: #fdecea; color: var(--orange); }
+    .badge-amber  { background: #fff8e0; color: #a07000; }
+    .badge-navy   { background: #e8f0fb; color: var(--navy); }
+
+    .cob-table { width: 100%; border-collapse: collapse; background: var(--white); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 32px; font-size: .84rem; }
+    .cob-table th { background: var(--l4-primary); color: white; padding: 12px 16px; text-align: left; font-size: .78rem; font-weight: 600; letter-spacing: .3px; }
+    .cob-table td { padding: 11px 16px; border-bottom: 1px solid var(--border); color: var(--ink); vertical-align: middle; }
+    .cob-table tr:last-child td { border-bottom: none; }
+    .cob-table tr:hover td { background: var(--l4-light); }
+    .badge-p { display: inline-block; background: #1a3557; color: white; font-size: .68rem; font-weight: 700; padding: 2px 9px; border-radius: 100px; }
+    .badge-s { display: inline-block; background: var(--l4-light); color: var(--l4-accent); font-size: .68rem; font-weight: 700; padding: 2px 9px; border-radius: 100px; border: 1px solid var(--l4-mid); }
+
+    .terms-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; margin-bottom: 32px; }
+    .term-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 6px; position: relative; overflow: hidden; }
+    .term-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--l4-accent); }
+    .term-card.orange::before { background: var(--orange); }
+    .term-card.amber::before  { background: var(--amber); }
+    .term-card.navy::before   { background: var(--navy); }
+    .term-name { font-weight: 700; font-size: .88rem; color: var(--navy); }
+    .term-def  { font-size: .78rem; color: var(--muted); line-height: 1.5; }
+
+    .course-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 10px 14px; box-shadow: var(--shadow); }
+    .course-tab { padding: 9px 18px; border-radius: 8px; border: none; cursor: pointer; font-family: var(--sans); font-size: .82rem; font-weight: 600; background: var(--sand); color: var(--muted); transition: all .2s; }
+    .course-tab:hover { background: var(--l4-light); color: var(--l4-accent); }
+    .course-tab.active-l4 { background: var(--l4-accent); color: white; box-shadow: 0 3px 10px rgba(15,118,110,.3); }
+
+    .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(4,35,28,.7); backdrop-filter: blur(6px); z-index: 200; padding: 24px; overflow-y: auto; }
+    .modal-overlay.open { display: flex; align-items: flex-start; justify-content: center; }
+    .modal { background: var(--white); border-radius: 16px; max-width: 820px; width: 100%; margin: auto; box-shadow: 0 24px 80px rgba(0,0,0,.35); overflow: hidden; animation: modalIn .25s ease; }
+    @keyframes modalIn { from { opacity: 0; transform: scale(.96) translateY(16px); } }
+    .modal-header { background: var(--l4-primary); padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .modal-header h2 { color: var(--white); font-family: var(--serif); font-size: 1.25rem; }
+    .modal-close { background: rgba(255,255,255,.15); border: none; color: white; cursor: pointer; width: 32px; height: 32px; border-radius: 50%; font-size: 1.1rem; display: grid; place-items: center; transition: background .2s; }
+    .modal-close:hover { background: rgba(255,255,255,.3); }
+    .modal-body { padding: 28px 24px; }
+    .modal-section { margin-bottom: 22px; }
+    .modal-section h3 { font-size: .9rem; font-weight: 700; color: var(--l4-accent); margin-bottom: 10px; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+    .modal-section p { font-size: .9rem; color: var(--muted); line-height: 1.6; margin-bottom: 8px; }
+    .modal-section ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .modal-section li { font-size: .88rem; color: var(--muted); padding-left: 18px; position: relative; line-height: 1.5; }
+    .modal-section li::before { content: '→'; position: absolute; left: 0; color: var(--orange); font-size: .75rem; top: 2px; }
+    .modal-footer { padding: 16px 24px; border-top: 1px solid var(--border); display: flex; gap: 12px; justify-content: flex-end; }
+    .modal-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 10px; }
+    .modal-col { background: var(--sand); border-radius: 8px; padding: 14px; border: 1px solid var(--border); }
+    .modal-col h4 { font-size: .8rem; font-weight: 700; margin-bottom: 6px; color: var(--ink); }
+    .modal-col p { font-size: .82rem; color: var(--muted); line-height: 1.5; }
+
+    footer { background: var(--navy); color: rgba(255,255,255,.55); text-align: center; padding: 28px 24px; font-size: .8rem; margin-top: 48px; }
+    footer strong { color: rgba(255,255,255,.8); }
+
+    @media (max-width: 900px) {
+      .main-grid { grid-template-columns: 1fr; }
+      .sidebar { position: static; padding-right: 0; flex-direction: row; flex-wrap: wrap; }
+      .sidebar-card { flex: 1; min-width: 260px; }
+      .course-header { grid-template-columns: 1fr; }
+      .start-btn { width: 100%; }
+    }
+    @media (max-width: 640px) {
+      .nav-links { display: none; position: absolute; top: var(--nav-h); left: 0; right: 0; background: var(--navy); flex-direction: column; align-items: stretch; padding: 12px; gap: 4px; border-top: 1px solid rgba(255,255,255,.1); }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 10px 14px; }
+      .nav-toggle { display: block; margin-left: auto; }
+      .nav-cta { display: none; }
+      .level-banner { padding: 48px 20px 56px; }
+      .main-grid { padding: 20px 16px; }
+      .slides-grid { grid-template-columns: 1fr; }
+      .modal-two-col { grid-template-columns: 1fr; }
+      .cob-table { font-size: .73rem; }
+      .cob-table th, .cob-table td { padding: 8px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">
+        <div class="nav-logo-icon">S</div>
+        <div class="nav-logo-text">
+          <strong>SHIP TAC</strong>
+          <span>Medicare Training</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html">Level 1 — Basics</a></li>
+        <li><a href="index2.html">Level 2 — Coverage Rules</a></li>
+        <li><a href="index3.html">Level 3 — Appeals &amp; Penalties</a></li>
+        <li><a href="index4.html" class="active">Level 4 — Other Insurance</a></li>
+      </ul>
+      <a class="nav-cta" href="index3.html">← Level 3</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <section class="level-banner">
+    <div class="level-badge">Level 4 — Other Insurance and Assistance Programs</div>
+    <h1>Medicare &amp; <em>Employer Insurance</em></h1>
+    <p>Advanced training on how Medicare coordinates with employer-sponsored coverage — including group health plans, COBRA, retiree insurance, and federal employee benefits.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="#course-content">Begin Course 1 →</a>
+      <a class="btn-outline" href="index3.html">← Back to Level 3</a>
+    </div>
+  </section>
+
+  <div class="breadcrumb">
+    <div class="breadcrumb-inner">
+      <a href="index.html">Home</a><span class="breadcrumb-sep">›</span>
+      <a href="index3.html">Level 3: Appeals &amp; Penalties</a><span class="breadcrumb-sep">›</span>
+      <span>Level 4: Other Insurance &amp; Assistance Programs</span><span class="breadcrumb-sep">›</span>
+      <span>Course 1: Medicare and Employer Insurance</span>
+    </div>
+  </div>
+
+  <div class="progress-strip">
+    <div class="progress-inner">
+      <span class="progress-label">Your Progress</span>
+      <div class="progress-track"><div class="progress-fill" style="width:0%"></div></div>
+      <span class="progress-meta"><strong>0 of 4</strong> courses · Level 4</span>
+    </div>
+  </div>
+
+  <div class="main-grid" id="course-content">
+    <aside class="sidebar">
+      <div class="sidebar-card">
+        <div class="sidebar-card-head">
+          <span class="icon">🏢</span>
+          <h3>Level 4 — Other Insurance &amp; Assistance</h3>
+        </div>
+        <ul class="course-list">
+          <li class="course-item active" id="sideC1" onclick="switchCourse(1)" style="cursor:pointer">
+            <div class="course-num" style="background:var(--l4-accent);color:white">1</div>
+            <div class="course-info">
+              <strong>Medicare &amp; Employer Insurance</strong>
+              <span>35 min · In Progress</span>
+            </div>
+            <span class="course-badge">Active</span>
+          </li>
+          <li class="course-item" id="sideC2" onclick="switchCourse(2)" style="cursor:pointer">
+            <div class="course-num" style="background:#0369a1;color:white">2</div>
+            <div class="course-info">
+              <strong>Medicare &amp; Other Insurance</strong>
+              <span>25 min · Available</span>
+            </div>
+            <span class="course-badge" style="background:#e0f2fe;color:#0369a1;border:1px solid #0369a1">New</span>
+          </li>
+          <li class="course-item" id="sideC3" onclick="switchCourse(3)" style="cursor:pointer">
+            <div class="course-num" style="background:#6d28d9;color:white">3</div>
+            <div class="course-info">
+              <strong>Medicare &amp; Medicaid</strong>
+              <span>45 min · Available</span>
+            </div>
+            <span class="course-badge" style="background:#ede9fe;color:#6d28d9;border:1px solid #6d28d9">New</span>
+          </li>
+          <li class="course-item" id="sideC4" onclick="switchCourse(4)" style="cursor:pointer">
+            <div class="course-num" style="background:#0f766e;color:white">4</div>
+            <div class="course-info">
+              <strong>Medicare Assistance Programs</strong>
+              <span>35 min · Available</span>
+            </div>
+            <span class="course-badge" style="background:#ccfbf1;color:#0f766e;border:1px solid #0f766e">New</span>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-card-head"><span class="icon">ℹ️</span><h3>Course Details</h3></div>
+        <div class="info-box">
+          <div class="info-row"><span>Seat Time</span><strong>35–45 minutes</strong></div>
+          <div class="info-row"><span>Level</span><strong>Advanced</strong></div>
+          <div class="info-row"><span>Prerequisites</span><strong>Level 3 Complete</strong></div>
+          <div class="info-row"><span>Provider</span><strong>SHIP TAC</strong></div>
+          <div class="info-row"><span>Courses</span><strong>4 courses</strong></div>
+        </div>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-card-head"><span class="icon">📘</span><h3>Level 3 Complete?</h3></div>
+        <div class="info-box">
+          <p style="font-size:.82rem;color:var(--muted);line-height:1.5">Make sure you've finished all Level 3 courses before starting Level 4.</p>
+          <a href="index3.html" style="display:block;text-align:center;background:var(--l4-primary);color:white;padding:9px 16px;border-radius:8px;font-size:.82rem;font-weight:600;margin-top:4px">← Review Level 3</a>
+        </div>
+      </div>
+    </aside>
+
+    <main class="content">
+      <div class="course-tabs">
+        <button class="course-tab active-l4" id="tab1" onclick="switchCourse(1)">🏢 Course 1: Medicare &amp; Employer Insurance</button>
+        <button class="course-tab" id="tab2" onclick="switchCourse(2)">🎖️ Course 2: Medicare &amp; Other Insurance</button>
+        <button class="course-tab" id="tab3" onclick="switchCourse(3)">🏥 Course 3: Medicare &amp; Medicaid</button>
+        <button class="course-tab" id="tab4" onclick="switchCourse(4)">💊 Course 4: Medicare Assistance Programs</button>
+      </div>
+
+      <div id="panel1">
+
+        <div class="course-header" style="border-top:4px solid var(--l4-accent)">
+          <div>
+            <div class="course-eyebrow">Level 4 · Course 1</div>
+            <h2 class="course-title">Medicare and Employer Insurance</h2>
+            <div class="course-meta-row">
+              <span class="meta-chip"><span class="dot"></span> 35 minutes seat time</span>
+              <span class="meta-chip"><span class="dot"></span> 4 learning objectives</span>
+              <span class="meta-chip"><span class="dot"></span> GHP, COBRA, Retiree &amp; FEHB</span>
+            </div>
+          </div>
+          <button class="start-btn" onclick="openModal('intro')">▶ View Course Intro</button>
+        </div>
+
+        <div class="section-label">Learning Objectives</div>
+        <div class="objectives-grid">
+          <div class="obj-card"><div class="obj-num">1</div><p>Explain coordination of benefits and differentiate between primary and secondary insurance.</p></div>
+          <div class="obj-card"><div class="obj-num">2</div><p>Determine when a beneficiary's current employee insurance pays primary or secondary to Medicare.</p></div>
+          <div class="obj-card"><div class="obj-num">3</div><p>Understand how COBRA, retiree insurance, and FEHB coordinate with Medicare.</p></div>
+          <div class="obj-card"><div class="obj-num">4</div><p>Advise beneficiaries about when they may or may not want to delay Medicare enrollment.</p></div>
+        </div>
+
+        <div class="section-label">Coordination of Benefits</div>
+        <div class="slides-grid">
+          <div class="slide-card" onclick="openModal('cob')">
+            <div class="slide-img"><div class="slide-thumb-content"><span class="slide-thumb-icon">🤝</span><div class="slide-thumb-title">Coordination of Benefits Overview</div></div></div>
+            <div class="slide-body"><div class="slide-num">Slide 3</div><div class="slide-title">Coordination of Benefits</div><div class="slide-desc">Rules that determine how Medicare and other insurance share responsibility for paying claims. Primary payer pays first; secondary pays second. Managed by the BCRC (855-798-2627).</div></div>
+            <div class="slide-footer"><span class="slide-tag">Overview</span><span class="slide-arrow">→</span></div>
+          </div>
+          <div class="slide-card" onclick="openModal('ghp65')">
+            <div class="slide-img navy-bg"><div class="slide-thumb-content"><span class="slide-thumb-icon">👔</span><div class="slide-thumb-title">Current Employee: Age 65+</div></div></div>
+            <div class="slide-body"><div class="slide-num">Slide 4</div><div class="slide-title">Current Employee Health Insurance: 65+</div><div class="slide-desc">Medicare is primary for small GHPs (&lt;20 employees). Medicare is secondary when GHP has 20+ employees. Applies when beneficiary is enrolled in Medicare and covered by their or their spouse's current employer plan.</div></div>
+            <div class="slide-footer"><span class="slide-tag navy">Age 65+</span><span class="slide-arrow">→</span></div>
+          </div>
+          <div class="slide-card" onclick="openModal('ghpprotect')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#0d5c4a,#f0a500)"><div class="slide-thumb-content"><span class="slide-thumb-icon">🛡️</span><div class="slide-thumb-title">Protections: GHP 20+ Employees</div></div></div>
+            <div class="slide-body"><div class="slide-num">Slide 5</div><div class="slide-title">Protections for GHP Members (20+ Employees)</div><div class="slide-desc">GHPs of 20+ employees must provide the same coverage as for all other employees and cannot discriminate against Medicare-eligible individuals. Employers cannot encourage employees to drop the employer plan.</div></div>
+            <div class="slide-footer"><span class="slide-tag">Protections</span><span class="slide-arrow">→</span></div>
+          </div>
+          <div class="slide-card" onclick="openModal('ghpunder65')">
+            <div class="slide-img navy-bg"><div class="slide-thumb-content"><span class="slide-thumb-icon">🦽</span><div class="slide-thumb-title">Current Employee: Under 65</div></div></div>
+            <div class="slide-body"><div class="slide-num">Slide 6</div><div class="slide-title">Current Employee Health Insurance: Under 65</div><div class="slide-desc">For beneficiaries under 65 eligible due to disability. Medicare is primary if GHP has fewer than 100 employees. Medicare is secondary if GHP is a large group health plan (LGHP) of 100+ employees.</div></div>
+            <div class="slide-footer"><span class="slide-tag navy">Under 65</span><span class="slide-arrow">→</span></div>
+          </div>
+          <div class="slide-card" onclick="openModal('msp')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#0d5c4a,#1a3d6b)"><div class="slide-thumb-content"><span class="slide-thumb-icon">💳</span><div class="slide-thumb-title">Medicare as Secondary Payer</div></div></div>
+            <div class="slide-body"><div class="slide-num">Slide 7</div><div class="slide-title">Medicare as Secondary Payer</div><div class="slide-desc">When GHP (20+) or LGHP pays primary, Medicare pays secondary. If GHP denies a Medicare-covered service, Medicare may pay primary. GHP denial does not affect Medicare's own coverage decisions.</div></div>
+            <div class="slide-footer"><span class="slide-tag">Secondary Payer</span><span class="slide-arrow">→</span></div>
+          </div>
+        </div>
+
+        <div class="section-label">Quick Reference: Who Pays Primary?</div>
+        <table class="cob-table">
+          <thead>
+            <tr><th>Situation</th><th>Employer / Plan Size</th><th>Primary Payer</th><th>Secondary Payer</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Age 65+, current employee coverage</td><td>Fewer than 20 employees (Small GHP)</td><td><span class="badge-p">Medicare</span></td><td><span class="badge-s">GHP</span></td></tr>
+            <tr><td>Age 65+, current employee coverage</td><td>20+ employees (GHP)</td><td><span class="badge-p">GHP</span></td><td><span class="badge-s">Medicare</span></td></tr>
+            <tr><td>Under 65, disability, current employee</td><td>Fewer than 100 employees</td><td><span class="badge-p">Medicare</span></td><td><span class="badge-s">GHP</span></td></tr>
+            <tr><td>Under 65, disability, current employee</td><td>100+ employees (LGHP)</td><td><span class="badge-p">LGHP</span></td><td><span class="badge-s">Medicare</span></td></tr>
+            <tr><td>COBRA (enrolled after already having Medicare)</td><td>Any</td><td><span class="badge-p">Medicare</span></td><td><span class="badge-s">COBRA</span></td></tr>
+            <tr><td>Retiree insurance + Medicare</td><td>Any</td><td><span class="badge-p">Medicare</span></td><td><span class="badge-s">Retiree Ins.</span></td></tr>
+            <tr><td>FEHB — currently working federal employee</td><td>Federal (large employer)</td><td><span class="badge-p">FEHB</span></td><td><span class="badge-s">Medicare</span></td></tr>
+            <tr><td>FEHB — retired federal employee</td><td>Federal</td><td><span class="badge-p">Medicare</span></td><td><span class="badge-s">FEHB</span></td></tr>
+            <tr><td>ESRD — within 30-month coordination period</td><td>Current or former employer</td><td><span class="badge-p">GHP</span></td><td><span class="badge-s">Medicare</span></td></tr>
+            <tr><td>ESRD — after 30-month coordination period</td><td>Any</td><td><span class="badge-p">Medicare</span></td><td><span class="badge-s">GHP</span></td></tr>
+          </tbody>
+        </table>
+
+        <div class="section-label">Delaying Medicare Enrollment</div>
+        <div class="slides-grid">
+          <div class="slide-card" onclick="openModal('delayab')">
+            <div class="slide-img orange-bg"><div class="slide-thumb-content"><span class="slide-thumb-icon">⏳</span><div class="slide-thumb-title">Delaying Part A &amp; B Enrollment</div></div></div>
+            <div class="slide-body"><div class="slide-num">Slide 8</div><div class="slide-title">Delaying Part A and/or Part B</div><div class="slide-desc">Two questions to consider: (1) Will other insurance pay primary? If secondary, delaying is usually unadvisable. (2) Will there be delays, gaps, or penalties? Current employee coverage provides a Part B SEP.</div></div>
+            <div class="slide-footer"><span class="slide-tag orange">Delay Risks</span><span class="slide-arrow">→</span></div>
+          </div>
+          <div class="slide-card" onclick="openModal('delayd')">
+            <div class="slide-img orange-bg"><div class="slide-thumb-content"><span class="slide-thumb-icon">💊</span><div class="slide-thumb-title">Delaying Part D Enrollment</div></div></div>
+            <div class="slide-body"><div class="slide-num">Slide 9</div><div class="slide-title">Delaying Part D Enrollment</div><div class="slide-desc">Individuals covered by employer drug coverage have a Part D SEP. No LEP if covered by creditable drug coverage. Keep all health insurance records. Delaying without creditable coverage = likely Part D LEP.</div></div>
+            <div class="slide-footer"><span class="slide-tag orange">Part D</span><span class="slide-arrow">→</span></div>
+          </div>
+        </div>
+
+        <div class="section-label">COBRA, Retiree Insurance, ESRD &amp; FEHB</div>
+        <div class="slides-grid">
+          <div class="slide-card" onclick="openModal('cobra')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#6b3fa0,#9b5fc0)"><div class="slide-thumb-content"><span class="slide-thumb-icon">🔗</span><div class="slide-thumb-title">COBRA Continuation Coverage</div></div></div>
+            <div class="slide-body"><div class="slide-num">Slides 10–13</div><div class="slide-title">COBRA Continuation Coverage</div><div class="slide-desc">Federal law giving individuals right to continued coverage after job loss, divorce, death, or other qualifying events. If enrolled in COBRA after Medicare, Medicare pays primary. Enroll in Medicare when first eligible — COBRA provides no Part B SEP.</div></div>
+            <div class="slide-footer"><span class="slide-tag purple">COBRA</span><span class="slide-arrow">→</span></div>
+          </div>
+          <div class="slide-card" onclick="openModal('retiree')">
+            <div class="slide-img amber-bg"><div class="slide-thumb-content"><span class="slide-thumb-icon">🎓</span><div class="slide-thumb-title">Retiree Insurance</div></div></div>
+            <div class="slide-body"><div class="slide-num">Slide 14</div><div class="slide-title">Retiree Insurance</div><div class="slide-desc">Coverage for former employees no longer actively working. Medicare always pays primary; retiree insurance is secondary. Delaying Medicare while on retiree coverage = no Part B SEP later. Drug coverage SEP available 63 days after losing retiree coverage.</div></div>
+            <div class="slide-footer"><span class="slide-tag amber">Retiree</span><span class="slide-arrow">→</span></div>
+          </div>
+          <div class="slide-card" onclick="openModal('esrd')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#1a3d6b,#0f766e)"><div class="slide-thumb-content"><span class="slide-thumb-icon">🏥</span><div class="slide-thumb-title">End-Stage Renal Disease</div></div></div>
+            <div class="slide-body"><div class="slide-num">Slide 15</div><div class="slide-title">End-Stage Renal Disease (ESRD)</div><div class="slide-desc">Special 30-month coordination period applies when both Medicare (ESRD) and a GHP are active. GHP pays primary during the coordination period. Medicare pays primary after 30 months. GHP can be from current or former employer.</div></div>
+            <div class="slide-footer"><span class="slide-tag navy">ESRD</span><span class="slide-arrow">→</span></div>
+          </div>
+          <div class="slide-card" onclick="openModal('fehb')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#0d2444,#0f766e)"><div class="slide-thumb-content"><span class="slide-thumb-icon">🏛️</span><div class="slide-thumb-title">Federal Employee Health Benefits</div></div></div>
+            <div class="slide-body"><div class="slide-num">Slides 18–19</div><div class="slide-title">Federal Employee Health Benefits (FEHB)</div><div class="slide-desc">Covers current and retired federal employees; administered by OPM. Currently working: FEHB pays primary. Retired: Medicare pays primary. Disenrolling from FEHB is permanent — cannot re-enroll. Retirees who don't take Part B lose their Part B SEP.</div></div>
+            <div class="slide-footer"><span class="slide-tag">FEHB</span><span class="slide-arrow">→</span></div>
+          </div>
+        </div>
+
+        <div class="section-label">Case Examples</div>
+        <div class="level-rows">
+          <div class="level-row" onclick="openModal('zahra')">
+            <div class="level-row-num" style="background:#0d5c4a">Z</div>
+            <div class="level-row-info">
+              <strong>Zahra — Coordination of Benefits Example</strong>
+              <span>67 years old · Medicare Parts A &amp; B · Retiree insurance · Husband's GHP (20+ employees) → Determine payment order</span>
+            </div>
+            <span class="level-row-badge badge-teal">Case Study</span>
+          </div>
+          <div class="level-row" onclick="openModal('ricardo')">
+            <div class="level-row-num" style="background:#d9622b">R</div>
+            <div class="level-row-info">
+              <strong>Ricardo — Should I Sign Up for Medicare?</strong>
+              <span>Currently working · Company with fewer than 20 employees · Turning 65 soon → When should he enroll?</span>
+            </div>
+            <span class="level-row-badge badge-orange">Case Study</span>
+          </div>
+        </div>
+
+        <div class="section-label">Enrollment Decision Considerations</div>
+        <div class="slides-grid">
+          <div class="slide-card" onclick="openModal('enroll-sep')">
+            <div class="slide-img"><div class="slide-thumb-content"><span class="slide-thumb-icon">📅</span><div class="slide-thumb-title">Right to Part B SEP</div></div></div>
+            <div class="slide-body"><div class="slide-num">Slide 20</div><div class="slide-title">Right to Part B Special Enrollment Period</div><div class="slide-desc">Individuals with current employee insurance have a Part B SEP to enroll when coverage ends — regardless of employer size. COBRA and retiree coverage do not count as current employee insurance and do not provide a Part B SEP.</div></div>
+            <div class="slide-footer"><span class="slide-tag">SEP</span><span class="slide-arrow">→</span></div>
+          </div>
+          <div class="slide-card" onclick="openModal('enroll-coverage')">
+            <div class="slide-img orange-bg"><div class="slide-thumb-content"><span class="slide-thumb-icon">⚠️</span><div class="slide-thumb-title">Payment &amp; Coverage Issues</div></div></div>
+            <div class="slide-body"><div class="slide-num">Slide 20</div><div class="slide-title">Possibility of Payment or Coverage Issues</div><div class="slide-desc">If other insurance pays secondary to Medicare, delaying enrollment is usually unadvisable. GHP may not pay on claims where Medicare hasn't paid first, and may recoup any payments made as primary.</div></div>
+            <div class="slide-footer"><span class="slide-tag orange">Risk</span><span class="slide-arrow">→</span></div>
+          </div>
+          <div class="slide-card" onclick="openModal('enroll-partd')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#6b3fa0,#0f766e)"><div class="slide-thumb-content"><span class="slide-thumb-icon">💊</span><div class="slide-thumb-title">Medicare Part D</div></div></div>
+            <div class="slide-body"><div class="slide-num">Slide 20</div><div class="slide-title">Medicare Part D Consideration</div><div class="slide-desc">Employer drug coverage may be creditable — preventing a Part D LEP. Verify creditability annually and keep records of all coverage periods. SEP available up to 2 months after losing employer drug coverage.</div></div>
+            <div class="slide-footer"><span class="slide-tag purple">Part D</span><span class="slide-arrow">→</span></div>
+          </div>
+          <div class="slide-card" onclick="openModal('enroll-fehb')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#0d2444,#f0a500)"><div class="slide-thumb-content"><span class="slide-thumb-icon">🏛️</span><div class="slide-thumb-title">FEHB Considerations</div></div></div>
+            <div class="slide-body"><div class="slide-num">Slide 20</div><div class="slide-title">Federal Employee Health Benefits</div><div class="slide-desc">Retiree FEHB beneficiaries who don't take Part B when first eligible cannot get a Part B SEP later. Disenrolling from FEHB is permanent. Two options: enroll in Part B and pay both premiums, or delay and risk a Part B LEP.</div></div>
+            <div class="slide-footer"><span class="slide-tag amber">FEHB</span><span class="slide-arrow">→</span></div>
+          </div>
+        </div>
+
+        <div class="section-label">Key Terms</div>
+        <div class="terms-grid">
+          <div class="term-card"><div class="term-name">Coordination of Benefits</div><div class="term-def">Rules determining how Medicare and other insurance share responsibility for paying claims, including which insurer pays first (primary) and which pays second (secondary).</div></div>
+          <div class="term-card orange"><div class="term-name">Primary Insurance</div><div class="term-def">The insurance that pays first on health care claims, before any other coverage pays its portion.</div></div>
+          <div class="term-card"><div class="term-name">Secondary Insurance</div><div class="term-def">The insurance that pays after the primary payer has paid its share, potentially covering remaining costs.</div></div>
+          <div class="term-card navy"><div class="term-name">Group Health Plan (GHP)</div><div class="term-def">Health insurance provided to actively working individuals through their employer or union. Coordination rules depend on whether the employer has fewer or more than 20 employees (for age 65+).</div></div>
+          <div class="term-card orange"><div class="term-name">BCRC (Benefits Coordination &amp; Recovery Center)</div><div class="term-def">Medicare contractor that ensures claims are paid in the correct order. Contact: 855-798-2627.</div></div>
+          <div class="term-card"><div class="term-name">COBRA Continuation Coverage</div><div class="term-def">Federal law giving individuals the right to purchase continued employer health coverage after job loss, divorce, death, or other qualifying events. Does not provide a Part B SEP.</div></div>
+          <div class="term-card navy"><div class="term-name">Retiree Insurance</div><div class="term-def">Coverage for former employees no longer actively working. Medicare always pays primary; retiree insurance is secondary. Does not provide a Part B SEP if Medicare enrollment is delayed.</div></div>
+          <div class="term-card orange"><div class="term-name">FEHB (Federal Employee Health Benefits)</div><div class="term-def">Program for current and retired federal employees administered by OPM (www.opm.gov). Federal government is a large employer. Disenrolling from FEHB is permanent.</div></div>
+          <div class="term-card"><div class="term-name">LGHP (Large Group Health Plan)</div><div class="term-def">A group health plan from an employer with 100+ employees. Pays primary to Medicare for disability-based beneficiaries under age 65.</div></div>
+          <div class="term-card navy"><div class="term-name">ESRD (End-Stage Renal Disease)</div><div class="term-def">Permanent kidney failure requiring dialysis or transplant. Special 30-month coordination period applies — GHP pays primary during this time; Medicare pays primary after.</div></div>
+          <div class="term-card"><div class="term-name">Part B Special Enrollment Period (SEP)</div><div class="term-def">Window to enroll in Part B without penalty when current employee coverage ends, regardless of employer size. COBRA and retiree coverage do not qualify.</div></div>
+          <div class="term-card orange"><div class="term-name">Creditable Drug Coverage</div><div class="term-def">Prescription drug coverage at least as good as Part D. Having creditable employer drug coverage allows Part D delay without a late enrollment penalty.</div></div>
+        </div>
+
+      </div><!-- end panel1 -->
+
+      <!-- ══ COURSE 2 PANEL ══ -->
+      <div id="panel2" class="course-panel-l4" style="display:none">
+
+        <div class="course-header" style="border-top:4px solid #0369a1">
+          <div>
+            <div class="course-eyebrow" style="color:#0369a1">Level 4 · Course 2</div>
+            <h2 class="course-title">Medicare and Other Insurance</h2>
+            <div class="course-meta-row">
+              <span class="meta-chip"><span class="dot" style="background:#0369a1"></span> 25 minutes seat time</span>
+              <span class="meta-chip"><span class="dot" style="background:#0369a1"></span> 4 learning objectives</span>
+              <span class="meta-chip"><span class="dot" style="background:#0369a1"></span> Military, Liability, LTC &amp; Marketplace</span>
+            </div>
+          </div>
+          <button class="start-btn" style="background:#0369a1;box-shadow:0 4px 14px rgba(3,105,161,.3)" onclick="openModal('c2-intro')">▶ View Course Intro</button>
+        </div>
+
+        <div class="section-label">Learning Objectives</div>
+        <div class="objectives-grid">
+          <div class="obj-card"><div class="obj-num" style="background:linear-gradient(135deg,#0c4a6e,#0369a1)">1</div><p>Understand how military benefits coordinate with Medicare, including TRICARE, TRICARE for Life, and Veterans Affairs (VA) benefits.</p></div>
+          <div class="obj-card"><div class="obj-num" style="background:linear-gradient(135deg,#0c4a6e,#0369a1)">2</div><p>Explain how liability insurance, no-fault insurance, and workers' compensation work with Medicare.</p></div>
+          <div class="obj-card"><div class="obj-num" style="background:linear-gradient(135deg,#0c4a6e,#0369a1)">3</div><p>Know the basics about long-term care and dental insurance.</p></div>
+          <div class="obj-card"><div class="obj-num" style="background:linear-gradient(135deg,#0c4a6e,#0369a1)">4</div><p>Recognize how Health Insurance Marketplaces may affect Medicare beneficiaries.</p></div>
+        </div>
+
+        <!-- Military Benefits -->
+        <div class="section-label">Military Benefits: TRICARE &amp; VA</div>
+        <div class="slides-grid">
+
+          <div class="slide-card" onclick="openModal('c2-tricare')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#1a4a2e,#2d7a4f)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">🎖️</span><div class="slide-thumb-title">TRICARE Overview</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 3</div><div class="slide-title">Military Benefits: TRICARE</div><div class="slide-desc">TRICARE covers active duty service members (ADSMs) and their families (ADFMs). TRICARE pays primary and Medicare pays secondary. TRICARE for Life (TFL) covers those retired from military who also have Medicare — Medicare pays primary, TFL pays secondary.</div></div>
+            <div class="slide-footer"><span class="slide-tag" style="background:#f0fdf4;color:#2d7a4f">TRICARE</span><span class="slide-arrow">→</span></div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c2-tfl-enrollment')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#2d7a4f,#0369a1)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">📋</span><div class="slide-thumb-title">TFL and Medicare Enrollment</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 4</div><div class="slide-title">TFL and Medicare Enrollment</div><div class="slide-desc">Individual 65+ covered by TRICARE through active duty can delay Part B and remain eligible. They may use Part B SEP when TRICARE ends. Those NOT covered through active duty should sign up for Medicare to avoid losing TRICARE coverage.</div></div>
+            <div class="slide-footer"><span class="slide-tag" style="background:#f0fdf4;color:#2d7a4f">Enrollment</span><span class="slide-arrow">→</span></div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c2-va')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#0c4a6e,#0369a1)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">🦅</span><div class="slide-thumb-title">Veterans Affairs Benefits</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 5</div><div class="slide-title">Veterans Affairs (VA) Benefits</div><div class="slide-desc">VA benefits cover individuals with disability related to active duty service. VA does not coordinate with Medicare at all. VA covers some services Medicare doesn't (e.g., custodial care). VA drug coverage is creditable. Enroll in Medicare when first eligible — no Part B SEP available.</div></div>
+            <div class="slide-footer"><span class="slide-tag" style="background:#e0f2fe;color:#0369a1">VA</span><span class="slide-arrow">→</span></div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c2-case-regina')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#1a4a2e,#0369a1)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">👤</span><div class="slide-thumb-title">Case Example: Regina</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slides 6–7</div><div class="slide-title">Case Example: TFL</div><div class="slide-desc">Regina is 64, retired from the military, and has TRICARE retiree coverage. She is eligible for premium-free Part A but is thinking of delaying Part B when she turns 65. Should she delay?</div></div>
+            <div class="slide-footer"><span class="slide-tag" style="background:#f0fdf4;color:#2d7a4f">Case Study</span><span class="slide-arrow">→</span></div>
+          </div>
+
+        </div>
+
+        <!-- Liability, No-Fault & Workers' Comp -->
+        <div class="section-label">Liability, No-Fault Insurance &amp; Workers' Compensation</div>
+        <div class="slides-grid">
+
+          <div class="slide-card" onclick="openModal('c2-liability')">
+            <div class="slide-img orange-bg">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">⚖️</span><div class="slide-thumb-title">Liability, No-Fault &amp; Workers' Comp</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 8</div><div class="slide-title">Liability, No-Fault &amp; Workers' Compensation</div><div class="slide-desc">Liability insurance protects policyholders if legally liable for injury. No-fault insurance pays for care from accidents regardless of fault. Workers' compensation pays for job-related injury claims. Medicare pays secondary to all three types.</div></div>
+            <div class="slide-footer"><span class="slide-tag orange">Secondary Payer</span><span class="slide-arrow">→</span></div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c2-bcrc')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#9e4d1a,#0369a1)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">🏛️</span><div class="slide-thumb-title">BCRC &amp; Conditional Payments</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 9</div><div class="slide-title">BCRC and Conditional Payments</div><div class="slide-desc">Medicare can make conditional payments as primary payer. The BCRC manages a 6-step recovery process — from reporting the case, through issuing payment summaries, to issuing a recovery demand letter after settlement is received.</div></div>
+            <div class="slide-footer"><span class="slide-tag orange">BCRC Process</span><span class="slide-arrow">→</span></div>
+          </div>
+
+        </div>
+
+        <!-- Long-Term Care & Dental -->
+        <div class="section-label">Long-Term Care &amp; Dental Insurance</div>
+        <div class="slides-grid">
+
+          <div class="slide-card" onclick="openModal('c2-ltc')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#5c4a1a,#b07800)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">🏠</span><div class="slide-thumb-title">Long-Term Care Insurance</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 10</div><div class="slide-title">Long-Term Care Insurance</div><div class="slide-desc">Covers long-term services and support (LTSS), also called custodial care — help with activities of daily living (ADLs). Medicare does not cover custodial care alone. Long-term care policies fill the gap. Purchase before you need it.</div></div>
+            <div class="slide-footer"><span class="slide-tag amber">Long-Term Care</span><span class="slide-arrow">→</span></div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c2-ltc-qualify')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#b07800,#2d7a4f)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">✅</span><div class="slide-thumb-title">LTC Qualifications</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 11</div><div class="slide-title">Long-Term Care Qualifications</div><div class="slide-desc">Two triggers: (1) Benefit trigger — needing help with 2+ ADLs (bathing, dressing, eating, etc.) or cognitive impairment such as Alzheimer's. (2) Elimination period — 30-, 60-, or 90-day waiting period before the policy starts paying.</div></div>
+            <div class="slide-footer"><span class="slide-tag amber">Qualifications</span><span class="slide-arrow">→</span></div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c2-ltc-costs')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#0c4a6e,#b07800)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">💰</span><div class="slide-thumb-title">LTC Policy Costs</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 12</div><div class="slide-title">Long-Term Care Costs</div><div class="slide-desc">LTC policy costs depend on: age at purchase, maximum number of days the policy will pay (maximum policy benefits), maximum daily benefit amount, and any optional benefits. Long-Term Care Partnership Programs may protect Medicaid assets.</div></div>
+            <div class="slide-footer"><span class="slide-tag amber">Costs</span><span class="slide-arrow">→</span></div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c2-dental')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#0369a1,#0d5c4a)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">🦷</span><div class="slide-thumb-title">Dental Insurance</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 13</div><div class="slide-title">Dental Insurance</div><div class="slide-desc">Most dental care (cleanings, fillings, extractions, dentures) is excluded from Medicare. Some Medicare Advantage plans offer limited dental coverage. Standalone dental policies can be purchased privately. In rare overlap cases, Medicare is primary and dental plan is secondary.</div></div>
+            <div class="slide-footer"><span class="slide-tag" style="background:#e0f2fe;color:#0369a1">Dental</span><span class="slide-arrow">→</span></div>
+          </div>
+
+        </div>
+
+        <!-- Health Insurance Marketplaces -->
+        <div class="section-label">Health Insurance Marketplaces</div>
+        <div class="slides-grid">
+
+          <div class="slide-card" onclick="openModal('c2-marketplace')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#0369a1,#2d7a4f)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">🏪</span><div class="slide-thumb-title">Health Insurance Marketplaces</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 14</div><div class="slide-title">Health Insurance Marketplaces</div><div class="slide-desc">Uninsured individuals can purchase Marketplace coverage. Medicare beneficiaries generally do not need to use Marketplaces — Medigap, MA plans, and Part D plans are not sold through the Marketplace. Tax credits are lost once enrolled in Medicare.</div></div>
+            <div class="slide-footer"><span class="slide-tag" style="background:#e0f2fe;color:#0369a1">Marketplace</span><span class="slide-arrow">→</span></div>
+          </div>
+
+        </div>
+
+        <!-- Key Terms -->
+        <div class="section-label">Key Terms</div>
+        <div class="terms-grid">
+          <div class="term-card" style="border-left-color:#2d7a4f"><div class="term-name">TRICARE</div><div class="term-def">Military health insurance for active duty service members (ADSMs) and active duty family members (ADFMs). TRICARE pays primary; Medicare pays secondary when a beneficiary has both.</div></div>
+          <div class="term-card orange"><div class="term-name">TRICARE for Life (TFL)</div><div class="term-def">TRICARE coverage for individuals who are retired from the military and have Medicare. Requires enrollment in both Part A and Part B. Medicare pays primary; TFL pays secondary. TFL drug coverage is generally creditable.</div></div>
+          <div class="term-card" style="border-left-color:#0369a1"><div class="term-name">VA Benefits</div><div class="term-def">Coverage for individuals with a disability related to active duty military service. VA benefits do not coordinate with Medicare at all. VA covers some services Medicare doesn't, such as custodial and nursing home care. VA drug coverage is creditable.</div></div>
+          <div class="term-card navy"><div class="term-name">Liability Insurance</div><div class="term-def">Insurance that protects the policyholder if they are legally liable for someone else's injury. Medicare pays secondary to liability insurance. Medicare can make conditional payments and recover through the BCRC.</div></div>
+          <div class="term-card orange"><div class="term-name">No-Fault Insurance</div><div class="term-def">Insurance that pays for health care services resulting from an individual's injury as the result of an accident, regardless of who was at fault. Medicare pays secondary to no-fault insurance.</div></div>
+          <div class="term-card" style="border-left-color:#2d7a4f"><div class="term-name">Workers' Compensation</div><div class="term-def">A state-administered program that pays for health care claims for job-related injuries. Medicare pays secondary to workers' compensation. The BCRC manages conditional payment and recovery processes.</div></div>
+          <div class="term-card amber"><div class="term-name">Long-Term Care (LTC) Insurance</div><div class="term-def">Private insurance that covers long-term services and support (LTSS), also called custodial care — assistance with activities of daily living. Medicare does not cover custodial care alone. LTC policies fill this gap.</div></div>
+          <div class="term-card navy"><div class="term-name">Benefit Trigger</div><div class="term-def">The criteria that must be met before a long-term care policy begins paying. Typically requires the individual to need help with 2 or more activities of daily living (ADLs), or to have a cognitive impairment such as Alzheimer's disease.</div></div>
+          <div class="term-card" style="border-left-color:#0369a1"><div class="term-name">Elimination Period</div><div class="term-def">The amount of time that must pass before a long-term care policy starts covering the beneficiary's care. Commonly 30, 60, or 90 days. Similar to a deductible measured in time rather than money.</div></div>
+          <div class="term-card orange"><div class="term-name">ADLs (Activities of Daily Living)</div><div class="term-def">Basic self-care tasks used to assess eligibility for long-term care benefits: bathing, dressing, using the toilet, transferring (moving from bed to chair), caring for incontinence, and eating.</div></div>
+          <div class="term-card" style="border-left-color:#2d7a4f"><div class="term-name">Health Insurance Marketplace</div><div class="term-def">A resource where uninsured and some underinsured individuals can purchase coverage. Medicare beneficiaries generally do not need to use Marketplaces, and enrolling in Medicare causes loss of Marketplace tax credits.</div></div>
+          <div class="term-card amber"><div class="term-name">SHOP (Small Business Health Options Program)</div><div class="term-def">A Marketplace program for small businesses. SHOP plans coordinate with Medicare the same way other current employee insurance does, following the same group health plan rules.</div></div>
+        </div>
+
+      </div><!-- end panel2 -->
+
+      <!-- ══ COURSE 3 PANEL ══ -->
+      <div id="panel3" class="course-panel-l4" style="display:none">
+
+        <div class="course-header" style="border-top:4px solid #6d28d9">
+          <div>
+            <div class="course-eyebrow" style="color:#6d28d9">Level 4 · Course 3</div>
+            <h2 class="course-title">Medicare and Medicaid</h2>
+            <div class="course-meta-row">
+              <span class="meta-chip"><span class="dot" style="background:#6d28d9"></span> 45 minutes seat time</span>
+              <span class="meta-chip"><span class="dot" style="background:#6d28d9"></span> 4 learning objectives</span>
+              <span class="meta-chip"><span class="dot" style="background:#6d28d9"></span> Eligibility, Benefits &amp; Transitions</span>
+            </div>
+          </div>
+          <button class="start-btn" style="background:#6d28d9;box-shadow:0 4px 14px rgba(109,40,217,.3)" onclick="openModal('c3-intro')">▶ View Course Intro</button>
+        </div>
+
+        <div class="section-label">Learning Objectives</div>
+        <div class="objectives-grid">
+          <div class="obj-card"><div class="obj-num" style="background:linear-gradient(135deg,#4c1d95,#6d28d9)">1</div><p>Explain what Medicaid is and what makes someone eligible.</p></div>
+          <div class="obj-card"><div class="obj-num" style="background:linear-gradient(135deg,#4c1d95,#6d28d9)">2</div><p>Understand how to apply for Medicaid.</p></div>
+          <div class="obj-card"><div class="obj-num" style="background:linear-gradient(135deg,#4c1d95,#6d28d9)">3</div><p>Know what services Medicaid covers.</p></div>
+          <div class="obj-card"><div class="obj-num" style="background:linear-gradient(135deg,#4c1d95,#6d28d9)">4</div><p>Describe how beneficiaries transition among different types of Medicaid.</p></div>
+        </div>
+
+        <!-- What is Medicaid -->
+        <div class="section-label">What is Medicaid?</div>
+        <div class="slides-grid">
+
+          <div class="slide-card" onclick="openModal('c3-what')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#4c1d95,#6d28d9)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">🏛️</span><div class="slide-thumb-title">Medicaid Overview</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 3</div><div class="slide-title">What is Medicaid?</div><div class="slide-desc">Federal and state program for people with limited income and assets. Federal guidelines set the framework; states determine income/asset limits, service scope, provider payment, and program names.</div></div>
+            <div class="slide-footer"><span class="slide-tag" style="background:#ede9fe;color:#6d28d9">Overview</span><span class="slide-arrow">→</span></div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c3-options')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#6d28d9,#d9622b)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">📋</span><div class="slide-thumb-title">Medicaid Options</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 4</div><div class="slide-title">Medicaid Options</div><div class="slide-desc">Three main program types: Medicaid for residents of institution (nursing homes/SNFs), Medicaid waiver programs (home/community care), and Medicaid for residents of community (general health services).</div></div>
+            <div class="slide-footer"><span class="slide-tag" style="background:#ede9fe;color:#6d28d9">Programs</span><span class="slide-arrow">→</span></div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c3-abd')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#4c1d95,#0d5c4a)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">👓</span><div class="slide-thumb-title">ABD Medicaid</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 5</div><div class="slide-title">Medicaid Eligibility: Aged, Blind, Disabled (ABD)</div><div class="slide-desc">Traditional Medicaid — most Medicare beneficiaries with Medicaid have ABD Medicaid. Income must be below 74% FPL in most states. SSI recipients automatically qualify. States use SSI budgeting methods.</div></div>
+            <div class="slide-footer"><span class="slide-tag" style="background:#ede9fe;color:#6d28d9">ABD</span><span class="slide-arrow">→</span></div>
+          </div>
+
+        </div>
+
+        <!-- Meeting Income Limits -->
+        <div class="section-label">Meeting Income Limits</div>
+        <div class="slides-grid">
+
+          <div class="slide-card" onclick="openModal('c3-spenddown')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#6d28d9,#1a3d6b)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">💸</span><div class="slide-thumb-title">Medicaid Spend-Down</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slides 6–7</div><div class="slide-title">Medicaid Spend-Down</div><div class="slide-desc">Some states offer the Medically Needy Program — individuals deduct medical expenses from income to meet the ABD spend-down limit. Spend-down is the difference between income and limit over a set period.</div></div>
+            <div class="slide-footer"><span class="slide-tag" style="background:#ede9fe;color:#6d28d9">Spend-Down</span><span class="slide-arrow">→</span></div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c3-trusts')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#1a3d6b,#6d28d9)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">🔒</span><div class="slide-thumb-title">Trusts</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 7</div><div class="slide-title">Trusts</div><div class="slide-desc">Available in some states as an alternative to spend-down. Special Needs Trusts, Supplemental Needs Trusts, and Miller Trusts keep income/assets from counting for Medicaid purposes. Strict rules apply.</div></div>
+            <div class="slide-footer"><span class="slide-tag" style="background:#ede9fe;color:#6d28d9">Trusts</span><span class="slide-arrow">→</span></div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c3-buyin')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#6d28d9,#0d5c4a)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">💼</span><div class="slide-thumb-title">Medicaid Buy-In</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 8</div><div class="slide-title">Medicaid Buy-In Program</div><div class="slide-desc">Available in some states for individuals under 65 with a disability who want to work and still receive Medicaid benefits. Qualifying individuals pay a premium to the Medicaid program.</div></div>
+            <div class="slide-footer"><span class="slide-tag" style="background:#ede9fe;color:#6d28d9">Buy-In</span><span class="slide-arrow">→</span></div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c3-spenddown-example')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#d9622b,#6d28d9)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">📊</span><div class="slide-thumb-title">Spend-Down Example</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 9</div><div class="slide-title">Medicaid Spend-Down Example: Vivian</div><div class="slide-desc">Vivian's income is $100 above her state's limit. She can use $100 in medical bills to qualify for Medicaid through spend-down — but only in months where she accumulates enough qualifying medical expenses.</div></div>
+            <div class="slide-footer"><span class="slide-tag" style="background:#fdecea;color:#d9622b">Example</span><span class="slide-arrow">→</span></div>
+          </div>
+
+        </div>
+
+        <!-- Application Process -->
+        <div class="section-label">Application Process</div>
+        <div class="slides-grid">
+
+          <div class="slide-card" onclick="openModal('c3-apply')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#4c1d95,#d9622b)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">📝</span><div class="slide-thumb-title">ABD Medicaid Application</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 10</div><div class="slide-title">Application Process for ABD Medicaid</div><div class="slide-desc">Four steps: (1) Apply through local Medicaid office (online, mail, in-person, or via community org), (2) Submit required documents, (3) Request fair hearing if denied, (4) Recertify annually.</div></div>
+            <div class="slide-footer"><span class="slide-tag" style="background:#ede9fe;color:#6d28d9">Application</span><span class="slide-arrow">→</span></div>
+          </div>
+
+        </div>
+
+        <!-- Medicaid Benefits -->
+        <div class="section-label">Medicaid Benefits</div>
+        <div class="slides-grid">
+
+          <div class="slide-card" onclick="openModal('c3-mandatory')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#14532d,#16a34a)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">✅</span><div class="slide-thumb-title">Mandatory Benefits</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 11</div><div class="slide-title">Mandatory Medicaid Benefits</div><div class="slide-desc">All state Medicaid programs must cover: inpatient/outpatient hospital services, nursing facility services, home health services, physician/lab/x-ray services, transportation to medical services, and more.</div></div>
+            <div class="slide-footer"><span class="slide-tag" style="background:#dcfce7;color:#14532d">Mandatory</span><span class="slide-arrow">→</span></div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c3-optional')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#4c1d95,#14532d)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">➕</span><div class="slide-thumb-title">Optional Benefits</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 12</div><div class="slide-title">Optional Medicaid Benefits</div><div class="slide-desc">States may offer: prescription drugs, dental services and dentures, optometry and eyeglasses, physical/occupational/speech therapy, chiropractic services, hospice care, personal care, podiatry, and more.</div></div>
+            <div class="slide-footer"><span class="slide-tag" style="background:#ede9fe;color:#6d28d9">Optional</span><span class="slide-arrow">→</span></div>
+          </div>
+
+        </div>
+
+        <!-- Medicare & Medicaid Coordination -->
+        <div class="section-label">Medicare &amp; Medicaid Coordination</div>
+        <div class="slides-grid">
+
+          <div class="slide-card" onclick="openModal('c3-dualeligible')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#1a3557,#6d28d9)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">🤝</span><div class="slide-thumb-title">Dual Eligible</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 13</div><div class="slide-title">Medicare and Medicaid Coordination</div><div class="slide-desc">Dual-eligible individuals are enrolled in both Medicare and Medicaid. Medicare always pays first; Medicaid is payer of last resort. Full dual-eligible individuals typically have no Part A/B premiums, deductibles, or copays.</div></div>
+            <div class="slide-footer"><span class="slide-tag" style="background:#ede9fe;color:#6d28d9">Dual-Eligible</span><span class="slide-arrow">→</span></div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c3-cob-example')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#6d28d9,#d9622b)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">👤</span><div class="slide-thumb-title">Case Example: Chantale</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slides 14–15</div><div class="slide-title">Case Example: Coordination of Benefits — Chantale</div><div class="slide-desc">Chantale (age 65) has Medicare Parts A &amp; B, retiree insurance, and Medicaid. Payment order: Medicare pays first, retiree insurance pays second, Medicaid pays last.</div></div>
+            <div class="slide-footer"><span class="slide-tag" style="background:#fdecea;color:#d9622b">Case Study</span><span class="slide-arrow">→</span></div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c3-institution')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#4c1d95,#0369a1)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">🏥</span><div class="slide-thumb-title">Medicaid for Institution Residents</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 16</div><div class="slide-title">Medicaid for Residents of Institution</div><div class="slide-desc">All states have this program. Covers nursing facility services and general health care. Individual must need nursing home level of care and meet income/asset guidelines. Medicaid can supplement Medicare-covered skilled nursing care.</div></div>
+            <div class="slide-footer"><span class="slide-tag" style="background:#ede9fe;color:#6d28d9">Institution</span><span class="slide-arrow">→</span></div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c3-institution-considerations')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#d9622b,#4c1d95)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">⚠️</span><div class="slide-thumb-title">Institution Considerations</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 17</div><div class="slide-title">Medicaid for Residents of Institution: Considerations</div><div class="slide-desc">Key considerations: income and assets of both spouses are reviewed together; five-year look-back period for asset transfers; home ownership affects Medicaid eligibility — consult an elder law attorney.</div></div>
+            <div class="slide-footer"><span class="slide-tag" style="background:#fdecea;color:#d9622b">Considerations</span><span class="slide-arrow">→</span></div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c3-hcbs')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#0d5c4a,#6d28d9)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">🏠</span><div class="slide-thumb-title">HCBS Waiver Programs</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 18</div><div class="slide-title">Medicaid HCBS Waiver Programs</div><div class="slide-desc">Home and Community-Based Services (HCBS) waiver programs help beneficiaries stay at home or in community settings. Covered services may include personal care, skilled nursing, therapy, and home modifications.</div></div>
+            <div class="slide-footer"><span class="slide-tag" style="background:#ede9fe;color:#6d28d9">Waiver</span><span class="slide-arrow">→</span></div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c3-waiver-considerations')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#6d28d9,#1a3d6b)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">📌</span><div class="slide-thumb-title">Waiver Program Considerations</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 19</div><div class="slide-title">Medicaid Waiver Program Considerations</div><div class="slide-desc">Key considerations: income/assets of individual and spouse reviewed together; states generally have limits on the number of people who can receive waiver benefits (wait lists may apply); home ownership affects eligibility.</div></div>
+            <div class="slide-footer"><span class="slide-tag" style="background:#ede9fe;color:#6d28d9">Considerations</span><span class="slide-arrow">→</span></div>
+          </div>
+
+        </div>
+
+        <!-- MAGI Medicaid -->
+        <div class="section-label">MAGI Medicaid &amp; Transitions</div>
+        <div class="slides-grid">
+
+          <div class="slide-card" onclick="openModal('c3-magi')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#0369a1,#6d28d9)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">📈</span><div class="slide-thumb-title">MAGI Medicaid</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 20</div><div class="slide-title">MAGI Medicaid Basics</div><div class="slide-desc">Modified Adjusted Gross Income (MAGI) determines eligibility for community Medicaid for children, pregnant people, parents/caregivers, and childless adults under 65. Available in states that expanded Medicaid under the ACA.</div></div>
+            <div class="slide-footer"><span class="slide-tag" style="background:#e0f2fe;color:#0369a1">MAGI</span><span class="slide-arrow">→</span></div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c3-magi-eligibility')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#4c1d95,#0369a1)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">📋</span><div class="slide-thumb-title">MAGI Eligibility</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 21</div><div class="slide-title">MAGI Medicaid Eligibility</div><div class="slide-desc">Available to eligible individuals with income below 138% FPL. Resources and assets are not counted. Certain income excluded (workers' comp, child support, veterans' benefits). Enroll through state or federal Health Insurance Marketplace.</div></div>
+            <div class="slide-footer"><span class="slide-tag" style="background:#ede9fe;color:#6d28d9">Eligibility</span><span class="slide-arrow">→</span></div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c3-transitions')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#d9622b,#4c1d95)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">🔄</span><div class="slide-thumb-title">MAGI to Medicare Transitions</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 22</div><div class="slide-title">MAGI Medicaid to Medicare Transitions</div><div class="slide-desc">When a MAGI Medicaid individual becomes Medicare-eligible, they should be evaluated for ABD Medicaid. MAGI has more generous income limits than ABD. Five key steps guide the transition process.</div></div>
+            <div class="slide-footer"><span class="slide-tag" style="background:#fdecea;color:#d9622b">Transitions</span><span class="slide-arrow">→</span></div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c3-transition-outcomes')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#0d5c4a,#6d28d9)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">🎯</span><div class="slide-thumb-title">Transition Outcomes</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 23</div><div class="slide-title">Possible Transition Outcomes</div><div class="slide-desc">Three possible outcomes when transitioning from MAGI Medicaid to Medicare: (1) with ABD Medicaid + MSP, (2) with MSP only, or (3) without Medicaid or MSP — with alternative coverage options.</div></div>
+            <div class="slide-footer"><span class="slide-tag" style="background:#ede9fe;color:#6d28d9">Outcomes</span><span class="slide-arrow">→</span></div>
+          </div>
+
+        </div>
+
+        <!-- Quick Reference Table -->
+        <div class="section-label">Quick Reference: Medicaid Program Types</div>
+        <table class="cob-table">
+          <thead>
+            <tr><th>Program Type</th><th>Who It Covers</th><th>Key Services</th><th>Income Standard</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>ABD Medicaid (Traditional)</td><td>Aged, blind, or disabled individuals; most Medicare beneficiaries with Medicaid</td><td>Full Medicaid benefits including long-term care</td><td>&lt;74% FPL (most states); SSI recipients automatic</td></tr>
+            <tr><td>Medicaid for Institution Residents</td><td>Individuals requiring nursing home level of care</td><td>Nursing facility services, general health care</td><td>Income and assets below state guidelines; 5-year look-back</td></tr>
+            <tr><td>HCBS Waiver Program</td><td>Individuals who meet nursing home level of care but prefer home/community setting</td><td>Personal care, skilled nursing, therapy, home modifications</td><td>Income/assets below guidelines; wait lists may apply</td></tr>
+            <tr><td>MAGI Medicaid</td><td>Children, pregnant people, parents/caregivers, childless adults ages 19–64</td><td>Community health care services</td><td>&lt;138% FPL; assets not counted</td></tr>
+            <tr><td>Medicaid for Community Residents (ABD)</td><td>Individuals who live in community and meet ABD criteria</td><td>Home care, physical therapy, prescriptions, transportation</td><td>State-determined income/asset limits</td></tr>
+          </tbody>
+        </table>
+
+        <!-- Key Terms -->
+        <div class="section-label">Key Terms</div>
+        <div class="terms-grid">
+          <div class="term-card" style="border-left-color:#6d28d9"><div class="term-name">Medicaid</div><div class="term-def">A joint federal and state program that provides health coverage to people with limited income and assets. States administer Medicaid within federal guidelines, determining income/asset limits, services, and provider payment rates.</div></div>
+          <div class="term-card orange"><div class="term-name">ABD Medicaid (Aged, Blind, Disabled)</div><div class="term-def">Traditional Medicaid for aged, blind, or disabled individuals. Most Medicare beneficiaries who have Medicaid have ABD Medicaid. Income limit is generally below 74% FPL; SSI recipients automatically qualify in most states.</div></div>
+          <div class="term-card" style="border-left-color:#6d28d9"><div class="term-name">Dual-Eligible</div><div class="term-def">An individual enrolled in both Medicare and Medicaid. Medicare always pays primary; Medicaid is the payer of last resort. Full dual-eligible individuals typically have no Part A/B premiums, deductibles, coinsurance, or copays.</div></div>
+          <div class="term-card navy"><div class="term-name">Medicaid Spend-Down</div><div class="term-def">A mechanism in some states (Medically Needy Program) allowing individuals to deduct medical expenses from income to meet the ABD Medicaid income limit. The spend-down amount is the difference between the individual's income and the state's limit.</div></div>
+          <div class="term-card orange"><div class="term-name">MAGI Medicaid</div><div class="term-def">Modified Adjusted Gross Income Medicaid — available in states that expanded Medicaid under the ACA. Covers certain individuals with income below 138% FPL; assets are not counted. Enrolled through the state or federal Health Insurance Marketplace.</div></div>
+          <div class="term-card" style="border-left-color:#14532d"><div class="term-name">HCBS Waiver Program</div><div class="term-def">Home and Community-Based Services waiver programs that allow states to provide long-term care services in home or community settings rather than nursing facilities. Each state has at least one HCBS waiver program.</div></div>
+          <div class="term-card navy"><div class="term-name">Five-Year Look-Back Period</div><div class="term-def">A rule for institutional Medicaid that examines asset transfers made within the past five years. If assets were transferred in violation of Medicaid rules, the beneficiary may be penalized and temporarily ineligible for Medicaid coverage.</div></div>
+          <div class="term-card orange"><div class="term-name">Miller Trust (Qualified Income Trust)</div><div class="term-def">A type of trust used in some states to help individuals with income above the Medicaid limit qualify for benefits. Excess income is deposited into the trust, keeping it from counting toward Medicaid eligibility.</div></div>
+          <div class="term-card" style="border-left-color:#6d28d9"><div class="term-name">Medicaid Buy-In Program</div><div class="term-def">A program available in some states allowing individuals under 65 with a disability to work and still receive Medicaid benefits by paying a premium to the Medicaid program.</div></div>
+          <div class="term-card navy"><div class="term-name">SSI (Supplemental Security Income)</div><div class="term-def">A federal income supplement program for aged, blind, and disabled individuals with limited income and resources. In most states, individuals receiving SSI automatically qualify for Medicaid.</div></div>
+          <div class="term-card orange"><div class="term-name">Countable Income</div><div class="term-def">The amount of income left over after certain types of earned and unearned income are deducted from an individual's monthly income for Medicaid eligibility purposes. Certain income and assets are excluded from this calculation.</div></div>
+          <div class="term-card" style="border-left-color:#14532d"><div class="term-name">MSP (Medicare Savings Program)</div><div class="term-def">A Medicaid program that helps pay Medicare costs such as premiums, deductibles, and copays. Partial dual-eligible individuals have MSP. When a MAGI Medicaid beneficiary transitions to Medicare, they should be evaluated for ABD Medicaid and/or MSP.</div></div>
+        </div>
+
+      </div><!-- end panel3 -->
+
+      <!-- ══ COURSE 4 PANEL ══ -->
+      <div id="panel4" class="course-panel-l4" style="display:none">
+
+        <div class="course-header" style="border-top:4px solid #0f766e">
+          <div>
+            <div class="course-eyebrow" style="color:#0f766e">Level 4 · Course 4</div>
+            <h2 class="course-title">Medicare Assistance Programs</h2>
+            <div class="course-meta-row">
+              <span class="meta-chip"><span class="dot" style="background:#0f766e"></span> 35 minutes seat time</span>
+              <span class="meta-chip"><span class="dot" style="background:#0f766e"></span> 4 learning objectives</span>
+              <span class="meta-chip"><span class="dot" style="background:#0f766e"></span> MSPs, Extra Help, SPAPs &amp; PAPs</span>
+            </div>
+          </div>
+          <button class="start-btn" style="background:#0f766e;box-shadow:0 4px 14px rgba(15,118,110,.3)" onclick="openModal('c4-intro')">▶ View Course Intro</button>
+        </div>
+
+        <div class="section-label">Learning Objectives</div>
+        <div class="objectives-grid">
+          <div class="obj-card"><div class="obj-num" style="background:linear-gradient(135deg,#065f46,#0f766e)">1</div><p>Know about Medicare Savings Programs and how to screen for them.</p></div>
+          <div class="obj-card"><div class="obj-num" style="background:linear-gradient(135deg,#065f46,#0f766e)">2</div><p>Understand the federal Extra Help drug subsidy program.</p></div>
+          <div class="obj-card"><div class="obj-num" style="background:linear-gradient(135deg,#065f46,#0f766e)">3</div><p>Be prepared to seek out state-specific assistance programs.</p></div>
+          <div class="obj-card"><div class="obj-num" style="background:linear-gradient(135deg,#065f46,#0f766e)">4</div><p>Help beneficiaries apply for an array of programs.</p></div>
+        </div>
+
+        <!-- Medicare Savings Programs -->
+        <div class="section-label">Medicare Savings Programs (MSPs)</div>
+        <div class="slides-grid">
+
+          <div class="slide-card" onclick="openModal('c4-msp-overview')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#065f46,#0f766e)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">💰</span><div class="slide-thumb-title">MSP Overview</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 3</div><div class="slide-title">Medicare Savings Programs (MSPs)</div><div class="slide-desc">State-administered benefits that help pay out-of-pocket Medicare costs for people with limited income/assets. Four types: QI, SLMB, QMB, and QDWI — each with different income limits and benefits.</div></div>
+            <div class="slide-footer"><span class="slide-tag" style="background:#ccfbf1;color:#0f766e">Overview</span><span class="slide-arrow">→</span></div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c4-msp-table')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#0f766e,#0369a1)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">📊</span><div class="slide-thumb-title">MSP Benefits Table</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 4</div><div class="slide-title">MSP Types &amp; Benefits</div><div class="slide-desc">QI (135% FPL): pays Part B premium + 3-month retroactive reimbursement. SLMB (120% FPL): same. QMB (100% FPL): pays Part B + Part A premium + improper billing protection. QDWI (200% FPL): pays Part A premium only.</div></div>
+            <div class="slide-footer"><span class="slide-tag" style="background:#ccfbf1;color:#0f766e">Benefits</span><span class="slide-arrow">→</span></div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c4-qmb-billing')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#d9622b,#0f766e)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">🚫</span><div class="slide-thumb-title">QMB Improper Billing</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 5</div><div class="slide-title">QMB Improper Billing Protections</div><div class="slide-desc">Federal law prohibits providers from billing QMB beneficiaries for cost-sharing. Applies to Original Medicare and in-network MA plan providers. Protections apply even across state lines. Providers can be penalized for violations.</div></div>
+            <div class="slide-footer"><span class="slide-tag" style="background:#fdecea;color:#d9622b">QMB Protection</span><span class="slide-arrow">→</span></div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c4-msp-income')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#065f46,#1a3557)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">📋</span><div class="slide-thumb-title">Qualifying: Income</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 6</div><div class="slide-title">Qualifying for MSP: Income</div><div class="slide-desc">Individual qualifies if income and assets fall below state limits. Federal gov sets minimums; states can be more generous. Key exclusions: first $20 of all income, first $65 of wages, half of remaining wages, food stamps.</div></div>
+            <div class="slide-footer"><span class="slide-tag" style="background:#ccfbf1;color:#0f766e">Income</span><span class="slide-arrow">→</span></div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c4-msp-assets')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#0f766e,#b07800)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">🏠</span><div class="slide-thumb-title">Qualifying: Assets</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 7</div><div class="slide-title">Qualifying for MSP: Assets</div><div class="slide-desc">Assets include savings, stocks, bonds, retirement accounts, real estate. Always excluded: primary home, one car, household goods/wedding rings, burial spaces up to $1,500/person, life insurance &lt;$1,500 cash value.</div></div>
+            <div class="slide-footer"><span class="slide-tag" style="background:#ccfbf1;color:#0f766e">Assets</span><span class="slide-arrow">→</span></div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c4-msp-apply')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#065f46,#d9622b)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">📝</span><div class="slide-thumb-title">MSP Application</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 8</div><div class="slide-title">MSP Application Process</div><div class="slide-desc">5 steps: (1) Submit to local Medicaid office, (2) Gather documentation, (3) If approved, verify benefits begin on date listed, (4) Request fair hearing if denied, (5) Recertify annually. Benefits may take 3–4 months — reimbursement applies retroactively.</div></div>
+            <div class="slide-footer"><span class="slide-tag" style="background:#ccfbf1;color:#0f766e">Application</span><span class="slide-arrow">→</span></div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c4-msp-benefits')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#0f766e,#6d28d9)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">✅</span><div class="slide-thumb-title">Additional MSP Benefits</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 9</div><div class="slide-title">Additional MSP Benefits</div><div class="slide-desc">MSP approval also: enrolls beneficiary in Part B outside usual enrollment periods (if Part A enrolled), enables QMB to get premium Part A outside usual periods, eliminates Part B LEP, and auto-enrolls individual in Extra Help through "deeming."</div></div>
+            <div class="slide-footer"><span class="slide-tag" style="background:#ccfbf1;color:#0f766e">Benefits</span><span class="slide-arrow">→</span></div>
+          </div>
+
+        </div>
+
+        <!-- Extra Help -->
+        <div class="section-label">Extra Help (Low-Income Subsidy)</div>
+        <div class="slides-grid">
+
+          <div class="slide-card" onclick="openModal('c4-extrahelp')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#0369a1,#0f766e)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">💊</span><div class="slide-thumb-title">Extra Help Overview</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 10</div><div class="slide-title">Extra Help (Low-Income Subsidy)</div><div class="slide-desc">Also called Low-Income Subsidy (LIS). Federal program administered by SSA that helps pay Part D premiums, lower coinsurance/copays for covered medications. Works with stand-alone Part D or MA plans with drug coverage.</div></div>
+            <div class="slide-footer"><span class="slide-tag" style="background:#e0f2fe;color:#0369a1">Extra Help</span><span class="slide-arrow">→</span></div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c4-extrahelp-benefits')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#0f766e,#0369a1)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">🎁</span><div class="slide-thumb-title">Extra Help Benefits</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 11</div><div class="slide-title">Extra Help Benefits</div><div class="slide-desc">Enrolls beneficiary in Part D if not already enrolled; eliminates Part D late enrollment penalty; allows beneficiary to change stand-alone Part D plans once per month (instead of only during AEP).</div></div>
+            <div class="slide-footer"><span class="slide-tag" style="background:#e0f2fe;color:#0369a1">Benefits</span><span class="slide-arrow">→</span></div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c4-extrahelp-costs')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#4c1d95,#0f766e)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">💵</span><div class="slide-thumb-title">Extra Help Costs</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 12</div><div class="slide-title">Extra Help Costs</div><div class="slide-desc">With Extra Help: $0 premium if enrolled in a benchmark plan, no deductible, and low or no copays for covered drugs. Significantly reduces the cost burden of prescription medications for qualifying beneficiaries.</div></div>
+            <div class="slide-footer"><span class="slide-tag" style="background:#ede9fe;color:#6d28d9">Costs</span><span class="slide-arrow">→</span></div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c4-extrahelp-apply')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#0369a1,#065f46)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">🖊️</span><div class="slide-thumb-title">How to Apply</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 13</div><div class="slide-title">Extra Help Application Process</div><div class="slide-desc">Apply via: SSA at 800-772-1213, local Social Security office, or online at ssa.gov. Also auto-enrolled via MSP, Medicaid, or SSI. If approved, beneficiary gets letter about benchmark plans. If denied, they can appeal.</div></div>
+            <div class="slide-footer"><span class="slide-tag" style="background:#e0f2fe;color:#0369a1">Application</span><span class="slide-arrow">→</span></div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c4-linet')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#d9622b,#0369a1)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">🔄</span><div class="slide-thumb-title">LI NET Program</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 14</div><div class="slide-title">LI NET — Low-Income Newly Eligible Transition</div><div class="slide-desc">Temporary program for Extra Help beneficiaries whose Part D plan coverage hasn't started yet. Eliminates coverage gaps. Example: Luis has Extra Help from March 5 but Part D starts April 1 — LI NET covers his prescriptions in between. Call 800-783-1307.</div></div>
+            <div class="slide-footer"><span class="slide-tag" style="background:#fdecea;color:#d9622b">LI NET</span><span class="slide-arrow">→</span></div>
+          </div>
+
+        </div>
+
+        <!-- SPAPs & PAPs -->
+        <div class="section-label">State &amp; Manufacturer Drug Assistance Programs</div>
+        <div class="slides-grid">
+
+          <div class="slide-card" onclick="openModal('c4-spap')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#065f46,#0369a1)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">🗺️</span><div class="slide-thumb-title">SPAPs</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 15</div><div class="slide-title">State Pharmaceutical Assistance Programs (SPAPs)</div><div class="slide-desc">State-based programs that may help pay the cost of beneficiary's drugs. Not all states have SPAPs. Each may have its own eligibility rules, application instructions, and conditions. Contact State Dept. of Health or visit medicare.gov for info.</div></div>
+            <div class="slide-footer"><span class="slide-tag" style="background:#ccfbf1;color:#0f766e">SPAPs</span><span class="slide-arrow">→</span></div>
+          </div>
+
+          <div class="slide-card" onclick="openModal('c4-pap')">
+            <div class="slide-img" style="background:linear-gradient(135deg,#b07800,#0f766e)">
+              <div class="slide-thumb-content"><span class="slide-thumb-icon">🏭</span><div class="slide-thumb-title">PAPs</div></div>
+            </div>
+            <div class="slide-body"><div class="slide-num">Slide 16</div><div class="slide-title">Pharmaceutical Assistance Programs (PAPs)</div><div class="slide-desc">Manufacturer-funded programs offering discounts on brand-name or generic drugs. Some may not work if beneficiary has prescription drug coverage. Each program has its own eligibility requirements. Visit rxassist.org or needymeds.org for info.</div></div>
+            <div class="slide-footer"><span class="slide-tag" style="background:#fff8e0;color:#a07000">PAPs</span><span class="slide-arrow">→</span></div>
+          </div>
+
+        </div>
+
+        <!-- Program Comparison Table -->
+        <div class="section-label">Program Comparison: MSPs, Extra Help, SPAPs &amp; PAPs</div>
+        <table class="cob-table">
+          <thead>
+            <tr><th>Comparison</th><th>MSPs</th><th>Extra Help (LIS)</th><th>SPAPs</th><th>PAPs</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Pays for</strong></td><td>Medicare health costs</td><td>Prescription drug costs</td><td>Prescription drug costs</td><td>Prescription drug costs</td></tr>
+            <tr><td><strong>Administered by</strong></td><td>State (Medicaid)</td><td>Federal (SSA)</td><td>State</td><td>Drug manufacturer</td></tr>
+            <tr><td><strong>Eligibility updated</strong></td><td>Annual state guidelines</td><td>Annual federal guidelines</td><td>Annual state guidelines</td><td>Varies by program</td></tr>
+            <tr><td><strong>Apply through</strong></td><td>Local Medicaid office</td><td>Social Security Administration</td><td>SPAP directly</td><td>Program directly</td></tr>
+            <tr><td><strong>Income limit</strong></td><td>Varies by MSP type (100%–200% FPL)</td><td>Federal limits (SSA)</td><td>Varies by state</td><td>Varies by manufacturer</td></tr>
+          </tbody>
+        </table>
+
+        <!-- Key Terms -->
+        <div class="section-label">Key Terms</div>
+        <div class="terms-grid">
+          <div class="term-card" style="border-left-color:#0f766e"><div class="term-name">Medicare Savings Programs (MSPs)</div><div class="term-def">State Medicaid programs that help people with limited income and assets pay out-of-pocket Medicare costs such as premiums, deductibles, and coinsurance. Four types: QMB, SLMB, QI, and QDWI.</div></div>
+          <div class="term-card orange"><div class="term-name">Qualified Medicare Beneficiary (QMB)</div><div class="term-def">MSP for individuals with income at or below 100% FPL. Pays Part B premium (and Part A premium if applicable). Provides improper billing protection — providers cannot charge QMB beneficiaries for Medicare cost-sharing.</div></div>
+          <div class="term-card" style="border-left-color:#0f766e"><div class="term-name">Specified Low-Income Medicare Beneficiary (SLMB)</div><div class="term-def">MSP for individuals with income between 100–120% FPL. Pays the Part B premium and provides 3-month retroactive Part B premium reimbursement.</div></div>
+          <div class="term-card navy"><div class="term-name">Qualifying Individual (QI)</div><div class="term-def">MSP for individuals with income between 120–135% FPL. Pays the Part B premium and provides 3-month retroactive reimbursement. Funded by limited federal allotment — first-come, first-served annually.</div></div>
+          <div class="term-card orange"><div class="term-name">Qualified Disabled and Working Individual (QDWI)</div><div class="term-def">MSP for Medicare beneficiaries under 65 who are working, have a disability, and are not Medicaid-eligible. Income limit is 200% FPL. Pays the Part A premium only.</div></div>
+          <div class="term-card" style="border-left-color:#0369a1"><div class="term-name">Extra Help (Low-Income Subsidy / LIS)</div><div class="term-def">Federal program administered by the Social Security Administration that helps pay Medicare Part D premiums and reduces coinsurance/copays for covered medications. Beneficiaries approved for MSP, Medicaid, or SSI are automatically deemed eligible through a process called deeming.</div></div>
+          <div class="term-card navy"><div class="term-name">Deeming</div><div class="term-def">The automatic process by which individuals approved for MSP, Medicaid, or SSI are enrolled in Extra Help without having to apply separately. Simplifies access to the Low-Income Subsidy for eligible beneficiaries.</div></div>
+          <div class="term-card orange"><div class="term-name">Benchmark Plan</div><div class="term-def">A Medicare Part D plan available at no premium cost to Extra Help recipients. Beneficiaries not already enrolled in Part D are automatically enrolled in a benchmark plan when they receive Extra Help approval.</div></div>
+          <div class="term-card" style="border-left-color:#0f766e"><div class="term-name">LI NET (Low-Income Newly Eligible Transition)</div><div class="term-def">A temporary program that provides prescription drug coverage to Extra Help-eligible beneficiaries who are between plans or whose Part D plan coverage has not yet started. Eliminates coverage gaps. Contact: 800-783-1307.</div></div>
+          <div class="term-card navy"><div class="term-name">State Pharmaceutical Assistance Programs (SPAPs)</div><div class="term-def">State-run programs that may help pay the cost of prescription drugs for qualifying residents. Not available in all states. Each program has its own eligibility requirements, application process, and rules. Contact your State Department of Health for details.</div></div>
+          <div class="term-card orange"><div class="term-name">Pharmaceutical Assistance Programs (PAPs)</div><div class="term-def">Programs run by drug manufacturers that offer discounts or free medications for qualifying individuals who cannot afford their prescriptions. Some programs may not work if the beneficiary has prescription drug coverage. Visit rxassist.org or needymeds.org.</div></div>
+          <div class="term-card" style="border-left-color:#0f766e"><div class="term-name">Best Available Evidence (BAE)</div><div class="term-def">Documentation a beneficiary can show their pharmacist as proof of Extra Help eligibility while waiting for their Part D plan to begin. Includes the auto-enrollment Extra Help notice or a current Medicaid card. Used with the LI NET program.</div></div>
+        </div>
+
+      </div><!-- end panel4 -->
+    </main>
+  </div>
+
+  <footer>
+    <strong>SHIP TAC — Medicare Training Platform</strong><br>
+    Level 4: Other Insurance and Assistance Programs · Courses 1, 2, 3 &amp; 4<br>
+    <span style="margin-top:6px;display:block">State Health Insurance Assistance Program Technical Assistance Center</span>
+  </footer>
+
+  <div class="modal-overlay" id="modal" onclick="closeModal(event)">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 id="modalTitle">Slide Detail</h2>
+        <button class="modal-close" onclick="closeModalDirect()">✕</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+      <div class="modal-footer">
+        <button class="start-btn" onclick="closeModalDirect()" style="padding:9px 20px;font-size:.82rem">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+
+    const slides = {
+      'intro': {
+        title: 'Course 1: Medicare and Employer Insurance',
+        body: `<div class="modal-section"><h3>Course Overview</h3><p>This course prepares SHIP counselors to advise beneficiaries who have—or are considering—employer-sponsored coverage alongside Medicare. Understanding who pays first is critical to avoiding gaps in coverage and unexpected costs.</p></div>
+        <div class="modal-section"><h3>4 Learning Objectives</h3><ul><li><strong>1.</strong> Explain what coordination of benefits means, and differentiate between primary and secondary insurance</li><li><strong>2.</strong> Determine when a beneficiary's current employee insurance pays primary or secondary to Medicare</li><li><strong>3.</strong> Understand how COBRA, retiree insurance, and FEHB coordinate with Medicare</li><li><strong>4.</strong> Advise beneficiaries about when they may or may not want to delay Medicare enrollment</li></ul></div>
+        <div class="modal-section"><h3>Key Topics</h3><ul><li>Coordination of benefits and the BCRC</li><li>Group health plans: age 65+ and under-65 disability rules</li><li>GHP protections for Medicare-eligible employees</li><li>Delaying Part A, B, and D — when it is and isn't advisable</li><li>COBRA, retiree insurance, ESRD, and FEHB coordination rules</li><li>Case examples: Zahra and Ricardo</li></ul></div>`
+      },
+      'cob': {
+        title: 'Coordination of Benefits',
+        body: `<div class="modal-section"><h3>What is Coordination of Benefits?</h3><p>Coordination of benefits refers to the particular rules about how Medicare and other insurance share responsibility for paying claims.</p></div>
+        <div class="modal-section"><h3>Primary vs. Secondary Insurance</h3>
+        <div class="modal-two-col"><div class="modal-col"><h4>① Primary Insurance</h4><p>Pays <strong>first</strong> on health care claims.</p></div><div class="modal-col"><h4>② Secondary Insurance</h4><p>Pays <strong>second</strong> — after the primary payer has already paid its share.</p></div></div></div>
+        <div class="modal-section"><h3>Benefits Coordination and Recovery Center (BCRC)</h3><ul><li>Medicare contractor that operates coordination of benefits</li><li>Makes sure claims are paid in the correct order</li><li>Keeps track of additional insurance a beneficiary may have</li><li><strong>Contact:</strong> 855-798-2627</li></ul></div>
+        <div class="modal-section"><h3>Types of Employer Coverage That Coordinate with Medicare</h3><ul><li><strong>Current employees:</strong> Employer group health plans, union plans</li><li><strong>Former employees and their spouses:</strong> Retiree coverage, COBRA continuation coverage</li></ul></div>`
+      },
+      'ghp65': {
+        title: 'Current Employee Health Insurance: Age 65+',
+        body: `<div class="modal-section"><h3>Who Does This Apply To?</h3><p>These rules apply to group health plans for beneficiaries who are <strong>65 or older</strong>, enrolled in Medicare, and covered by insurance from their or their spouse's <strong>current work</strong>.</p></div>
+        <div class="modal-section"><h3>Group Health Plans (GHPs)</h3><p>Health insurance provided to individuals who are <strong>actively working</strong>. Includes employer plans and union plans.</p></div>
+        <div class="modal-section"><h3>Who Pays Primary?</h3>
+        <div class="modal-two-col"><div class="modal-col"><h4>Small GHP — Fewer than 20 Employees</h4><p><strong>Medicare is primary.</strong> GHP pays secondary.</p></div><div class="modal-col"><h4>Large GHP — 20+ Employees</h4><p><strong>GHP is primary.</strong> Medicare pays secondary.</p></div></div></div>`
+      },
+      'ghpprotect': {
+        title: 'Protections: GHP of 20+ Employees',
+        body: `<div class="modal-section"><h3>Non-Discrimination Requirements</h3><ul><li>Coverage provided by a GHP of 20+ employees must be the <strong>same as coverage provided to other employees</strong> — not reduced for Medicare-eligible individuals</li><li>Plans <strong>cannot pay less or discriminate</strong> against individuals eligible for Medicare</li><li>Employers whose insurance should pay primary <strong>cannot encourage</strong> the individual to drop the employer plan and enroll in Medicare</li></ul></div>
+        <div class="modal-section"><h3>Important Limitation</h3><p>⚠️ These protections do <strong>not</strong> apply to employer plans that cover <strong>fewer than 20 employees</strong>.</p></div>`
+      },
+      'ghpunder65': {
+        title: 'Current Employee Health Insurance: Under 65 (Disability)',
+        body: `<div class="modal-section"><h3>Who Does This Apply To?</h3><p>These rules apply to group health plans for beneficiaries who are <strong>under age 65</strong>, eligible for Medicare due to <strong>disability</strong>, and covered by insurance from their, their spouse's, or their family member's current work.</p></div>
+        <div class="modal-section"><h3>Who Pays Primary?</h3>
+        <div class="modal-two-col"><div class="modal-col"><h4>Fewer than 100 Employees</h4><p><strong>Medicare is primary.</strong> GHP pays secondary.</p></div><div class="modal-col"><h4>100+ Employees (LGHP)</h4><p><strong>LGHP is primary.</strong> Medicare pays secondary.</p></div></div></div>
+        <div class="modal-section"><h3>Key Difference from Age 65+ Rules</h3><p>The threshold for the under-65 disability rules is <strong>100 employees (LGHP)</strong>, compared to just <strong>20 employees</strong> for the age-65+ rules. This means more employers pay secondary to Medicare for working beneficiaries under 65.</p></div>`
+      },
+      'msp': {
+        title: 'Medicare as Secondary Payer',
+        body: `<div class="modal-section"><h3>When Medicare Pays Secondary</h3><p>When a GHP of 20+ employees or an LGHP pays primary, Medicare pays secondary.</p></div>
+        <div class="modal-section"><h3>When GHP Denies a Claim</h3><ul><li>If GHP or LGHP <strong>denies payment</strong> for a Medicare-covered service, Medicare <strong>may pay primary</strong></li><li>The GHP or LGHP's decision to deny does <strong>not affect Medicare's own coverage decisions</strong></li></ul></div>
+        <div class="modal-section"><h3>Important Limitation</h3><ul><li>Medicare will <strong>not pay primary</strong> if GHP or LGHP does not cover the service for primary payment when that service is provided to Medicare beneficiaries</li></ul></div>`
+      },
+      'delayab': {
+        title: 'Delaying Part A and/or Part B Enrollment',
+        body: `<div class="modal-section"><h3>Before Deciding to Delay — Two Key Questions</h3></div>
+        <div class="modal-section"><h3>① Will Their Other Insurance Pay Primary?</h3><ul><li>If other insurance will pay <strong>secondary</strong> to Medicare, it is usually <strong>unadvisable</strong> to delay Medicare enrollment</li><li>GHP is <strong>not obligated</strong> to pay primary, and may not pay on claims where Medicare has not made payment</li><li>GHP may <strong>recoup any payments</strong> made as primary when it should have been secondary</li></ul></div>
+        <div class="modal-section"><h3>② Will There Be Delays, Gaps, or Penalties?</h3><ul><li>Individuals covered by <strong>current employee insurance</strong> have a Part B SEP to sign up for premium Part A and/or Part B, regardless of employer size</li><li>If the individual does <strong>not sign up during Part B SEP</strong>, they may face a late enrollment penalty and coverage gaps</li></ul></div>`
+      },
+      'delayd': {
+        title: 'Delaying Part D Enrollment',
+        body: `<div class="modal-section"><h3>Special Enrollment Period (SEP) for Part D</h3><ul><li>An individual covered by prescription drug coverage from their or their spouse's employer has an <strong>SEP to sign up for Part D</strong> up to <strong>2 full months</strong> after losing that prescription drug coverage</li></ul></div>
+        <div class="modal-section"><h3>Late Enrollment Penalty (LEP) Considerations</h3><ul><li><strong>No LEP</strong> as long as the individual was covered by <strong>creditable drug coverage</strong> before becoming eligible for Part D</li><li>If the individual delays Part D enrollment <strong>without creditable drug coverage</strong>, they will likely have a Part D LEP</li><li>Individuals should <strong>keep records</strong> of all health insurance coverage</li></ul></div>`
+      },
+      'cobra': {
+        title: 'COBRA Continuation Coverage',
+        body: `<div class="modal-section"><h3>What is COBRA?</h3><p><strong>COBRA (Consolidated Omnibus Budget Reconciliation Act)</strong> is a federal law that gives individuals the right to purchase continued health coverage under their employer plan after termination of employment, death, divorce, or other qualifying circumstances.</p></div>
+        <div class="modal-section"><h3>How COBRA Coordinates with Medicare</h3><ul><li>If a beneficiary enrolls in COBRA <strong>after</strong> they already have Medicare: Medicare Parts A and B pay <strong>primary</strong>; COBRA pays <strong>secondary</strong></li></ul></div>
+        <div class="modal-section"><h3>Can COBRA Coverage End?</h3><ul><li>COBRA coverage will most likely <strong>end</strong> if the beneficiary enrolls in Medicare after already being enrolled in COBRA</li></ul></div>
+        <div class="modal-section"><h3>When Should a Beneficiary with COBRA Enroll in Medicare?</h3><ul><li>Beneficiaries covered by COBRA should sign up for Medicare <strong>when first eligible</strong></li><li>COBRA does <strong>not</strong> provide a Part B SEP — beneficiary will not be able to enroll in Medicare later outside a SEP</li><li>If they miss the IEP, they will have to wait for the <strong>General Enrollment Period (GEP)</strong> and may have a LEP</li></ul></div>
+        <div class="modal-section"><h3>Does COBRA Include Prescription Drug Coverage?</h3><ul><li>If COBRA coverage includes <strong>creditable drug coverage</strong>, the beneficiary can delay Part D enrollment without penalty</li></ul></div>`
+      },
+      'retiree': {
+        title: 'Retiree Insurance',
+        body: `<div class="modal-section"><h3>What is Retiree Insurance?</h3><p>Retiree insurance is coverage provided to <strong>former employees</strong> who are no longer actively working.</p></div>
+        <div class="modal-section"><h3>4 Key Facts About Retiree Insurance and Medicare</h3>
+        <div class="modal-two-col"><div class="modal-col"><h4>① Medicare Always Primary</h4><p>Medicare Parts A and B are primary; retiree insurance is secondary.</p></div><div class="modal-col"><h4>② No Part B SEP</h4><p>If beneficiary delays Medicare enrollment while on retiree insurance, they will <strong>not</strong> have a SEP to enroll later.</p></div></div>
+        <div class="modal-two-col" style="margin-top:12px"><div class="modal-col"><h4>③ Plan May Change</h4><p>Some retiree plans complement Original Medicare; others become Medicare Advantage plans. Premiums and cost-sharing may increase.</p></div><div class="modal-col"><h4>④ Drug Coverage SEP</h4><p>SEP available up to 63 days after losing retiree drug coverage. Creditable = no LEP. Non-creditable = SEP but likely LEP.</p></div></div></div>`
+      },
+      'esrd': {
+        title: 'End-Stage Renal Disease (ESRD)',
+        body: `<div class="modal-section"><h3>Special Coordination Rules</h3><p>Coordination of benefit rules are <strong>different</strong> for individuals who have Medicare due to ESRD and are also covered by an employer group health plan.</p></div>
+        <div class="modal-section"><h3>30-Month Coordination Period</h3><ul><li>Starts when the individual first enrolls in Medicare based on ESRD, or the first month they would have qualified if they had applied</li><li>During this period, Medicare pays <strong>secondary</strong>; GHP pays <strong>primary</strong></li></ul></div>
+        <div class="modal-section"><h3>Who Pays Primary?</h3>
+        <div class="modal-two-col"><div class="modal-col"><h4>Within 30-Month Period</h4><p><strong>GHP pays primary.</strong> Medicare pays secondary.</p></div><div class="modal-col"><h4>After 30-Month Period</h4><p><strong>Medicare pays primary.</strong> GHP pays secondary.</p></div></div></div>
+        <div class="modal-section"><h3>Additional Notes</h3><ul><li>Group health plans can be from <strong>current or former work</strong></li></ul></div>`
+      },
+      'fehb': {
+        title: 'Federal Employee Health Benefits (FEHB) Program',
+        body: `<div class="modal-section"><h3>Overview</h3><ul><li>FEHB covers <strong>current and retired</strong> federal government employees</li><li>Administered by the <strong>Office of Personnel Management (www.opm.gov)</strong></li></ul></div>
+        <div class="modal-section"><h3>Currently Working and Covered by FEHB</h3><ul><li>Same coordination rules as non-federal current employee insurance</li><li><strong>FEHB pays primary</strong>; Medicare pays secondary (federal government = large employer)</li></ul></div>
+        <div class="modal-section"><h3>Retired and Covered by FEHB</h3><ul><li><strong>Medicare pays primary</strong>; FEHB pays secondary</li><li>Beneficiary can keep retiree FEHB as primary as long as they <strong>do not enroll in Part B</strong></li><li>If beneficiary keeps FEHB as primary when retiring, they will <strong>not have a Part B SEP</strong> — possible Part B LEP if they enroll in Part B later</li><li>If beneficiary <strong>disenrolls from FEHB</strong>, they <strong>cannot get it back</strong></li></ul></div>
+        <div class="modal-section"><h3>FEHB Decision Options for Retirees</h3>
+        <div class="modal-two-col"><div class="modal-col"><h4>Option A: Enroll in Medicare</h4><p>Sign up for Part B when first eligible, pay both Part B premium and FEHB, avoid Part B LEP, FEHB becomes secondary.</p></div><div class="modal-col"><h4>Option B: Keep FEHB Only</h4><p>Do not take Part B; retiree FEHB stays primary. Risk: no Part B SEP later; possible LEP if Medicare is ever desired.</p></div></div></div>`
+      },
+      'zahra': {
+        title: 'Case Example: Zahra — Coordination of Benefits',
+        body: `<div class="modal-section"><h3>Scenario</h3><p>Zahra is <strong>67 years old</strong>. She has Medicare Parts A and B, retiree insurance from her previous job, and is also covered by her husband's group health plan from his work at a company with <strong>20+ employees</strong>.</p></div>
+        <div class="modal-section"><h3>Question: In what order does each insurance pay?</h3></div>
+        <div class="modal-section"><h3>Answer: Payment Order</h3><ul><li><strong>① First:</strong> Zahra's husband's GHP (20+ employees) — pays primary to Medicare because GHP from 20+ employee company pays before Medicare for age-65+ beneficiaries</li><li><strong>② Second:</strong> Medicare — pays secondary to GHP; pays before retiree insurance</li><li><strong>③ Third:</strong> Zahra's retiree insurance — always pays secondary to Medicare when beneficiary has both</li></ul></div>
+        <div class="modal-section"><h3>Counseling Tip</h3><p>Contact the BCRC at <strong>855-798-2627</strong> with questions about how different insurance policies work together in complex coordination of benefits situations.</p></div>`
+      },
+      'ricardo': {
+        title: 'Case Example: Ricardo — Should I Sign Up for Medicare?',
+        body: `<div class="modal-section"><h3>Scenario</h3><p>Ricardo is currently working for a company that provides him with health coverage. He wants to know if he should sign up for Medicare when he becomes eligible.</p></div>
+        <div class="modal-section"><h3>Key Information from Ricardo</h3>
+        <div class="modal-two-col"><div class="modal-col"><h4>How is Ricardo eligible?</h4><p>He will be <strong>65</strong> in a few months.</p></div><div class="modal-col"><h4>Company size?</h4><p>His company has <strong>fewer than 20 employees</strong> (small GHP).</p></div></div></div>
+        <div class="modal-section"><h3>Answer and Counseling</h3><ul><li>Because Ricardo's employer has fewer than 20 employees, <strong>Medicare pays primary</strong> and his employer insurance pays secondary</li><li>Ricardo should sign up for Medicare during his <strong>Initial Enrollment Period (IEP)</strong> — his employer insurance will only pay secondary and may not pay on claims where Medicare hasn't paid first</li><li>If he does not have creditable drug coverage through his employer, he should also sign up for <strong>Part D</strong> during his IEP to avoid a Part D LEP</li></ul></div>`
+      },
+      'enroll-sep': {
+        title: 'Enrollment Decision: Right to Part B SEP',
+        body: `<div class="modal-section"><h3>Part B Special Enrollment Period</h3><p>An individual covered by <strong>current employee insurance</strong> has the right to a Part B SEP to sign up for premium Part A and/or Part B when that coverage ends — <strong>regardless of employer size</strong>.</p></div>
+        <div class="modal-section"><h3>Who Does NOT Get a Part B SEP?</h3><ul><li>Individuals with <strong>COBRA coverage</strong> — COBRA does not count as current employee insurance for SEP purposes</li><li>Individuals with <strong>retiree insurance</strong> — retiree coverage is not current employee insurance</li><li><strong>Federal retirees</strong> who keep retiree FEHB as primary when they retire</li></ul></div>
+        <div class="modal-section"><h3>What Happens Without a SEP?</h3><ul><li>Beneficiary must wait for the <strong>General Enrollment Period (GEP)</strong> — January 1 through March 31</li><li>Coverage is effective the <strong>first of the month following</strong> enrollment</li><li>Beneficiary may face a <strong>Part B late enrollment penalty</strong></li></ul></div>`
+      },
+      'enroll-coverage': {
+        title: 'Enrollment Decision: Payment or Coverage Issues',
+        body: `<div class="modal-section"><h3>The Risk of Delaying When GHP Pays Secondary</h3><p>If a beneficiary's other insurance would pay <strong>secondary</strong> to Medicare, it is usually <strong>unadvisable</strong> to delay Medicare enrollment.</p></div>
+        <div class="modal-section"><h3>Why It Can Be Problematic</h3><ul><li>GHP is <strong>not obligated to pay primary</strong> if Medicare should pay first</li><li>GHP may <strong>not assist on claims</strong> for which Medicare has not made payment</li><li>GHP may <strong>recoup (take back) any payments</strong> it made as primary when it should have been secondary</li><li>This can result in the beneficiary owing large, unexpected bills</li></ul></div>
+        <div class="modal-section"><h3>When Delaying May Be Acceptable</h3><ul><li>When the GHP (20+ employees) or LGHP (100+ for disability cases) pays <strong>primary</strong> to Medicare</li><li>When the individual has a confirmed <strong>Part B SEP</strong> available when they eventually enroll</li></ul></div>`
+      },
+      'enroll-partd': {
+        title: 'Enrollment Decision: Medicare Part D',
+        body: `<div class="modal-section"><h3>Can Employer Drug Coverage Allow Delay?</h3><p>Yes — if employer drug coverage is <strong>creditable</strong> (at least as good as Part D), the beneficiary can delay Part D enrollment without incurring a LEP.</p></div>
+        <div class="modal-section"><h3>What Beneficiaries Should Do</h3><ul><li>Verify their employer drug coverage is creditable — employers must notify annually</li><li><strong>Keep records</strong> of all drug coverage periods to prove creditable coverage later</li><li>A Part D SEP is available for up to <strong>2 full months</strong> after losing employer drug coverage</li></ul></div>
+        <div class="modal-section"><h3>If Employer Coverage Is Not Creditable</h3><ul><li>Delaying Part D will result in a <strong>LEP of 1% per uncovered month</strong></li><li>This LEP lasts for <strong>life</strong> (if eligible for Medicare due to age)</li></ul></div>`
+      },
+      'enroll-fehb': {
+        title: 'Enrollment Decision: Federal Employee Health Benefits',
+        body: `<div class="modal-section"><h3>The FEHB Retirement Dilemma</h3><p>Federal retirees face unique choices because retiree FEHB is comprehensive, but decisions about Medicare enrollment and FEHB continuation are <strong>permanent</strong>.</p></div>
+        <div class="modal-section"><h3>Option A: Keep FEHB Only (No Medicare Part B)</h3><ul><li>Retiree FEHB continues to pay primary</li><li>Some beneficiaries choose to stay with FEHB and <strong>never enroll in Medicare</strong></li><li>⚠️ If they later want Part B, they will <strong>not have a SEP</strong> — GEP only, and likely a Part B LEP</li></ul></div>
+        <div class="modal-section"><h3>Option B: Enroll in Medicare Part B When First Eligible</h3><ul><li>Pay both the Part B premium and FEHB premium</li><li>FEHB becomes secondary — may reduce out-of-pocket costs</li><li>Avoids the Part B LEP entirely</li></ul></div>
+        <div class="modal-section"><h3>Critical Reminder</h3><ul><li>If a beneficiary <strong>disenrolls from FEHB</strong>, they will <strong>never be able to re-enroll</strong></li><li>This is a permanent, irreversible decision</li></ul></div>`
+      },
+
+      // ── COURSE 2: MEDICARE AND OTHER INSURANCE ──
+      'c2-intro': {
+        title: 'Course 2: Medicare and Other Insurance',
+        body: `<div class="modal-section"><h3>Course Overview</h3><p>This course covers how Medicare works with a variety of other insurance types beyond employer coverage — including military benefits, liability and workers' compensation, long-term care, dental insurance, and Health Insurance Marketplaces.</p></div>
+        <div class="modal-section"><h3>4 Learning Objectives</h3><ul><li><strong>1.</strong> Understand how military benefits coordinate with Medicare, including TRICARE, TRICARE for Life, and VA benefits</li><li><strong>2.</strong> Explain how liability insurance, no-fault insurance, and workers' compensation work with Medicare</li><li><strong>3.</strong> Know the basics about long-term care and dental insurance</li><li><strong>4.</strong> Recognize how Health Insurance Marketplaces may affect Medicare beneficiaries</li></ul></div>`
+      },
+      'c2-tricare': {
+        title: 'Military Benefits: TRICARE and TRICARE for Life',
+        body: `<div class="modal-section"><h3>TRICARE</h3><ul><li>Military insurance for <strong>active duty service members (ADSMs)</strong> and <strong>active duty family members (ADFMs)</strong></li><li>There are different types of TRICARE plans</li><li><strong>TRICARE pays primary</strong> and Medicare pays secondary</li></ul></div>
+        <div class="modal-section"><h3>TRICARE for Life (TFL)</h3><ul><li>TRICARE coverage for individuals who are <strong>retired from the military and have Medicare</strong></li><li>Individual who is eligible for premium-free Part A <strong>must</strong> sign up for Part A and Part B — then TRICARE benefits are received through TFL</li><li><strong>Medicare pays primary</strong> and TFL pays secondary</li><li>TFL drug coverage is generally <strong>creditable</strong></li></ul></div>`
+      },
+      'c2-tfl-enrollment': {
+        title: 'TFL and Medicare Enrollment',
+        body: `<div class="modal-section"><h3>Individual 65+ Covered by TRICARE Through Active Duty</h3><ul><li>Can <strong>delay Part B enrollment</strong> and remain eligible for TRICARE</li><li>Can use the <strong>Part B Special Enrollment Period (SEP)</strong> to enroll in Part B without penalty when TRICARE coverage ends</li></ul></div>
+        <div class="modal-section"><h3>Individual 65+ NOT Covered by TRICARE Through Active Duty</h3><ul><li>Should <strong>sign up for Medicare</strong> to avoid losing TRICARE coverage</li><li>Failure to enroll in Medicare when first eligible may result in <strong>loss of TRICARE benefits</strong></li></ul></div>`
+      },
+      'c2-va': {
+        title: 'Military Benefits: Veterans Affairs (VA) Benefits',
+        body: `<div class="modal-section"><h3>What are VA Benefits?</h3><p>VA benefits provide coverage for individuals who are determined to have a <strong>disability related to active duty service</strong>.</p></div>
+        <div class="modal-section"><h3>4 Key Facts About VA Benefits and Medicare</h3>
+        <div class="modal-two-col"><div class="modal-col"><h4>① No Coordination with Medicare</h4><p>VA benefits <strong>do not coordinate at all</strong> with Medicare. They operate as entirely separate systems.</p></div><div class="modal-col"><h4>② Covers Some Medicare Gaps</h4><p>VA benefits cover certain services Medicare does not, such as <strong>custodial and nursing home care</strong>.</p></div></div>
+        <div class="modal-two-col" style="margin-top:12px"><div class="modal-col"><h4>③ Creditable Drug Coverage</h4><p>VA drug coverage is <strong>creditable</strong>, so individuals can delay Part D enrollment without a LEP.</p></div><div class="modal-col"><h4>④ Enroll in Medicare When First Eligible</h4><p>Individual covered by VA benefits should enroll in Medicare when first eligible — they will <strong>not have a Part B SEP</strong> if they delay enrollment.</p></div></div></div>`
+      },
+      'c2-case-regina': {
+        title: 'Case Example: TFL — Regina',
+        body: `<div class="modal-section"><h3>Scenario</h3><p>Regina is 64 years old, retired from the military, and a recipient of TRICARE retiree coverage from her previous military service. She is eligible for premium-free Part A, but is thinking of delaying Part B enrollment when she turns 65, since she likes her current coverage.</p></div>
+        <div class="modal-section"><h3>Question: Should Regina delay Part B enrollment when she turns 65?</h3>
+        <div class="modal-two-col"><div class="modal-col"><h4>❌ Yes — Delay Part B</h4><p>Incorrect. If Regina delays Part B, she will lose her TRICARE benefits. To remain eligible for TRICARE, individuals eligible for premium-free Part A must enroll in both Parts A and B when they become eligible.</p></div><div class="modal-col"><h4>✅ No — Correct!</h4><p>Regina should <strong>not</strong> delay Part B if she wants to keep her TRICARE coverage. Once she enrolls in Parts A and B, her benefits will be through <strong>TRICARE for Life (TFL)</strong>. Medicare pays primary and TFL pays secondary.</p></div></div></div>`
+      },
+      'c2-liability': {
+        title: 'Liability, No-Fault Insurance, and Workers\' Compensation',
+        body: `<div class="modal-section"><h3>Three Types of Insurance Where Medicare Pays Secondary</h3>
+        <div class="modal-two-col"><div class="modal-col"><h4>Liability Insurance</h4><p>Protects the policyholder if they are <strong>legally liable for someone else's injury</strong>. Examples: auto liability, homeowner's liability.</p></div><div class="modal-col"><h4>No-Fault Insurance</h4><p>Pays for health care services resulting from an individual's injury as the result of an <strong>accident, regardless of fault</strong>. Examples: personal injury protection (PIP) in auto insurance.</p></div></div>
+        <div class="modal-two-col" style="margin-top:12px"><div class="modal-col"><h4>Workers' Compensation</h4><p>A <strong>state-administered program</strong> that pays for health care claims for <strong>job-related injuries</strong>.</p></div><div class="modal-col"><h4>Medicare's Role</h4><p><strong>Medicare pays secondary</strong> to all three types of insurance. Medicare can make <strong>conditional payments</strong> as primary payer, and the BCRC reimburses Medicare once settlement is received.</p></div></div></div>`
+      },
+      'c2-bcrc': {
+        title: 'BCRC and Conditional Payments — 6-Step Process',
+        body: `<div class="modal-section"><h3>What are Conditional Payments?</h3><p>When Medicare pays for services that liability, no-fault, or workers' compensation insurance should pay, these are called <strong>conditional payments</strong>. The BCRC recovers these payments once a settlement is reached.</p></div>
+        <div class="modal-section"><h3>The 6-Step BCRC Conditional Payment Process</h3><ul><li><strong>Step 1:</strong> Beneficiary or attorney reports pending case to BCRC</li><li><strong>Step 2:</strong> BCRC issues a Rights and Responsibilities letter explaining what information BCRC needs from the beneficiary</li><li><strong>Step 3:</strong> If beneficiary has <em>not</em> yet received settlement, BCRC sends two documents: (a) <strong>Payment Summary Form (PSF)</strong> — lists the amount Medicare will pay conditionally; (b) <strong>Conditional Payment Letter (CPL)</strong> — tells beneficiary how to dispute claims on PSF</li><li><strong>Step 4:</strong> If beneficiary has <em>already</em> received settlement, BCRC sends a <strong>Conditional Payment Notification (CPN)</strong></li><li><strong>Step 5:</strong> Beneficiary receives settlement; BCRC issues <strong>recovery demand letter</strong>, sets end date, and checks if additional claims should be added</li><li><strong>Step 6:</strong> If beneficiary does not pay the amount on the demand letter in a timely fashion, the amount will <strong>accrue interest</strong></li></ul></div>`
+      },
+      'c2-ltc': {
+        title: 'Long-Term Care Insurance',
+        body: `<div class="modal-section"><h3>What is Long-Term Care?</h3><p>Long-term care — also called <strong>long-term services and support (LTSS)</strong> or <strong>custodial care</strong> — provides help with <strong>activities of daily living (ADLs)</strong> such as bathing, dressing, eating, and mobility.</p></div>
+        <div class="modal-section"><h3>Medicare and Long-Term Care</h3><ul><li><strong>Medicare does not cover custodial care alone</strong></li><li>Long-term care policies cover long-term care <strong>outside of what Medicare covers</strong></li><li>Long-term care insurance should be <strong>purchased before you need it</strong> — waiting until you need care makes it impossible or very expensive to obtain</li></ul></div>`
+      },
+      'c2-ltc-qualify': {
+        title: 'Long-Term Care Qualifications',
+        body: `<div class="modal-section"><h3>How Do You Qualify for Benefits?</h3><p>Two criteria must be met before a long-term care policy begins paying benefits:</p></div>
+        <div class="modal-section"><h3>① Benefit Trigger</h3><ul><li>Beneficiary needs help with <strong>2 or more ADLs:</strong> bathing, dressing, using the toilet, transferring, caring for incontinence, eating</li><li>Beneficiary can also qualify based on <strong>cognitive impairment</strong>, such as Alzheimer's disease</li></ul></div>
+        <div class="modal-section"><h3>② Elimination Period</h3><ul><li>The amount of time that must pass <strong>before the plan starts to cover</strong> the beneficiary's long-term care</li><li>Commonly <strong>30-day, 60-day, or 90-day</strong> elimination periods</li><li>Similar to a deductible, but measured in time rather than money</li></ul></div>`
+      },
+      'c2-ltc-costs': {
+        title: 'Long-Term Care Policy Costs',
+        body: `<div class="modal-section"><h3>Factors That Determine LTC Policy Cost</h3>
+        <div class="modal-two-col"><div class="modal-col"><h4>Age at Purchase</h4><p>The younger the individual when they purchase, the lower the premium. This is why purchasing <strong>before you need it</strong> is so important.</p></div><div class="modal-col"><h4>Maximum Policy Benefits</h4><p>The <strong>maximum number of days</strong> the policy will pay for care. Longer benefit periods cost more.</p></div></div>
+        <div class="modal-two-col" style="margin-top:12px"><div class="modal-col"><h4>Maximum Daily Benefit</h4><p>The <strong>maximum amount</strong> the policy pays for each day of care. Higher daily benefits cost more.</p></div><div class="modal-col"><h4>Optional Benefits</h4><p>Any additional benefits chosen when the policy is purchased, such as inflation protection.</p></div></div></div>
+        <div class="modal-section"><h3>Long-Term Care Partnership Programs</h3><ul><li>Many states have <strong>Long-Term Care Partnership Programs</strong> that require plans to include inflation protection</li><li>These programs can <strong>protect the beneficiary's assets</strong> if they later qualify for Medicaid</li><li>Some individuals may qualify for <strong>Medicaid coverage</strong> of long-term care</li></ul></div>`
+      },
+      'c2-dental': {
+        title: 'Dental Insurance',
+        body: `<div class="modal-section"><h3>What Medicare Covers (and Doesn't)</h3><ul><li><strong>Most dental care is excluded</strong> from Medicare coverage, including: cleanings, fillings, tooth extractions, and dentures</li><li>Some <strong>Medicare Advantage Plans</strong> offer limited dental coverage</li></ul></div>
+        <div class="modal-section"><h3>Private Dental Insurance</h3><ul><li>Beneficiaries with higher dental insurance needs can purchase a <strong>dental policy from a private insurance company</strong></li><li>Dental plans generally <strong>do not coordinate with Medicare</strong></li><li>In the <strong>rare instance</strong> that both a dental plan and Medicare cover the same service, <strong>Medicare is primary and the dental plan is secondary</strong></li></ul></div>`
+      },
+      'c2-marketplace': {
+        title: 'Health Insurance Marketplaces',
+        body: `<div class="modal-section"><h3>What are Health Insurance Marketplaces?</h3><ul><li>Uninsured and some underinsured individuals can <strong>purchase coverage through the Marketplace</strong></li><li>Not all states have their own Marketplaces; residents of those states can use the <strong>federal Marketplace</strong></li></ul></div>
+        <div class="modal-section"><h3>Medicare Beneficiaries Generally Do NOT Need the Marketplace</h3><ul><li>Medigap, Medicare Advantage Plans, and stand-alone Part D plans are <strong>not sold through the Marketplace</strong></li><li>Individual enrolled in a Marketplace plan with tax credits will <strong>lose tax credits once enrolled in Medicare</strong></li><li><strong>Exception:</strong> If a beneficiary does not qualify for premium-free Part A, they can drop Medicare and enroll in a Marketplace plan — but may have LEPs if they decide to enroll in Medicare later</li></ul></div>
+        <div class="modal-section"><h3>SHOP Plans</h3><ul><li><strong>Small Business Health Options Program (SHOP)</strong> plans coordinate with Medicare the <strong>same way other current employee insurance does</strong></li></ul></div>`
+      },
+
+      // ── COURSE 3: MEDICARE AND MEDICAID ──
+      'c3-intro': {
+        title: 'Course 3: Medicare and Medicaid',
+        body: `<div class="modal-section"><h3>Course Overview</h3><p>This course prepares SHIP counselors to advise beneficiaries who have or may qualify for Medicaid alongside Medicare. Understanding Medicaid eligibility, benefits, and how it works with Medicare is essential for serving dual-eligible individuals.</p></div>
+        <div class="modal-section"><h3>4 Learning Objectives</h3><ul><li><strong>1.</strong> Explain what Medicaid is and what makes someone eligible</li><li><strong>2.</strong> Understand how to apply for Medicaid</li><li><strong>3.</strong> Know what services Medicaid covers</li><li><strong>4.</strong> Describe how beneficiaries transition among different types of Medicaid</li></ul></div>
+        <div class="modal-section"><h3>Key Topics</h3><ul><li>Medicaid program overview and state variability</li><li>ABD Medicaid eligibility and SSI budgeting methods</li><li>Meeting income limits: spend-down, trusts, and Buy-In programs</li><li>ABD Medicaid application process</li><li>Mandatory and optional Medicaid benefits</li><li>Dual-eligible coordination of benefits</li><li>Institutional and waiver Medicaid programs</li><li>MAGI Medicaid and transitions to Medicare</li></ul></div>`
+      },
+      'c3-what': {
+        title: 'What is Medicaid?',
+        body: `<div class="modal-section"><h3>Overview</h3><p>Medicaid is a <strong>federal and state program</strong> for certain people with limited income and assets. Guidelines are established by the federal government, but states determine the specifics.</p></div>
+        <div class="modal-section"><h3>What States Determine</h3><ul><li>Income and asset limits</li><li>Type, amount, duration, and scope of services</li><li>How much providers get paid</li><li>Program names (differ by state)</li></ul></div>
+        <div class="modal-section"><h3>Eligibility Categories</h3><p>States administer different Medicaid-funded programs for different groups:</p><ul><li>Individuals with limited income/assets, children, pregnant people, parents, older adults, people with disabilities</li><li>People who need nursing home care, long-term care services, or home health care services</li></ul></div>`
+      },
+      'c3-options': {
+        title: 'Medicaid Options',
+        body: `<div class="modal-section"><h3>Three Main Medicaid Program Types</h3></div>
+        <div class="modal-section"><h3>① Medicaid for Residents of Institution</h3><ul><li>Individual must meet state's income, asset, and level of care requirements</li><li>Medicaid pays for stay in a <strong>skilled nursing facility (SNF) or nursing home</strong></li></ul></div>
+        <div class="modal-section"><h3>② Medicaid Waiver Program</h3><ul><li>Individual must meet state's income and level of care requirements</li><li>Waiver allows state to relax certain Medicaid requirements</li><li>Medicaid pays for <strong>long-term care or care in the home (home health care)</strong></li></ul></div>
+        <div class="modal-section"><h3>③ Medicaid for Residents of Community</h3><ul><li>Provides coverage for individuals who live in the community</li><li>Medicaid pays for health care services such as: home care, physical therapy, prescription drugs, and transportation to/from doctor appointments</li></ul></div>`
+      },
+      'c3-abd': {
+        title: 'Medicaid Eligibility: Aged, Blind, Disabled (ABD)',
+        body: `<div class="modal-section"><h3>What is ABD Medicaid?</h3><ul><li>A type of <strong>community Medicaid</strong>, also known as <strong>traditional Medicaid</strong></li><li>Most Medicare beneficiaries with Medicaid have <strong>ABD Medicaid</strong></li></ul></div>
+        <div class="modal-section"><h3>Income Requirements (Most States)</h3><ul><li>Individual must have income less than <strong>74% of the federal poverty level (FPL)</strong></li><li>Individuals receiving <strong>Social Security Income (SSI) automatically get Medicaid</strong> in most states</li></ul></div>
+        <div class="modal-section"><h3>SSI Budgeting Methods</h3><ul><li>All states use SSI budgeting methods to determine Medicaid financial eligibility</li><li><strong>Countable income:</strong> Amount left over after certain types of earned and unearned income are deducted from the individual's monthly income</li><li>Certain income and assets are excluded — so an individual may still qualify for ABD Medicaid even if income and assets appear to be over the limit</li></ul></div>`
+      },
+      'c3-spenddown': {
+        title: 'Meeting Income Limits: Medicaid Spend-Down',
+        body: `<div class="modal-section"><h3>Medically Needy Program</h3><ul><li>Some states participate in the <strong>Medically Needy Program</strong>, which features Medicaid spend-down for aged, blind, or disabled individuals</li><li>Individuals can <strong>deduct medical expenses from income</strong> in order to meet the ABD Medicaid spend-down limit in their state</li></ul></div>
+        <div class="modal-section"><h3>How Spend-Down Works</h3><ul><li>States are required to have spend-down if at least 1 of their eligibility requirements is more restrictive than SSI</li><li>Spend-down is the <strong>difference between the individual's income and the Medicaid spend-down limit</strong> over a certain period of time</li><li>Individual has Medicaid for each period they meet their spend-down</li><li>Income limit for spend-down is usually <strong>lower</strong> than for Medicaid without spend-down</li></ul></div>`
+      },
+      'c3-trusts': {
+        title: 'Meeting Income Limits: Trusts',
+        body: `<div class="modal-section"><h3>What are Medicaid Trusts?</h3><ul><li>Trusts are available in some states</li><li>Can be used as an <strong>alternative to spend-down</strong></li><li>Keep income and assets from counting for Medicaid purposes</li><li>There are <strong>strict requirements</strong> for how trusts are established and administered</li></ul></div>
+        <div class="modal-section"><h3>Common Types of Trusts</h3><ul><li><strong>Special Needs Trusts</strong></li><li><strong>Supplemental Needs Trusts</strong></li><li><strong>Miller Trusts (Qualified Income Trusts)</strong></li></ul></div>
+        <div class="modal-section"><h3>Important Notes</h3><ul><li>Beneficiary or relative can put a portion of monthly income or assets into trust</li><li>Rules for trusts <strong>vary by state</strong></li><li>Contact <strong>local Medicaid office</strong> or an <strong>elder law attorney</strong> for more information</li></ul></div>`
+      },
+      'c3-buyin': {
+        title: 'Meeting Income Limits: Medicaid Buy-In Program',
+        body: `<div class="modal-section"><h3>What is the Medicaid Buy-In Program?</h3><ul><li>Available in some states; <strong>may go by a different name</strong></li><li>Allows an <strong>individual under 65 with a disability</strong> to work and still get Medicaid benefits</li></ul></div>
+        <div class="modal-section"><h3>How It Works</h3><ul><li>If the individual qualifies, they may receive Medicaid by <strong>paying a premium</strong> to the Medicaid program</li></ul></div>
+        <div class="modal-section"><h3>How to Find Out More</h3><ul><li>Contact the <strong>local Medicaid office</strong> for eligibility information</li></ul></div>`
+      },
+      'c3-spenddown-example': {
+        title: 'Medicaid Spend-Down Example: Vivian',
+        body: `<div class="modal-section"><h3>Scenario</h3><p>Vivian's state has Medicaid spend-down. She gets Medicaid for each month she meets the Medicaid spend-down income limit.</p></div>
+        <div class="modal-section"><h3>The Numbers</h3><ul><li>Her monthly income is <strong>$100 above the limit</strong> in her state</li><li>Vivian can use <strong>$100 worth of medical bills</strong> to qualify for Medicaid through spend-down (medical bills equal to the amount of excess income)</li></ul></div>
+        <div class="modal-section"><h3>Month-to-Month Variability</h3>
+        <div class="modal-two-col"><div class="modal-col"><h4>If Vivian Does NOT Have $100 in Bills</h4><p>She will <strong>not qualify</strong> for spend-down in that month.</p></div><div class="modal-col"><h4>If Vivian HAS $100 in Bills Each Month</h4><p>She will <strong>continue to qualify</strong> for Medicaid through spend-down each month.</p></div></div></div>
+        <div class="modal-section"><h3>Key Takeaway</h3><p>Spend-down eligibility is <strong>not permanent</strong> — it is re-evaluated each period based on whether the individual's medical expenses are sufficient to bring their countable income below the limit.</p></div>`
+      },
+      'c3-apply': {
+        title: 'Application Process for ABD Medicaid',
+        body: `<div class="modal-section"><h3>How to Apply for ABD Medicaid</h3></div>
+        <div class="modal-section"><h3>Step 1: Apply for ABD Medicaid Through Local Medicaid Office</h3><ul><li>Application may be submitted <strong>online, through mail, through a community-based organization, or in-person</strong> at the local office</li></ul></div>
+        <div class="modal-section"><h3>Step 2: Complete and Attach Copies of Required Documents</h3><ul><li>Required documents may include: proof of age, proof of income and resources, proof of address, copy of insurance cards, and copy of Medicare card</li></ul></div>
+        <div class="modal-section"><h3>Step 3: Request a Fair Hearing if Turned Down or Given Untimely Decision</h3><ul><li>Contact the Medicaid office, State Department of Social Services, or other agency that administers Medicaid to learn more</li></ul></div>
+        <div class="modal-section"><h3>Step 4: Recertify in a Timely Manner</h3><ul><li>Recertification is often an <strong>annual process</strong> — contact the local Medicaid office to learn more</li></ul></div>`
+      },
+      'c3-mandatory': {
+        title: 'Mandatory Medicaid Benefits',
+        body: `<div class="modal-section"><h3>All State Medicaid Programs Are Required to Cover:</h3></div>
+        <div class="modal-section"><ul><li>Inpatient and outpatient <strong>hospital services</strong></li><li><strong>Nursing facility services</strong></li><li><strong>Home health services</strong></li><li>Physicians' and laboratory services, <strong>x-rays</strong></li><li><strong>Rural health clinic services</strong></li><li><strong>Transportation to medical services</strong></li><li>Family planning and nurse midwife services, <strong>tobacco cessation counseling</strong> for pregnant people, state-licensed freestanding birth centers</li><li>Pediatric and certified <strong>family nurse practitioner services</strong></li></ul></div>`
+      },
+      'c3-optional': {
+        title: 'Optional Medicaid Benefits',
+        body: `<div class="modal-section"><h3>Other Benefits Are Optional — May Not Be Available in All States</h3></div>
+        <div class="modal-section">
+        <div class="modal-two-col"><div class="modal-col"><h4>Common Optional Benefits</h4><ul><li>Prescription drugs</li><li>Physical, occupational, and speech therapy</li><li>Dental services and dentures</li><li>Prosthetics</li><li>Optometry and eyeglasses</li><li>Chiropractic services</li></ul></div><div class="modal-col"><h4>Additional Optional Benefits</h4><ul><li>Personal care</li><li>Case management</li><li>Hospice care</li><li>Podiatry</li><li>Private duty nursing</li></ul></div></div></div>
+        <div class="modal-section"><h3>Important Note</h3><p>Availability of optional benefits varies significantly by state. Beneficiaries should contact their <strong>local Medicaid office</strong> to find out which optional benefits are available in their state.</p></div>`
+      },
+      'c3-dualeligible': {
+        title: 'Medicare and Medicaid Coordination: Dual-Eligible Individuals',
+        body: `<div class="modal-section"><h3>Key Definitions</h3>
+        <div class="modal-two-col"><div class="modal-col"><h4>Dual-Eligible</h4><p>An individual enrolled in <strong>both Medicare and Medicaid</strong>.</p></div><div class="modal-col"><h4>Full Dual-Eligible</h4><p>Individual enrolled in Part A and/or Part B <strong>and</strong> Medicaid (community or institutional benefits).</p></div></div>
+        <div class="modal-two-col" style="margin-top:12px"><div class="modal-col"><h4>Partial Dual-Eligible</h4><p>Individual with a <strong>Medicare Savings Program (MSP)</strong>.</p></div><div class="modal-col"><h4>How They Work Together</h4><p>Medicare pays first; Medicaid is the <strong>payer of last resort</strong>.</p></div></div></div>
+        <div class="modal-section"><h3>Full Dual-Eligible Benefits</h3><ul><li>Usually does <strong>not have to pay</strong> Part A and B premiums, deductibles, coinsurance, or copays</li><li>Should see providers who accept <strong>both Medicare and Medicaid</strong> to have the lowest out-of-pocket costs</li></ul></div>`
+      },
+      'c3-cob-example': {
+        title: 'Case Example: Coordination of Benefits — Chantale',
+        body: `<div class="modal-section"><h3>Scenario</h3><p>Chantale is <strong>65 years old</strong>. She has Medicare Parts A and B, retiree insurance from her previous job, and is covered by her state's Medicaid program.</p></div>
+        <div class="modal-section"><h3>Question: In What Order Does Each Insurance Pay?</h3></div>
+        <div class="modal-section"><h3>Answer: Payment Order</h3><ul><li><strong>① First:</strong> Medicare — pays primary to all other insurances</li><li><strong>② Second:</strong> Retiree insurance — pays after Medicare</li><li><strong>③ Third (Last Resort):</strong> Medicaid — payer of last resort; pays remaining costs after all other insurance has paid</li></ul></div>
+        <div class="modal-section"><h3>Key Principle</h3><p>When Chantale receives a service covered by all three insurances, <strong>Medicare pays first, retiree insurance pays second, and Medicaid pays last</strong>. Medicaid is always the payer of last resort.</p></div>`
+      },
+      'c3-institution': {
+        title: 'Medicaid for Residents of Institution',
+        body: `<div class="modal-section"><h3>Overview</h3><ul><li><strong>All states</strong> have Medicaid for residents of an institution</li><li>Covers <strong>nursing facility services and general health care</strong> for eligible individuals</li><li>Has different eligibility requirements than Medicaid for residents of community who need long-term care</li></ul></div>
+        <div class="modal-section"><h3>Qualifications</h3><ul><li>Individual needs <strong>nursing home level of care</strong> or meets nursing home functional eligibility criteria</li><li>Individual has income and assets <strong>below certain guidelines</strong></li></ul></div>
+        <div class="modal-section"><h3>How It Works with Medicare</h3><ul><li>Medicaid can be used to <strong>supplement Medicare coverage</strong> of skilled nursing care</li></ul></div>
+        <div class="modal-section"><h3>State Variation</h3><ul><li>States have different standards for determining whether an individual needs nursing home level of care, such as assessing need for help with <strong>activities of daily living (ADLs)</strong></li></ul></div>`
+      },
+      'c3-institution-considerations': {
+        title: 'Medicaid for Residents of Institution: Considerations',
+        body: `<div class="modal-section"><h3>Three Key Considerations</h3></div>
+        <div class="modal-section"><h3>① Income and Assets</h3><p>Medicaid looks at the <strong>individual's and their spouse's income/assets together</strong>. This is critical — a spouse remaining in the community may still have assets examined as part of the eligibility determination.</p></div>
+        <div class="modal-section"><h3>② Five-Year Look-Back Period</h3><p>Medicaid looks at assets transferred in the <strong>past five years</strong>. A beneficiary can be penalized if they transferred assets in <strong>violation of Medicaid's rules</strong>. Improper transfers can delay eligibility.</p></div>
+        <div class="modal-section"><h3>③ Home Ownership</h3><p>If the beneficiary owns their home, they should speak to an <strong>elder law attorney</strong> about how it affects Medicaid eligibility. Home ownership rules are complex and vary by state.</p></div>`
+      },
+      'c3-hcbs': {
+        title: 'Medicaid HCBS Waiver Programs',
+        body: `<div class="modal-section"><h3>Overview</h3><p>States have at least <strong>one home and community-based services (HCBS) waiver program</strong>. These programs help beneficiaries stay at home or in a community-based setting instead of a nursing facility.</p></div>
+        <div class="modal-section"><h3>Covered Services May Include</h3><ul><li>Personal care</li><li>Skilled nursing care</li><li>Therapy services</li><li>Home modifications</li></ul></div>
+        <div class="modal-section"><h3>Qualifications</h3><ul><li>Individual meets state's <strong>level of care / functional eligibility requirements</strong></li><li>Individual has income and assets <strong>below certain guidelines</strong></li><li>States have different level of care requirements</li></ul></div>
+        <div class="modal-section"><h3>How It Works with Medicare</h3><ul><li>Medicaid can be used to <strong>supplement individual's Medicare-covered home health care</strong></li></ul></div>`
+      },
+      'c3-waiver-considerations': {
+        title: 'Medicaid Waiver Program Considerations',
+        body: `<div class="modal-section"><h3>Three Key Considerations</h3></div>
+        <div class="modal-section"><h3>① Income and Assets</h3><p>Medicaid looks at the <strong>individual's and their spouse's income/assets together</strong>. This applies the same way as for institutional Medicaid.</p></div>
+        <div class="modal-section"><h3>② Program Limits</h3><p>States generally have <strong>limits to the number of people who can receive</strong> waiver benefits. This means individuals may be placed on a <strong>wait list</strong> even if they meet all eligibility criteria.</p></div>
+        <div class="modal-section"><h3>③ Home Ownership</h3><p>If the beneficiary owns their home, they should speak to an <strong>elder law attorney</strong> about how it affects Medicaid eligibility.</p></div>`
+      },
+      'c3-magi': {
+        title: 'MAGI Medicaid Basics',
+        body: `<div class="modal-section"><h3>Two Ways to Determine Community Medicaid Eligibility</h3>
+        <div class="modal-two-col"><div class="modal-col"><h4>Traditional Income Assessment</h4><p>Used to determine eligibility for <strong>aged, blind, disabled populations</strong>, including those with Medicare.</p></div><div class="modal-col"><h4>Modified Adjusted Gross Income (MAGI)</h4><p>Used for <strong>children, pregnant people, parents or caregivers, and childless adults under 65</strong>.</p></div></div></div>
+        <div class="modal-section"><h3>Where is MAGI Medicaid Available?</h3><ul><li>MAGI Medicaid is available in states that <strong>expanded Medicaid coverage to new populations</strong> using federal expansion money available under the <strong>Affordable Care Act (ACA)</strong></li></ul></div>`
+      },
+      'c3-magi-eligibility': {
+        title: 'MAGI Medicaid Eligibility',
+        body: `<div class="modal-section"><h3>Who Qualifies</h3><ul><li>MAGI Medicaid is available to individuals with income less than <strong>138% of FPL</strong></li><li>Eligible groups: childless adults age 19–64, pregnant people, children up to age 19 (or 21, depending on state), and parent and relative caretakers</li></ul></div>
+        <div class="modal-section"><h3>What Is NOT Counted</h3>
+        <div class="modal-two-col"><div class="modal-col"><h4>Excluded Income</h4><p>Workers' compensation, child support, veterans' benefits are <strong>not counted</strong> as income.</p></div><div class="modal-col"><h4>No Asset Test</h4><p><strong>Resources and assets are not counted</strong> — unlike ABD Medicaid.</p></div></div></div>
+        <div class="modal-section"><h3>How to Enroll</h3><ul><li>Individuals eligible for MAGI Medicaid enroll through their <strong>state's or federal Health Insurance Marketplace</strong></li></ul></div>`
+      },
+      'c3-transitions': {
+        title: 'MAGI Medicaid to Medicare Transitions',
+        body: `<div class="modal-section"><h3>Key Rule</h3><p>An individual with MAGI Medicaid should be <strong>evaluated for traditional (ABD) Medicaid</strong> when they become Medicare-eligible.</p></div>
+        <div class="modal-section"><h3>5 Steps in the Transition Process</h3><ul><li><strong>Step 1:</strong> MAGI Medicaid has more generous income limits than ABD Medicaid — an individual who qualifies for MAGI may not qualify for ABD Medicaid</li><li><strong>Step 2:</strong> Individual soon to be eligible for Medicare should <strong>complete any paperwork they receive</strong> about being evaluated for ABD Medicaid</li><li><strong>Step 3:</strong> After completing the steps, individual should receive information about whether they are eligible for <strong>ABD Medicaid and/or Medicare Savings Program (MSP)</strong></li><li><strong>Step 4:</strong> Regardless of evaluation status, individual should <strong>enroll in Medicare Parts A and B when first eligible</strong> — Medicare is primary and Medicaid is payer of last resort</li><li><strong>Step 5:</strong> Individual may <strong>automatically receive Extra Help</strong>, enrolling them in a Medicare Part D drug plan</li></ul></div>`
+      },
+      'c3-transition-outcomes': {
+        title: 'Possible Transition Outcomes from MAGI Medicaid to Medicare',
+        body: `<div class="modal-section"><h3>Three Possible Outcomes</h3></div>
+        <div class="modal-section"><h3>① Individual Transitions with ABD Medicaid AND MSP</h3><ul><li>Medicare pays primary, Medicaid pays secondary</li><li>MSP helps pay <strong>Part B premium and possibly other costs</strong></li><li>Best outcome — most comprehensive coverage</li></ul></div>
+        <div class="modal-section"><h3>② Individual Transitions with MSP Only</h3><ul><li>MSP helps pay <strong>Part B premium and possibly other costs</strong></li><li>Does not have full ABD Medicaid benefits</li></ul></div>
+        <div class="modal-section"><h3>③ Individual Transitions WITHOUT Medicaid or MSP</h3><ul><li>Individual does not qualify for ABD Medicaid or MSP</li><li>Other options include: <strong>Medicare Advantage Plan</strong>, <strong>Original Medicare + Medigap</strong>, or <strong>Medicaid spend-down</strong> (depending on state)</li></ul></div>`
+      },
+
+      // ── COURSE 4: MEDICARE ASSISTANCE PROGRAMS ──
+      'c4-intro': {
+        title: 'Course 4: Medicare Assistance Programs',
+        body: `<div class="modal-section"><h3>Course Overview</h3><p>This course prepares SHIP counselors to help beneficiaries identify and apply for programs that reduce the cost of Medicare — including state-administered Medicare Savings Programs, the federal Extra Help subsidy, and pharmaceutical assistance programs.</p></div>
+        <div class="modal-section"><h3>4 Learning Objectives</h3><ul><li><strong>1.</strong> Know about Medicare Savings Programs and how to screen for them</li><li><strong>2.</strong> Understand the federal Extra Help drug subsidy program</li><li><strong>3.</strong> Be prepared to seek out state-specific assistance programs</li><li><strong>4.</strong> Help beneficiaries apply for an array of programs</li></ul></div>
+        <div class="modal-section"><h3>Key Topics</h3><ul><li>Four types of Medicare Savings Programs (MSPs)</li><li>QMB improper billing protections</li><li>MSP income and asset qualification rules</li><li>MSP application process (5 steps)</li><li>Additional MSP benefits including deeming into Extra Help</li><li>Extra Help / Low-Income Subsidy (LIS) overview, benefits, and costs</li><li>Extra Help application process and LI NET transition program</li><li>State Pharmaceutical Assistance Programs (SPAPs)</li><li>Pharmaceutical Assistance Programs (PAPs) from manufacturers</li><li>Program comparison: MSPs vs Extra Help vs SPAPs vs PAPs</li></ul></div>`
+      },
+      'c4-msp-overview': {
+        title: 'Medicare Savings Programs (MSPs)',
+        body: `<div class="modal-section"><h3>What are MSPs?</h3><ul><li>Benefits that help pay <strong>out-of-pocket Medicare costs</strong> for people with limited income and/or assets</li><li><strong>Administered by state Medicaid program</strong></li></ul></div>
+        <div class="modal-section"><h3>Four Types of MSPs</h3><ul><li><strong>Qualifying Individual (QI)</strong></li><li><strong>Specified Low-Income Medicare Beneficiary (SLMB)</strong></li><li><strong>Qualified Medicare Beneficiary (QMB)</strong></li><li><strong>Qualified Disabled and Working Individual (QDWI)</strong></li></ul></div>
+        <div class="modal-section"><h3>Key Facts</h3><ul><li>Income limits based on different percentages of the <strong>federal poverty level (FPL)</strong></li><li><strong>Full dual:</strong> Individual with Medicare and Medicaid</li><li><strong>Partial dual:</strong> Individual with Medicare and MSP</li></ul></div>`
+      },
+      'c4-msp-table': {
+        title: 'MSP Types and Benefits',
+        body: `<div class="modal-section"><h3>Qualifying Individual (QI)</h3><ul><li>Pays <strong>Part B premium</strong></li><li><strong>3-month retroactive</strong> Part B premium reimbursement</li><li>Income limit: <strong>135% of FPL</strong></li></ul></div>
+        <div class="modal-section"><h3>Specified Low-Income Medicare Beneficiary (SLMB)</h3><ul><li>Pays <strong>Part B premium</strong></li><li><strong>3-month retroactive</strong> Part B premium reimbursement</li><li>Income limit: <strong>120% of FPL</strong></li></ul></div>
+        <div class="modal-section"><h3>Qualified Medicare Beneficiary (QMB)</h3><ul><li>Pays <strong>Part B premium</strong> and Part A premium if applicable</li><li><strong>Improper billing protection:</strong> Providers cannot charge QMB beneficiaries for cost-sharing</li><li><strong>No retroactive coverage</strong></li><li>Income limit: <strong>100% of FPL</strong></li></ul></div>
+        <div class="modal-section"><h3>Qualified Disabled and Working Individual (QDWI)</h3><ul><li>Only available for Medicare beneficiaries <strong>under 65 who are working, have a disability, and are not Medicaid-eligible</strong></li><li>Pays <strong>Part A premium</strong></li><li>Income limit: <strong>200% of FPL</strong></li></ul></div>`
+      },
+      'c4-qmb-billing': {
+        title: 'QMB Improper Billing Protections',
+        body: `<div class="modal-section"><h3>Federal Law Prohibition</h3><p>Federal law <strong>prohibits providers from billing QMB beneficiaries</strong> for Medicare cost-sharing (deductibles, coinsurance, copays).</p></div>
+        <div class="modal-section"><h3>Who Must Comply</h3>
+        <div class="modal-two-col"><div class="modal-col"><h4>QMB + Original Medicare</h4><p>Providers who <strong>accept Medicare</strong> cannot bill QMB beneficiaries for any cost-sharing.</p></div><div class="modal-col"><h4>QMB + Medicare Advantage Plan</h4><p><strong>In-network providers</strong> cannot bill QMB beneficiaries for cost-sharing.</p></div></div></div>
+        <div class="modal-section"><h3>Important Details</h3><ul><li>Medicare provider must comply with improper billing protections <strong>even if they do not accept Medicaid</strong></li><li>Improper billing protections apply if beneficiary receives care <strong>in other states</strong></li><li>Providers can be <strong>penalized</strong> if they try to bill QMB beneficiaries</li></ul></div>`
+      },
+      'c4-msp-income': {
+        title: 'Qualifying for MSP: Income',
+        body: `<div class="modal-section"><h3>How Income is Assessed</h3><ul><li>Individual qualifies for MSP if income <strong>and</strong> assets fall below limits in their state</li><li><strong>Federal government sets minimum income limits</strong>; states can adjust (be more generous)</li></ul></div>
+        <div class="modal-section"><h3>Income Never Counted in ALL States</h3><ul><li><strong>First $20 of all income</strong> (general income exclusion)</li><li><strong>First $65 of monthly wages</strong> (earned income exclusion)</li><li><strong>Half of individual's monthly wages</strong> after the $65 deduction</li><li><strong>Food stamps</strong> (SNAP benefits)</li></ul></div>
+        <div class="modal-section"><h3>Important Note</h3><p>Beneficiaries who appear to be over the income and/or asset limit <strong>should still consider applying</strong>, since certain income and assets are not counted toward the amount used to determine eligibility.</p></div>`
+      },
+      'c4-msp-assets': {
+        title: 'Qualifying for MSP: Assets',
+        body: `<div class="modal-section"><h3>What Are Assets?</h3><p>Assets (resources) include: savings and checking accounts, stocks, bonds, mutual funds, retirement accounts, and real estate (other than primary home).</p></div>
+        <div class="modal-section"><h3>Resources NEVER Counted in All States</h3><ul><li><strong>Individual's house</strong> while they are living in it</li><li><strong>One car</strong></li><li><strong>Household goods</strong> and wedding or engagement rings</li><li><strong>Burial spaces and burial funds</strong> up to $1,500 per person</li><li><strong>Life insurance</strong> with cash value less than $1,500</li></ul></div>
+        <div class="modal-section"><h3>State Variation</h3><ul><li>Some states <strong>exclude other resources</strong> beyond the federal minimums</li><li>Some states do <strong>not count resources at all</strong> for MSP eligibility</li></ul></div>`
+      },
+      'c4-msp-apply': {
+        title: 'MSP Application Process',
+        body: `<div class="modal-section"><h3>Important Note Before Applying</h3><p>Beneficiaries over the income and/or asset limit should <strong>still consider applying</strong>, since certain income and assets are not counted toward eligibility.</p></div>
+        <div class="modal-section"><h3>5-Step Application Process</h3><ul><li><strong>Step 1: Submit application to local Medicaid office</strong> — online, through mail, through a community-based organization, or in-person</li><li><strong>Step 2: Gather documentation</strong> — proof of age, income, resources, address, insurance cards, and Medicare card</li><li><strong>Step 3: If approved, make sure benefits begin on date listed on notice</strong> — benefits may take 3–4 months; individual should be reimbursed for deductions when benefit takes effect</li><li><strong>Step 4: Request fair hearing if benefit is denied</strong></li><li><strong>Step 5: Recertify in a timely manner</strong> — recertification is often an annual process</li></ul></div>`
+      },
+      'c4-msp-benefits': {
+        title: 'Additional MSP Benefits',
+        body: `<div class="modal-section"><h3>MSP Approval Triggers Additional Benefits</h3></div>
+        <div class="modal-section"><h3>① Part B Enrollment Outside Usual Periods</h3><ul><li>MSP <strong>enrolls the beneficiary in Part B</strong> outside of usual enrollment periods, <strong>if they are already enrolled in Part A</strong></li></ul></div>
+        <div class="modal-section"><h3>② Premium Part A Enrollment (QMB)</h3><ul><li>Depending on state, QMB can <strong>enroll beneficiary in premium Part A</strong> outside of usual enrollment periods</li></ul></div>
+        <div class="modal-section"><h3>③ Eliminates Part B LEP</h3><ul><li>MSP enrollment <strong>eliminates the Part B late enrollment penalty (LEP)</strong>, if applicable</li></ul></div>
+        <div class="modal-section"><h3>④ Auto-Enrollment in Extra Help (Deeming)</h3><ul><li>Individual approved for MSP is <strong>automatically enrolled in Extra Help</strong> through a process called <strong>deeming</strong></li><li>This means no separate Extra Help application is needed for MSP enrollees</li></ul></div>`
+      },
+      'c4-extrahelp': {
+        title: 'Extra Help (Low-Income Subsidy)',
+        body: `<div class="modal-section"><h3>What is Extra Help?</h3><ul><li>Also known as <strong>Low-Income Subsidy (LIS)</strong></li><li>Federal assistance program that helps pay <strong>Part D premiums</strong> and <strong>lower coinsurance charges or copayments</strong> for covered medications</li><li><strong>Administered by the Social Security Administration (SSA)</strong></li></ul></div>
+        <div class="modal-section"><h3>Eligibility</h3><ul><li>Beneficiary must meet <strong>federal income and asset limits</strong> to qualify</li><li>Individuals enrolled in MSP, Medicaid, or SSI are <strong>automatically deemed eligible</strong></li></ul></div>
+        <div class="modal-section"><h3>How Extra Help Works</h3><ul><li>Works with Medicare Part D: a <strong>stand-alone Part D plan</strong> or a <strong>Medicare Advantage Plan (MA Plan) that includes drug coverage</strong></li></ul></div>`
+      },
+      'c4-extrahelp-benefits': {
+        title: 'Extra Help Benefits',
+        body: `<div class="modal-section"><h3>Three Key Extra Help Benefits</h3></div>
+        <div class="modal-section"><h3>① Enrolls in Part D</h3><ul><li><strong>Enrolls the beneficiary in Part D</strong> if not already enrolled — no separate Part D application needed</li></ul></div>
+        <div class="modal-section"><h3>② Eliminates Part D LEP</h3><ul><li><strong>Eliminates the Part D late enrollment penalty</strong>, if applicable — even if the beneficiary previously went without creditable coverage</li></ul></div>
+        <div class="modal-section"><h3>③ Monthly Plan Change SEP</h3><ul><li>Allows beneficiary to <strong>change stand-alone Part D plans once per month</strong> — instead of being locked in until the Annual Enrollment Period (AEP)</li></ul></div>`
+      },
+      'c4-extrahelp-costs': {
+        title: 'Extra Help Costs',
+        body: `<div class="modal-section"><h3>What Extra Help Pays For</h3></div>
+        <div class="modal-section">
+        <div class="modal-two-col"><div class="modal-col"><h4>$0 Premium</h4><p>If enrolled in a <strong>benchmark plan</strong>, the beneficiary pays <strong>no monthly premium</strong> for their Part D plan.</p></div><div class="modal-col"><h4>No Deductible</h4><p>Extra Help enrollees do <strong>not pay the Part D annual deductible</strong>.</p></div></div>
+        <div class="modal-two-col" style="margin-top:12px"><div class="modal-col"><h4>Low or No Copays</h4><p>Copayments for covered medications are <strong>reduced to low or $0</strong> amounts.</p></div><div class="modal-col"><h4>Benchmark Plan</h4><p>A plan available at <strong>$0 premium</strong> to Extra Help recipients. Beneficiaries not enrolled in Part D are <strong>automatically enrolled</strong> in a benchmark plan.</p></div></div></div>`
+      },
+      'c4-extrahelp-apply': {
+        title: 'Extra Help Application Process',
+        body: `<div class="modal-section"><h3>Four Ways to Apply</h3><ul><li><strong>1.</strong> Contact Social Security Administration at <strong>800-772-1213</strong></li><li><strong>2.</strong> Visit your <strong>local Social Security office</strong></li><li><strong>3.</strong> Apply online at <strong>www.ssa.gov</strong></li><li><strong>4.</strong> Enroll in MSP, Medicaid, or SSI — automatic deeming applies</li></ul></div>
+        <div class="modal-section"><h3>After Approval</h3><ul><li>Beneficiary receives a <strong>letter about which type of Extra Help</strong> they will receive and available <strong>benchmark plans</strong> in their area</li><li>Beneficiary not enrolled in a benchmark plan <strong>may wish to enroll in one</strong></li><li>Beneficiary not enrolled in Part D will be <strong>automatically enrolled in a benchmark plan</strong></li></ul></div>
+        <div class="modal-section"><h3>If Denied</h3><ul><li>Beneficiary can <strong>appeal</strong> the denial decision</li></ul></div>`
+      },
+      'c4-linet': {
+        title: 'LI NET — Low-Income Newly Eligible Transition Program',
+        body: `<div class="modal-section"><h3>What is LI NET?</h3><ul><li><strong>Low-income newly eligible transition program</strong></li><li>Temporary program for beneficiaries who <strong>qualify for Extra Help but whose Part D plan coverage has not yet started</strong></li><li><strong>Eliminates gaps in coverage</strong> for those transitioning to Part D</li></ul></div>
+        <div class="modal-section"><h3>Example: Luis</h3><ul><li>Luis has Extra Help starting <strong>March 5</strong>, but his Part D plan will not start until <strong>April 1</strong></li><li>LI NET covers Luis's prescriptions <strong>between March 5 and April 1</strong></li><li>Luis can use LI NET to cover his prescriptions by showing his pharmacist <strong>proof of Extra Help enrollment</strong> (known as <strong>best available evidence / BAE</strong>), such as his auto-enrollment Extra Help notice or Medicaid card</li></ul></div>
+        <div class="modal-section"><h3>Contact Information</h3><ul><li>For help with LI NET benefits, call <strong>800-783-1307</strong></li></ul></div>`
+      },
+      'c4-spap': {
+        title: 'State Pharmaceutical Assistance Programs (SPAPs)',
+        body: `<div class="modal-section"><h3>What are SPAPs?</h3><ul><li>State-based programs that <strong>may help pay the cost of a beneficiary's drugs</strong></li><li><strong>Not all states have a SPAP</strong></li></ul></div>
+        <div class="modal-section"><h3>Program Requirements Vary</h3><p>Each SPAP may have its own:</p><ul><li><strong>Eligibility requirements</strong></li><li><strong>Application instructions</strong></li><li><strong>Rules and conditions</strong> that the beneficiary must follow to receive the benefit</li></ul></div>
+        <div class="modal-section"><h3>How to Find SPAP Information</h3><ul><li>Contact the <strong>State Department of Health</strong></li><li>Visit: <strong>https://www.medicare.gov/pharmaceutical-assistance-program/state-programs.aspx</strong></li></ul></div>`
+      },
+      'c4-pap': {
+        title: 'Pharmaceutical Assistance Programs (PAPs)',
+        body: `<div class="modal-section"><h3>What are PAPs?</h3><ul><li>Programs run by <strong>drug manufacturers</strong> that generally offer <strong>discounts on specific types of brand-name or generic drugs</strong></li><li>Discount is <strong>provided directly by the drug manufacturer</strong></li><li>Some programs may <strong>not work if the beneficiary has prescription drug coverage</strong></li></ul></div>
+        <div class="modal-section"><h3>Program Requirements Vary</h3><p>Each PAP may have its own:</p><ul><li><strong>Eligibility requirements</strong></li><li><strong>Application instructions</strong></li><li><strong>Rules and conditions</strong> that the beneficiary must follow to receive the benefit</li></ul></div>
+        <div class="modal-section"><h3>How to Find PAP Information</h3><ul><li>Visit <strong>www.rxassist.org</strong></li><li>Visit <strong>www.needymeds.org</strong></li></ul></div>`
+      }
+    };
+
+    function switchCourse(num) {
+      document.getElementById('panel1').style.display = num === 1 ? '' : 'none';
+      document.getElementById('panel2').style.display = num === 2 ? '' : 'none';
+      document.getElementById('panel3').style.display = num === 3 ? '' : 'none';
+      document.getElementById('panel4').style.display = num === 4 ? '' : 'none';
+      document.getElementById('tab1').classList.toggle('active-l4', num === 1);
+      document.getElementById('tab2').classList.toggle('active-l4', num === 2);
+      document.getElementById('tab3').classList.toggle('active-l4', num === 3);
+      document.getElementById('tab4').classList.toggle('active-l4', num === 4);
+      document.getElementById('sideC1').classList.toggle('active', num === 1);
+      document.getElementById('sideC2').classList.toggle('active', num === 2);
+      document.getElementById('sideC3').classList.toggle('active', num === 3);
+      document.getElementById('sideC4').classList.toggle('active', num === 4);
+      document.getElementById('course-content').scrollIntoView({behavior:'smooth', block:'start'});
+    }
+
+    function openModal(key) {
+      const s = slides[key];
+      if (!s) return;
+      document.getElementById('modalTitle').textContent = s.title;
+      document.getElementById('modalBody').innerHTML = s.body;
+      document.getElementById('modal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(e) {
+      if (e.target === document.getElementById('modal')) closeModalDirect();
+    }
+
+    function closeModalDirect() {
+      document.getElementById('modal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModalDirect(); });
+  </script>
+</body>
+</html>
